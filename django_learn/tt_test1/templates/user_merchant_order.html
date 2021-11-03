@@ -1,0 +1,80 @@
+{% extends 'user_center_info.html' %}
+{% if is_user == 1 %}
+    {% block merchant %}
+        <li class="nav-item active">
+            <a id="xdy" class="nav-link active" data-toggle="tab"
+               data-target="#tabtwo">下单页</a>
+        </li>
+    {% endblock merchant %}
+{% endif %}
+{% block user_order %}
+    <div class="tab-pane fade active show" id="tabtwo" role="tabpanel">
+        {% for order_sku in order_page %}
+            <div class="card text-white bg-primary mb-2 pi-draggable">
+                <div class="row pi-draggable" draggable="true">
+                    <div class="col-md-12">
+                        <div class="row pi-draggable pb-1" draggable="true">
+                            <div class="col-md-4">
+                                <div class="form-check">
+                                    <div class="row pi-draggable">
+                                        <div class="col-lg-3 col-2 px-0"><img
+                                                class="img-fluid d-block"
+                                                src="{{ order_sku.sku.image.url }}">
+                                        </div>
+                                        <div class="col-lg-9 col-3">
+                                            <h6 class="py-2 my-1 text-left"> {{ order_sku.sku.name }} </h6>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-md-3 px-0">
+                                <h6 class="py-2 my-1">{{ order_sku.price }}元/{{ order_sku.sku.unite }}</h6>
+                            </div>
+                            <div class="col-md-1 px-0">
+                                <h6 class="py-2 my-1">{{ order_sku.count }}</h6>
+                            </div>
+                            <div class="col-md-2 px-0">
+                                <h6 class="py-2 my-1">{{ order_sku.amount }}</h6>
+                            </div>
+                            <div class="col-md-2 px-0 order_status"
+                                 order_merchant_status=" {{ order_sku.order_status }}"
+                                 order_merchant_sku_id="{{ order_sku.id }}">
+                                <h6 class="py-2 my-1">{{ order_sku.order_status_name }}</h6>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        {% endfor %}
+        {% csrf_token %}
+        <div class="row">
+            <div class="col-md-4"></div>
+            <div class="col-md-4">
+                <ul class="pagination px-5 my-2">
+                    {% if order_page.has_previous %}
+                        <li class="page-item"><a class="page-link"
+                                                 href="{% url 'user:merchant' order_page.previous_page_number %}?sort={{ sort }}">
+                            <span>«</span></a></li>
+                    {% endif %}
+                    {% for pindex in pages %}
+                        {% if pindex == order_page.number %}
+                            <li class="page-item active"><a class="page-link"
+                                                            href="{% url 'user:merchant' pindex %}">{{ pindex }}</a>
+                            </li>
+                        {% else %}
+                            <li class="page-item"><a class="page-link"
+                                                     href="{% url 'user:merchant' pindex %}">{{ pindex }}</a></li>
+                        {% endif %}
+                    {% endfor %}
+                    {% if order_page.has_next %}
+                        <li class="page-item"><a class="page-link"
+                                                 href="{% url 'user:merchant' order_page.next_page_number %}">
+                            <span>»</span></a></li>
+                    {% endif %}
+                </ul>
+            </div>
+            <div class="col-md-4"></div>
+        </div>
+    </div>
+{% endblock user_order %}
+

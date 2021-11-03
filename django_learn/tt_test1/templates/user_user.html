@@ -1,0 +1,52 @@
+{% extends 'user_center_info.html' %}
+{% block is_user_user %} active {% endblock is_user_user %}
+{% block merchant %}
+    <li class="nav-item" {% if not is_user %}{{ hidden }}{% endif %}>
+        <a id="xdy" class="nav-link" data-toggle="tab"
+           data-target="#tabtwo">下单页</a>
+    </li>
+{% endblock merchant %}
+{% block user_user %}
+    <div class="tab-pane fade active show" id="tabone" role="tabpanel">
+        <div class="row">
+            <div class="card text-white mb-3 text-left col-md-12 bg-info">
+                <div class="card-body row">
+                    <div class="col-md-4 col-4 text-right">
+                        <div> 用户名：</div>
+                        <div> 联系方式：</div>
+                        <div> 收货地址：</div>
+                    </div>
+                    <div class="col-md-8 col-8 text-light">
+                        <div> {{ user.username }}</div>
+                        {% if address %}
+                            <div>{{ address.phone }}</div>
+                            <div>{{ address.addr }}</div>
+                        {% else %}
+                            <div> 无默认</div>
+                            <div> 无默认</div>
+                        {% endif %}
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-12 col-12 bg-info text-white">
+                <h3 class="my-1"> 浏览历史 </h3>
+            </div>
+            {% for goods in goods_li %}
+                <div class="col-lg-2 col-3 p-3">
+                    <a href="{% url 'goods:detail' goods.id %}">
+                        <div class="card"><img class="card-img-top"
+                                               src="{{ goods.image.url }}"
+                                               alt="Card image cap">
+                            <div class="card-body">
+                                <h5 class="card-title text-center"><b>{{ goods.name }}</b></h5>
+                                <p class="card-text text-center">￥{{ goods.price }}</p>
+                            </div>
+                        </div>
+                    </a>
+                </div>
+                {% empty %}
+                <h3 class="my-1"> 无历史浏览记录</h3>
+            {% endfor %}
+        </div>
+    </div>
+{% endblock user_user %}

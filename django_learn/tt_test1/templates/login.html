@@ -1,0 +1,41 @@
+{% extends 'base.html' %}
+{% load staticfiles %}
+{% block title %}登陆{% endblock title %}
+{% block body %}
+    <div class="py-5 text-center text-white"
+         style="background-image: linear-gradient(to bottom, rgba(0, 0, 0, .75), rgba(0, 0, 0, .75)), url(https://static.pingendo.com/cover-bubble-dark.svg);  background-position: center center, center center;  background-size: cover, cover;  background-repeat: repeat, repeat;">
+        <div class="container">
+            <div class="row">
+                <div class="mx-auto col-md-12">
+                    <h1 class="mb-3">登陆</h1>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-lg-4 col-md-3 col-2 p-4"></div>
+                <div class="col-lg-4 col-md-6 col-8 p-4"><img class="img-fluid d-block mb-3 mx-auto rounded-circle"
+                                                              src="https://static.pingendo.com/img-placeholder-2.svg"
+                                                              alt="Card image cap" width="200">
+                    <form id="c_form-h" method="post" class="">
+                        {% csrf_token %}
+                        <div class="form-group row">
+                            <div class="col-12">
+                                <input class="form-control" name="username" value="{{ username }}" placeholder="用户名">
+                            </div>
+                        </div>
+                        <div class="form-group row">
+                            <div class="col-12">
+                                <input type="password" class="form-control" name="pwd" placeholder="密码"></div>
+                        </div>
+                        <div class="form-check py-2">
+                            <input class="form-check-input" type="checkbox" name="remember"
+                                   value="on" {{ checked }}><label
+                                class="form-check-label" for="exampleCheck1">记住用户</label></div>
+                        <button type="submit" class="btn bg-primary">登陆</button>
+                    </form>
+                    {{ errmsg }}
+                </div>
+                <div class="col-lg-4 col-md-3 col-2 p-4"></div>
+            </div>
+        </div>
+    </div>
+{% endblock body %}

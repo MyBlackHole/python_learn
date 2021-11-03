@@ -1,0 +1,59 @@
+{% extends 'base.html' %}
+{% block title %}{{ type }}-列表{% endblock title %}
+{% block body %}
+    <div
+            style="background-image: url(https://static.pingendo.com/cover-bubble-dark.svg); background-position: right bottom;  background-size: cover; background-repeat: repeat; background-attachment: fixed;">
+        <div class="container">
+            <ul class="pi-draggable breadcrumb">
+                <li class="breadcrumb-item">种类</li>
+                <li class="breadcrumb-item">{{ type.name }}种类列表</li>
+                <li class="breadcrumb-item active">{{ goods.name }}spu列表</li>
+            </ul>
+            <div class="row">
+                {% for goods_sku in goods_sku_all %}
+                    <div class="col-lg-3 col-6 p-3">
+                        <a href="{% url 'goods:detail' goods_sku.id %}">
+                            <div class="card"><img class="card-img-top"
+                                                   src="{{ goods_sku.image.url }}"
+                                                   alt="Card image cap">
+                                <div class="card-body">
+                                    <h5 class="card-title text-center"><b>{{ goods_sku.name }}</b></h5>
+                                    <p class="card-text text-center">￥ {{ goods_sku.price }}</p>
+                                </div>
+                            </div>
+                        </a>
+                    </div>
+                {% endfor %}
+            </div>
+            <div class="row">
+                <div class="col-md-4"></div>
+                <div class="col-md-4">
+                    <ul class="pagination px-5 my-2">
+                        {% if skus_page.has_previous %}
+                            <li class="page-item"><a class="page-link"
+                                                     href="{% url 'goods:spulist' goods.id skus_page.previous_page_number %}?sort={{ sort }}">
+                                <span>«</span></a></li>
+                        {% endif %}
+                        {% for pindex in pages %}
+                            {% if pindex == skus_page.number %}
+                                <li class="page-item active"><a class="page-link"
+                                                                href="{% url 'goods:spulist' goods.id pindex %}">{{ pindex }}</a>
+                                </li>
+                            {% else %}
+                                <li class="page-item"><a class="page-link"
+                                                         href="{% url 'goods:spulist' goods.id pindex %}">{{ pindex }}</a>
+                                </li>
+                            {% endif %}
+                        {% endfor %}
+                        {% if skus_page.has_next %}
+                            <li class="page-item"><a class="page-link"
+                                                     href="{% url 'goods:spulist' goods.id skus_page.next_page_number %}">
+                                <span>»</span></a></li>
+                        {% endif %}
+                    </ul>
+                </div>
+                <div class="col-md-4"></div>
+            </div>
+        </div>
+    </div>
+{% endblock body %}

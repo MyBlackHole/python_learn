@@ -1,0 +1,515 @@
+{
+  "abstract": "",
+  "allow_download": false,
+  "article_sub_type": 0,
+  "article_type": 0,
+  "article_url": "",
+  "ban_comment": 0,
+  "ban_immersive": 0,
+  "behot_time": 1613631538,
+  "bury_count": 0,
+  "bury_style_show": 1,
+  "cell_ctrls": {
+    "cell_flag": 272646400,
+    "cell_layout_style": 700,
+    "cell_height": 0,
+    "content_decoration": null,
+    "need_client_impr_recycle": 1
+  },
+  "cell_type": 49,
+  "comment_count": 0,
+  "content_decoration": "",
+  "cursor": 1613631538000,
+  "data_type": 1,
+  "digg_count": 0,
+  "has_m3u8_video": false,
+  "has_mp4_video": 0,
+  "has_video": false,
+  "hot": 0,
+  "id": 6718617356689542408,
+  "ignore_web_transform": 0,
+  "interaction_data": "",
+  "is_key_video": false,
+  "is_subject": false,
+  "item_version": 0,
+  "level": 0,
+  "log_pb": {
+    "author_id": "62633340659",
+    "concern_id": "6570895765428767246",
+    "entrance_gid": "",
+    "entrance_impr_id": "",
+    "from_page": "",
+    "group_id_str": "6718617356689542408",
+    "impr_id": "20210218145858010212172031196599AA",
+    "is_following": "0",
+    "logpb_group_id": "6718617356689542408",
+    "parent_gid": "",
+    "parent_impr_id": "",
+    "style_type": "concern_topic"
+  },
+  "raw_ad_data": null,
+  "raw_data": {
+    "action": {
+      "bury_count": 0,
+      "comment_count": 15,
+      "ctr": null,
+      "detail_read_count_merge": null,
+      "detail_read_count_new": null,
+      "detail_read_count_old": null,
+      "digg_count": 320,
+      "display_count": null,
+      "fans_display_count_new": null,
+      "fans_display_count_old": null,
+      "fans_read_count_new": null,
+      "fans_read_count_old": null,
+      "forward_count": 0,
+      "play_count": 14417,
+      "read_count": 14417,
+      "repin_count": null,
+      "repost_display_count": null,
+      "repost_read_count": null,
+      "share_count": 7,
+      "show_count": null,
+      "stay_time": null,
+      "user_bury": 0,
+      "user_digg": 0,
+      "user_repin": 0
+    },
+    "activity": {
+      "activity_info": "20616人参加",
+      "activity_type": null,
+      "bonus": null,
+      "concern_id": 6570895765428767246,
+      "forum_id": 1604222598871118,
+      "forum_type": 0,
+      "labels": null,
+      "name": "山西大同",
+      "open_url": "sslocal://concern?cid=6570895765428767246\u0026tab_sname=short_video_activity",
+      "rank": null,
+      "show_on_list": 1
+    },
+    "animated_cover_image_list": [
+      {
+        "height": 960,
+        "image_type": 2,
+        "uri": "2c202000786bbf9b336a2",
+        "url": "http://p1.toutiaoimg.com/img/mosaic-legacy/2c202000786bbf9b336a2~tplv-obj.image?from=shortvideo",
+        "url_list": [
+          {
+            "url": "http://p1.toutiaoimg.com/img/mosaic-legacy/2c202000786bbf9b336a2~tplv-obj.image?from=shortvideo"
+          },
+          {
+            "url": "http://p6.toutiaoimg.com/img/mosaic-legacy/2c202000786bbf9b336a2~tplv-obj.image?from=shortvideo"
+          },
+          {
+            "url": "http://p9.toutiaoimg.com/img/mosaic-legacy/2c202000786bbf9b336a2~tplv-obj.image?from=shortvideo"
+          }
+        ],
+        "width": 540
+      }
+    ],
+    "animated_cover_image_looping": 0,
+    "animated_image_list": [
+      {
+        "height": 960,
+        "image_type": 2,
+        "uri": "2c202000786bbf9b336a2",
+        "url": "https://p9.toutiaoimg.com/img/mosaic-legacy/2c202000786bbf9b336a2~noop.webp?from=shortvideo",
+        "url_list": [
+          {
+            "url": "https://p9.toutiaoimg.com/img/mosaic-legacy/2c202000786bbf9b336a2~noop.webp?from=shortvideo"
+          },
+          {
+            "url": "https://p3.toutiaoimg.com/img/mosaic-legacy/2c202000786bbf9b336a2~noop.webp?from=shortvideo"
+          },
+          {
+            "url": "https://p6.toutiaoimg.com/img/mosaic-legacy/2c202000786bbf9b336a2~noop.webp?from=shortvideo"
+          }
+        ],
+        "width": 540
+      }
+    ],
+    "app_download": {
+      "flag": 0,
+      "text": "好玩的人都在用抖音"
+    },
+    "app_schema": "snssdk1128://feed",
+    "article_info": {
+      "third_sync_xigua": "",
+      "visibility_level": "40"
+    },
+    "ban_danmaku": false,
+    "ban_download": null,
+    "ban_immersive": null,
+    "biz_id": 31,
+    "challenge_info": null,
+    "check_challenge": null,
+    "cloud_content_video_type": null,
+    "control_meta": {
+      "modify": {
+        "RemainingTimes": null,
+        "ShowRemainingTimes": null,
+        "permission": true,
+        "tips": ""
+      },
+      "remove": {
+        "RemainingTimes": null,
+        "ShowRemainingTimes": null,
+        "permission": true,
+        "tips": ""
+      },
+      "share": {
+        "RemainingTimes": null,
+        "ShowRemainingTimes": null,
+        "permission": true,
+        "tips": ""
+      }
+    },
+    "create_time": 1564323337,
+    "default_danmaku": 0,
+    "detail_schema": "sslocal://awemevideo?group_id=6718617356689542408\u0026group_source=19\u0026item_id=6718617356689542408\u0026request_id=20210218145858010212172031196599AA\u0026enter_from=click_forum\u0026category_name=forum_hot_tab\u0026log_pb=%7B%22concern_id%22%3A%226570895765428767246%22%2C%22entrance_gid%22%3A%22%22%2C%22entrance_impr_id%22%3A%22%22%2C%22from_page%22%3A%22%22%2C%22group_id_str%22%3A%226718617356689542408%22%2C%22impr_id%22%3A%2220210218145858010212172031196599AA%22%2C%22parent_gid%22%3A%22%22%2C%22parent_impr_id%22%3A%22%22%2C%22style_type%22%3A%22concern_topic%22%7D\u0026gd_ext_json=%7B%22concern_id%22%3A%226570895765428767246%22%2C%22entrance_gid%22%3A%22%22%2C%22entrance_impr_id%22%3A%22%22%2C%22from_page%22%3A%22%22%2C%22group_id_str%22%3A%226718617356689542408%22%2C%22impr_id%22%3A%2220210218145858010212172031196599AA%22%2C%22parent_gid%22%3A%22%22%2C%22parent_impr_id%22%3A%22%22%2C%22style_type%22%3A%22concern_topic%22%7D",
+    "deversion": null,
+    "distance": "",
+    "diversion": null,
+    "douhuo_download_info": {
+      "app_download_url": "https://d.douyin.com/eXBJ/",
+      "app_icon_url": "https://sf1-hscdn-tos.pstatp.com/obj/ies.fe.effect/a752e3bd176b10ea340c65db16e7c91c",
+      "app_name": "抖音短视频",
+      "to_app_id": null,
+      "to_app_name": null
+    },
+    "duet_info": {
+      "can_duet": false,
+      "cur_tab": "duet",
+      "duet_source": "cur",
+      "origin_group_id": 0
+    },
+    "effect": {
+      "beautify_eye": 0,
+      "beautify_face": 0,
+      "effect_id": 0,
+      "effect_type": "",
+      "filter_id": ""
+    },
+    "extension_type": null,
+    "extensions": null,
+    "extra": "{\"follow_icon\":\"http://p3-tt.bytecdn.cn/origin/tos-cn-i-0000/7ebb50f47d3b404090c724bdf18de623.webp\",\"follow_text\":\"跟拍\",\"item_id_str\":\"6718617356689542408\",\"statistics_extra\":{\"biz_id\":19,\"content_schema_video_type\":1,\"group_source\":19,\"new_source\":2,\"server_source\":\"92\",\"short_video_source\":\"aweme_insite\",\"tag_id_level1\":3},\"play_url_expire\":1613674739}",
+    "first_frame_image_list": [
+      {
+        "height": 960,
+        "image_type": 1,
+        "uri": "2b752000ba5e330d5ce18",
+        "url": "https://p1.toutiaoimg.com/img/mosaic-legacy/2b752000ba5e330d5ce18~noop.webp?from=shortvideo",
+        "url_list": [
+          {
+            "url": "https://p1.toutiaoimg.com/img/mosaic-legacy/2b752000ba5e330d5ce18~noop.webp?from=shortvideo"
+          },
+          {
+            "url": "https://p26.toutiaoimg.com/img/mosaic-legacy/2b752000ba5e330d5ce18~noop.webp?from=shortvideo"
+          },
+          {
+            "url": "https://p9.toutiaoimg.com/img/mosaic-legacy/2b752000ba5e330d5ce18~noop.webp?from=shortvideo"
+          }
+        ],
+        "width": 540
+      }
+    ],
+    "forum": null,
+    "from_type": 0,
+    "group_id": 6718617356689542408,
+    "group_source": 19,
+    "horizontal_image_list": null,
+    "in_feed_action": null,
+    "insert_ads": null,
+    "interact_label": null,
+    "interactive_data": null,
+    "is_ad": 0,
+    "is_key_video": false,
+    "item_id": 6718617356689542408,
+    "item_status": null,
+    "label": "",
+    "label_for_list": "",
+    "large_image_list": [
+      {
+        "height": 960,
+        "image_type": 1,
+        "uri": "2c018000bca513cd8b0ba",
+        "url": "https://p9.toutiaoimg.com/img/mosaic-legacy/2c018000bca513cd8b0ba~noop.webp?from=shortvideo",
+        "url_list": [
+          {
+            "url": "https://p9.toutiaoimg.com/img/mosaic-legacy/2c018000bca513cd8b0ba~noop.webp?from=shortvideo"
+          },
+          {
+            "url": "https://p6.toutiaoimg.com/img/mosaic-legacy/2c018000bca513cd8b0ba~noop.webp?from=shortvideo"
+          },
+          {
+            "url": "https://p1.toutiaoimg.com/img/mosaic-legacy/2c018000bca513cd8b0ba~noop.webp?from=shortvideo"
+          }
+        ],
+        "width": 540
+      }
+    ],
+    "local_channel_distance": "",
+    "local_channel_postion": "",
+    "music": null,
+    "ocr_location": "",
+    "ocr_main_location": "",
+    "opcat_activity": null,
+    "open_url": null,
+    "panel_datas": null,
+    "personal_label_for_list": null,
+    "pseries": null,
+    "pseries_rank": null,
+    "publish_reason": {
+      "noun": "",
+      "verb": ""
+    },
+    "publish_time": 1564323337,
+    "recommand_reason": "",
+    "relative_videos_meta": {
+      "more_subtitle": "",
+      "more_title": "更多相关视频",
+      "show_interactive": true,
+      "title_color": ""
+    },
+    "repost_show_tips": null,
+    "rich_title": "\u003ca href=\"sslocal://concern?cid=1609999569835015\u0026tab_sname=thread\"\u003e#山西大同\u003c/a\u003e \u003ca href=\"sslocal://concern?cid=1639671016518702\u0026tab_sname=thread\"\u003e#第五届成龙电影周\u003c/a\u003e 蹭个成龙大哥的热度 也不知道能不能火 🔥 大同 真拧！哈哈哈哈",
+    "risk_warning": null,
+    "search_info": null,
+    "search_tag": null,
+    "service_info": {},
+    "share": {
+      "share_cover": null,
+      "share_desc": "看更多视频，上今日头条。",
+      "share_title": "鹿爷yea: #山西大同 #第五届成龙电影周 蹭个成龙大哥的热度 也不知道能不能火 🔥 大同 真拧！哈哈哈哈",
+      "share_url": "https://m.toutiaoimg.cn/group/6718617356689542408/?app=news_article\u0026timestamp=1613631539",
+      "share_weibo_desc": null
+    },
+    "share_info": {
+      "cover_image": {
+        "height": 600,
+        "image_type": 1,
+        "uri": "2c018000bca513cd8b0ba",
+        "url": "http://p26.toutiaoimg.com/2c018000bca513cd8b0ba~tplv-tt-cs0:400:600.webp?from=shortvideo",
+        "url_list": [
+          {
+            "url": "http://p26.toutiaoimg.com/2c018000bca513cd8b0ba~tplv-tt-cs0:400:600.webp?from=shortvideo"
+          },
+          {
+            "url": "http://p6.toutiaoimg.com/2c018000bca513cd8b0ba~tplv-tt-cs0:400:600.webp?from=shortvideo"
+          },
+          {
+            "url": "http://p9.toutiaoimg.com/2c018000bca513cd8b0ba~tplv-tt-cs0:400:600.webp?from=shortvideo"
+          },
+          {
+            "url": "http://p3.toutiaoimg.com/2c018000bca513cd8b0ba~tplv-tt-cs0:400:600.webp?from=shortvideo"
+          }
+        ],
+        "width": 400
+      },
+      "description": "看更多视频，上今日头条。",
+      "share_backup_url": null,
+      "share_type": {
+        "pyq": 0,
+        "qq": 0,
+        "qzone": 0,
+        "wx": 0
+      },
+      "share_url": "https://m.toutiaoimg.cn/group/6718617356689542408/?app=news_article\u0026timestamp=1613631539",
+      "title": "鹿爷yea: #山西大同 #第五届成龙电影周 蹭个成龙大哥的热度 也不知道能不能火 🔥 大同 真拧！哈哈哈哈",
+      "token_type": 1,
+      "weixin_cover_image": {
+        "height": 0,
+        "uri": "",
+        "url": "",
+        "url_list": [
+          {
+            "url": ""
+          },
+          {
+            "url": ""
+          },
+          {
+            "url": ""
+          }
+        ],
+        "width": 0
+      }
+    },
+    "shoot": {
+      "icon_url": "",
+      "shoot_attr": [
+        "activity"
+      ]
+    },
+    "smart_image_list": [
+      {
+        "height": 194,
+        "image_type": 1,
+        "uri": "2c018000bca513cd8b0ba",
+        "url": "http://p6.toutiaoimg.com/img/mosaic-legacy/2c018000bca513cd8b0ba~tplv-tt-cs:345:194.webp?from=shortvideo",
+        "url_list": [
+          {
+            "url": "http://p6.toutiaoimg.com/img/mosaic-legacy/2c018000bca513cd8b0ba~tplv-tt-cs:345:194.webp?from=shortvideo"
+          },
+          {
+            "url": "http://p3.toutiaoimg.com/img/mosaic-legacy/2c018000bca513cd8b0ba~tplv-tt-cs:345:194.webp?from=shortvideo"
+          },
+          {
+            "url": "http://p26.toutiaoimg.com/img/mosaic-legacy/2c018000bca513cd8b0ba~tplv-tt-cs:345:194.webp?from=shortvideo"
+          }
+        ],
+        "width": 345
+      }
+    ],
+    "special_video_flag": null,
+    "status": {
+      "allow_comment": true,
+      "allow_download": false,
+      "allow_share": true,
+      "is_delete": false
+    },
+    "text_comment_count": null,
+    "thumb_image_list": [
+      {
+        "height": 600,
+        "image_type": 1,
+        "uri": "2c018000bca513cd8b0ba",
+        "url": "http://p26.toutiaoimg.com/2c018000bca513cd8b0ba~tplv-tt-cs0:400:600.webp?from=shortvideo",
+        "url_list": [
+          {
+            "url": "http://p26.toutiaoimg.com/2c018000bca513cd8b0ba~tplv-tt-cs0:400:600.webp?from=shortvideo"
+          },
+          {
+            "url": "http://p6.toutiaoimg.com/2c018000bca513cd8b0ba~tplv-tt-cs0:400:600.webp?from=shortvideo"
+          },
+          {
+            "url": "http://p9.toutiaoimg.com/2c018000bca513cd8b0ba~tplv-tt-cs0:400:600.webp?from=shortvideo"
+          },
+          {
+            "url": "http://p3.toutiaoimg.com/2c018000bca513cd8b0ba~tplv-tt-cs0:400:600.webp?from=shortvideo"
+          }
+        ],
+        "width": 400
+      }
+    ],
+    "title": "#山西大同 #第五届成龙电影周 蹭个成龙大哥的热度 也不知道能不能火 🔥 大同 真拧！哈哈哈哈",
+    "title_rich_span": "{\"links\":[{\"id\":1609999569835015,\"id_type\":0,\"length\":5,\"link\":\"sslocal://concern?cid=6594558238585260547\\u0026tab_sname=short_video_activity\",\"start\":0,\"text\":\"\",\"type\":2},{\"id\":1639671016518702,\"id_type\":0,\"length\":9,\"link\":\"sslocal://concern?cid=1639671016518702\\u0026tab_sname=short_video_activity\",\"start\":6,\"text\":\"\",\"type\":2}]}",
+    "topbar_ui_style": "1",
+    "user": {
+      "info": {
+        "auth_verified_info": null,
+        "avatar_uri": null,
+        "avatar_url": "https://p1-dy.bytexservice.com/img/user-avatar/f0b208db522715866b68018b65cf9da0~300x300.image",
+        "ban_status": false,
+        "create_time": null,
+        "desc": "谢谢你的关注💕",
+        "gender": 2,
+        "live_business_type": null,
+        "live_info_type": 0,
+        "living_count": 0,
+        "medals": null,
+        "media_id": "1606747944493063",
+        "name": "鹿爷yea",
+        "origin_profile_url": "https://www.douyin.com/share/user/57631670431/?sec_uid=MS4wLjABAAAAOrkpknnpsCmFrD9wdIGMWad3iiJKIzoFX2Qdqp1qwrQ\u0026_fix=0",
+        "origin_user_id": 57631670431,
+        "real_name": null,
+        "room_schema": "",
+        "schema": "sslocal://profile?uid=62633340659\u0026refer=ies_video",
+        "user_auth_info": "",
+        "user_decoration": "",
+        "user_id": 62633340659,
+        "user_verified": 0,
+        "verified_content": ""
+      },
+      "media_info": null,
+      "relation": {
+        "is_followed": 0,
+        "is_following": 0,
+        "is_friend": 0,
+        "is_real_friend": null,
+        "remark_name": ""
+      },
+      "relation_count": {
+        "followers_count": 0,
+        "followings_count": 0
+      }
+    },
+    "video": {
+      "auth_token": null,
+      "biz_token": null,
+      "codec_type": "h264",
+      "download_addr": {
+        "uri": "v0200f140000bkuqrdar863o88n8ql80",
+        "url_list": [
+          "https://aweme.snssdk.com/aweme/v1/play/?video_id=v0200f140000bkuqrdar863o88n8ql80\u0026ratio=720p\u0026watermark=1\u0026line=0",
+          "https://aweme.snssdk.com/aweme/v1/play/?video_id=v0200f140000bkuqrdar863o88n8ql80\u0026ratio=720p\u0026watermark=1\u0026line=1"
+        ]
+      },
+      "duration": 26,
+      "file_hash": "ad8d5c11e661437b1c7ccb6bfb5d47a6",
+      "height": 1280,
+      "origin_cover": {
+        "uri": "2c018000bca513cd8b0ba",
+        "url_list": [
+          "https://p1.toutiaoimg.com/img/mosaic-legacy/2c018000bca513cd8b0ba~noop.jpeg?from=shortvideo",
+          "https://p26.toutiaoimg.com/img/mosaic-legacy/2c018000bca513cd8b0ba~noop.jpeg?from=shortvideo",
+          "https://p9.toutiaoimg.com/img/mosaic-legacy/2c018000bca513cd8b0ba~noop.jpeg?from=shortvideo"
+        ]
+      },
+      "play_addr": {
+        "uri": "v0200f140000bkuqrdar863o88n8ql80",
+        "url_list": [
+          "http://v6.toutiaovod.com/2ba4bee90b4aa6b721412a21895c9bfe/602eb8f3/video/m/2207df42ae236764fc6a6dc46229a98a6cd116303d15000071cb29f78dd8/?a=13\u0026br=4464\u0026bt=1116\u0026cd=0%7C0%7C0\u0026ch=0\u0026cr=0\u0026cs=0\u0026cv=1\u0026dr=0\u0026ds=3\u0026er=\u0026l=20210218145858010212172031196599AA\u0026lr=no_logo\u0026mime_type=video_mp4\u0026pl=0\u0026qs=0\u0026rc=M287O3I5dWd0bjMzN2kzM0ApNGRlNzxkODw6N2VnaTk1N2cpdnF2ZXJneWZ4cmx4d2Y1bms1MDVeb3JfLS0uLS9zcy9iMDEtLWE0Nl8tYGMuNDY6Y3BiZnJcYmYrZCtecWw6\u0026vl=\u0026vr="
+        ]
+      },
+      "play_addr_list": [
+        {
+          "bitrate": 0,
+          "codec_type": "h264",
+          "definition": "720p",
+          "file_hash": "ad8d5c11e661437b1c7ccb6bfb5d47a6",
+          "play_url_list": [
+            "http://v6.toutiaovod.com/2ba4bee90b4aa6b721412a21895c9bfe/602eb8f3/video/m/2207df42ae236764fc6a6dc46229a98a6cd116303d15000071cb29f78dd8/?a=13\u0026br=4464\u0026bt=1116\u0026cd=0%7C0%7C0\u0026ch=0\u0026cr=0\u0026cs=0\u0026cv=1\u0026dr=0\u0026ds=3\u0026er=\u0026l=20210218145858010212172031196599AA\u0026lr=no_logo\u0026mime_type=video_mp4\u0026pl=0\u0026qs=0\u0026rc=M287O3I5dWd0bjMzN2kzM0ApNGRlNzxkODw6N2VnaTk1N2cpdnF2ZXJneWZ4cmx4d2Y1bms1MDVeb3JfLS0uLS9zcy9iMDEtLWE0Nl8tYGMuNDY6Y3BiZnJcYmYrZCtecWw6\u0026vl=\u0026vr="
+          ],
+          "size": 3724683,
+          "video_quality": 0
+        }
+      ],
+      "play_info": null,
+      "ratio": "720p",
+      "size": 3724683,
+      "video_id": "v0200f140000bkuqrdar863o88n8ql80",
+      "video_logo": null,
+      "width": 592
+    },
+    "video_content": "",
+    "video_forum_info": null,
+    "video_logo": null,
+    "video_neardup_id": 0,
+    "visual_search_enable": null,
+    "voice_comment_count": null,
+    "voice_comment_enable": null,
+    "wallpaper": null,
+    "xi_related": false
+  },
+  "read_count": 0,
+  "req_id": "20210218145858010212172031196599AA",
+  "rid": "20210218145858010212172031196599AA",
+  "share_count": 0,
+  "share_info": null,
+  "show_dislike": false,
+  "show_portrait": false,
+  "show_portrait_article": false,
+  "small_image": null,
+  "tip": 0,
+  "ugc_recommend": {
+    "activity": "",
+    "reason": ""
+  },
+  "user_repin": 0,
+  "user_verified": 0,
+  "verified_content": "",
+  "video_style": 0,
+  "xi_related": false
+}

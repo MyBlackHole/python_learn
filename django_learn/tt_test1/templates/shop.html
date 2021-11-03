@@ -1,0 +1,102 @@
+{% extends 'base.html' %}
+{% block title %}{{ name }}的店铺{% endblock title %}
+{% block body %}
+    <div class="container">
+        <ul class="pi-draggable breadcrumb m-0">
+            <li class="breadcrumb-item">店铺</li>
+            <li class="breadcrumb-item active">{{ name }}店铺首页</li>
+        </ul>
+        <div id="carouselExampleIndicators" class="carousel slide carousel-fade pi-draggable" data-ride="carousel">
+            <ol class="carousel-indicators">
+                {% for wheel in wheel_list %}
+                    {% if forloop.counter == 1 %}
+                        <li data-target="#carouselExampleIndicators" data-slide-to="{{ forloop.counter }}"
+                            class="active"></li>
+                    {% else %}
+                        <li data-target="#carouselExampleIndicators" data-slide-to="{{ forloop.counter }}"
+                            class=""></li>
+                    {% endif %}
+                {% endfor %}
+            </ol>
+            <div class="carousel-inner">
+                {% for wheel in wheel_list %}
+                    {% if forloop.counter == 1 %}
+                        <div class="carousel-item active"><img class="d-block img-fluid w-100"
+                                                               src="{{ wheel.image.url }}">
+                        </div>
+                    {% else %}
+                        <div class="carousel-item"><img class="d-block img-fluid w-100"
+                                                        src="{{ wheel.image.url }}">
+                        </div>
+                    {% endif %}
+                {% endfor %}
+            </div>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-md-12">
+            <div class="card text-white">
+                <div class="container">
+                    <div class="row">
+                        {% for activity in activity_list %}
+                            <div class="col-lg-3 col-6 p-3">
+                                <a href="{% url 'goods:detail' activity.sku.id %} }">
+                                    <div class="card"><img class="card-img-top"
+                                                           src="{{ activity.image.url }}"
+                                                           alt="Card image cap">
+                                        <div class="card-body">
+                                            <h5 class="card-title text-center"><b>{{ activity.name }}</b></h5>
+                                            <p class="card-text text-center">{{ activity.sku.name }}</p>
+                                        </div>
+                                    </div>
+                                </a>
+                            </div>
+                        {% endfor %}
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="col-md-12">
+            <div class="card text-white bg-primary">
+                <div class="container">
+                    <div class="row">
+                        {% for shop_spu in shop_spu_list %}
+                            <div class="col-lg-3 col-6 p-3">
+                                <a href="">
+                                    <div class="card"><img class="card-img-top"
+                                                           src="{{ shop_spu.image.url }}"
+                                                           alt="Card image cap">
+                                        <div class="card-body">
+                                            <h5 class="card-title text-center"><b>{{ shop_spu.name }}</b></h5>
+                                            <p class="card-text text-center">{{ shop_spu.type }}</p>
+                                        </div>
+                                    </div>
+                                </a>
+                            </div>
+                        {% endfor %}
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="card text-white bg-info">
+        <div class="container">
+            <div class="row">
+                {% for shop_sku in shop_sku_list %}
+                    <div class="col-lg-3 col-6 p-3">
+                        <a href="{% url 'goods:detail' shop_sku.id %}">
+                            <div class="card"><img class="card-img-top"
+                                                   src="{{ shop_sku.image.url }}"
+                                                   alt="Card image cap">
+                                <div class="card-body">
+                                    <h5 class="card-title text-center"><b>{{ shop_sku.name }}</b></h5>
+                                    <p class="card-text text-center">{{ shop_sku.price }}</p>
+                                </div>
+                            </div>
+                        </a>
+                    </div>
+                {% endfor %}
+            </div>
+        </div>
+    </div>
+{% endblock body %}

@@ -1,0 +1,188 @@
+{% extends 'base.html' %}
+{% load staticfiles %}
+{% block title %}下单页面{% endblock title %}
+{% block body %}
+    <div class="container">
+        <div class="row">
+            <div class="col-md-12">
+                <div class="card text-white bg-primary mb-3">
+                    <div class="row pi-draggable" draggable="true">
+                        <div class="col-md-10">
+                            <div class="card-header">确认收货地址</div>
+                        </div>
+                        <div class="col-md-2"><a class="btn btn-info pi-draggable m-1 mx-3"
+                                                 href="{% url 'user:address' %}"> 编辑地址 </a></div>
+                    </div>
+                    <div class="card-body">
+                        <form>
+                            {% for addr in addrs %}
+                                <div class="radio">
+                                    <label><input type="radio" name="optradio"
+                                                  {% if addr.is_default %}checked{% endif %}
+                                                  value="{{ addr.id }}">{{ addr.addr }}
+                                        ({{ addr.receiver }}收) {{ addr.phone }}</label>
+                                </div>
+                            {% endfor %}
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div>
+        <div class="container">
+            <div class="row">
+                <div class="col-md-12">
+                    <div class="card mb-3 bg-light text-info">
+                        <div class="card-header">支付方式</div>
+                        <div class="card-body py-0 pt-0">
+                            <form class="pb-0 pt-0 mb-0">
+                                <div class="row pi-draggable py-0">
+                                    <div class="col-md-3">
+                                        <div class="row pi-draggable" draggable="true">
+                                            <div class="col-md-4"><label class="radio-inline my-3 ml-4 px-3"><input
+                                                    type="radio" name="optradio" checked="checked" value="1"></label>
+                                            </div>
+                                            <div class="col-md-8 px-0">
+                                                <h3 class="mt-2 text-primary text-left">货到付款</h3>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="col-md-3">
+                                        <div class="row pi-draggable" draggable="true">
+                                            <div class="col-md-4"><label class="radio-inline my-3 ml-4 px-3"><input
+                                                    type="radio" name="optradio" value="2"></label></div>
+                                            <div class="col-md-8 px-0">
+                                                <h3 class="mt-2 text-primary text-left">微信支付</h3>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="col-md-3">
+                                        <div class="row pi-draggable" draggable="true">
+                                            <div class="col-md-4"><label class="radio-inline my-3 ml-4 px-3"><input
+                                                    type="radio" name="optradio" value="3"></label></div>
+                                            <div class="col-md-8 px-0">
+                                                <h3 class="mt-2 text-primary text-left">支付宝</h3>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="col-md-3">
+                                        <div class="row pi-draggable" draggable="true">
+                                            <div class="col-md-4"><label class="radio-inline my-3 ml-4 px-3"><input
+                                                    type="radio" name="optradio" value="4"></label></div>
+                                            <div class="col-md-8 px-0">
+                                                <h3 class="mt-2 text-primary text-left">银联</h3>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="container">
+        <div class="row">
+            <div class="col-md-12">
+                <div class="card mb-3 bg-info text-white">
+                    <div class="card-header">商品列表</div>
+                    <div class="card-footer p-0 px-3">
+                        <div class="row pi-draggable">
+                            <div class="col-lg-4 col-4">
+                                <h6 class="py-2 my-1"> 名称</h6>
+                            </div>
+                            <div class="col-md-2">
+                                <h6 class="py-2 my-1">单位</h6>
+                            </div>
+                            <div class="col-md-2">
+                                <h6 class="py-2 my-1">单价</h6>
+                            </div>
+                            <div class="col-md-2">
+                                <h6 class="py-2 my-1">数量</h6>
+                            </div>
+                            <div class="col-md-2">
+                                <h6 class="py-2 my-1">小计</h6>
+                            </div>
+                        </div>
+                    </div>
+                    {% for sku in skus %}
+                        <div class="card-footer">
+                            <div class="row pi-draggable">
+                                <div class="col-lg-4 col-4">
+                                    <div class="form-check">
+                                        <div class="row pi-draggable">
+                                            <div class="col-lg-2 col-2 px-0"><img class="img-fluid d-block"
+                                                                                  src="https://static.pingendo.com/img-placeholder-1.svg"
+                                                                                  width="60"></div>
+                                            <div class="col-lg-3 col-3">
+                                                <h6 class="py-2 my-1"> {{ sku.name }} </h6>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-md-2">
+                                    <h6 class="py-2 my-1">{{ sku.unite }}</h6>
+                                </div>
+                                <div class="col-md-2">
+                                    <h6 class="py-2 my-1">{{ sku.price }}元</h6>
+                                </div>
+                                <div class="col-md-2">
+                                    <h6 class="py-2 my-1">{{ sku.count }}</h6>
+                                </div>
+                                <div class="col-md-2">
+                                    <h6 class="py-2 my-1">{{ sku.amount }}元</h6>
+                                </div>
+                            </div>
+                        </div>
+                    {% endfor %}
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="container mb-2">
+        <div class="row">
+            <div class="list-group-item list-group-item-action flex-column align-items-start active">
+                <div class="row pi-draggable">
+                    <div class="col-md-7">
+                        <div class="row pi-draggable" draggable="true">
+                            <div class="col-md-9 px-0">
+                                <h5 class="py-2 my-1 text-right"> 运费：</h5>
+                            </div>
+                            <div class="col-md-3 px-0">
+                                <h5 class="py-2 my-1 text-danger" style="">10￥</h5>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-2">
+                        <div class="row pi-draggable" draggable="true">
+                            <div class="col-md-9 px-0">
+                                <h5 class="py-2 my-1 text-right"> 件数：</h5>
+                            </div>
+                            <div class="col-md-3 px-0">
+                                <h5 class="py-2 my-1 text-danger" style="">{{ total_count }}</h5>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-2">
+                        <div class="row pi-draggable" draggable="true">
+                            <div class="col-md-4 px-0">
+                                <h6 class="py-2 my-1 text-right"> 合计：</h6>
+                            </div>
+                            <div class="col-md-8 px-0">
+                                <h4 class="py-2 my-1 text-danger" style="">{{ total_pay }}</h4>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-1"><a class="btn btn-danger" id="queren">确认下单</a></div>
+                    <input type="hidden" name="sku_ids" value="{{ sku_ids }}">
+                    {% csrf_token %}
+                </div>
+            </div>
+        </div>
+    </div>
+{% endblock body %}
+{% block topfiles %}
+    <script type="text/javascript" src="{% static 'js/my.js' %}"></script>
+{% endblock topfiles %}

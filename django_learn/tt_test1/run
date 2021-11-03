@@ -1,0 +1,13 @@
+# 启动fdfs分布式文件系统
+sudo service fdfs_trackerd start
+sudo service fdfs_storaged start
+
+# 启动nginx Web服务器
+sudo /usr/local/nginx/sbin/nginx
+
+# 启动uwsgi服务器
+uwsgi --ini uwsgi.ini
+
+# 启动celery
+celery -A celery_tasks worker -l info > celery.log
+

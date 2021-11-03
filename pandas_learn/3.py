@@ -1,0 +1,66 @@
+import datetime
+
+from pandas import DataFrame
+
+data = [{'ID': 91659, 'TaskID': 174, 'HashCode': 'f069d05a6b19483ec88559726f4bf234',
+         'ArticleID': 'de08fa9d6b168e9e09aea6eacca0b2e3', 'Title': '城市坚守者 | 全线出击，勇挑重担，下城区全力推进“大整治、大提升”集中攻坚行动',
+         'Content': '根据市委、市政府以及市城管局工作要求，下城区委、区政府高度重视，围绕', 'Time': datetime.datetime(2020, 5, 17, 19, 2, 58),
+         'Url': 'https://mp.weixin.qq.com/s?__biz=MjM5NjI4MjM5Ng==&mid=2650443891&idx=3&sn=5da07304743fe6b9a06f780304ada406&chksm=bee59900899210168af26dd5d5721a9dc79e3df0149bdafe91cee80669fc7c42dc2ce763500e#rd',
+         'Heat': 198, 'Reads': 100001, 'Shares': 0, 'Comments': 0, 'Likes': 324, 'ArticleTitle': '',
+         'ArticleContent': None,
+         'LastTime': datetime.datetime(1000, 1, 1, 0, 0), 'Interval': 1440, 'Original': -1, 'RealOriginal': 1,
+         'CreateTime': datetime.datetime(2020, 7, 2, 17, 14, 28),
+         'UpdateTime': datetime.datetime(2020, 7, 6, 16, 3, 52)},
+        {'ID': 91691, 'TaskID': 174, 'HashCode': '32aa4dc703791b6cc7920e05a6b8e485',
+         'ArticleID': '2a50c7428c9e9f51a92276db0df01964', 'Title': '城市坚守者|环卫之家：驿站温暖，陪你走过生活每一天',
+         'Content': '第4期      城管驿站不仅仅为一线作业人员提供了休息、用餐的场所，更用实际行动，为环卫工作者带来最贴心的',
+         'Time': datetime.datetime(2020, 5, 13, 22, 38, 35),
+         'Url': 'https://mp.weixin.qq.com/s?__biz=MjM5NjI4MjM5Ng==&mid=2650442282&idx=5&sn=5b4a8d0df9685c469195ee1f97fb4314&chksm=bee5835989920a4fddbab7d53a9cf6a64be55e7d03d9b25f5dad4fde19b06d73977e336d1bfd#rd',
+         'Heat': 202, 'Reads': 100001, 'Shares': 0, 'Comments': 0, 'Likes': 365, 'ArticleTitle': '',
+         'ArticleContent': None,
+         'LastTime': datetime.datetime(1000, 1, 1, 0, 0), 'Interval': 1440, 'Original': -1, 'RealOriginal': 1,
+         'CreateTime': datetime.datetime(2020, 7, 2, 17, 14, 31),
+         'UpdateTime': datetime.datetime(2020, 7, 6, 16, 3, 56)},
+        {'ID': 91698, 'TaskID': 174, 'HashCode': 'cf844c5016670cee47b64a0fa3ef0027',
+         'ArticleID': '22718e866904291d6d47d0afdb5fc4b7', 'Title': '城市坚守者|市政之窗：江干区奏响道路品质“四部曲”',
+         'Content': '第5期为切实提升城市管理精细化水平，江干区奏响提升市政道路品质四部曲，从道路巡查、病害整治、作业方式、成果验',
+         'Time': datetime.datetime(2020, 5, 12, 23, 22, 22),
+         'Url': 'https://mp.weixin.qq.com/s?__biz=MjM5NjI4MjM5Ng==&mid=2650441777&idx=4&sn=2d33f2689d35a83d8e7a7e4fa8316731&chksm=bee581428992085482400013051d494620775fba147e8ce26647a3fda6c960083749215a1366#rd',
+         'Heat': 200, 'Reads': 100001, 'Shares': 0, 'Comments': 0, 'Likes': 348, 'ArticleTitle': '',
+         'ArticleContent': None,
+         'LastTime': datetime.datetime(1000, 1, 1, 0, 0), 'Interval': 1440, 'Original': -1, 'RealOriginal': 1,
+         'CreateTime': datetime.datetime(2020, 7, 2, 17, 14, 31),
+         'UpdateTime': datetime.datetime(2020, 7, 6, 16, 3, 57)}]
+df = DataFrame(data)
+data1 = [{'ID': 87513, 'TaskID': 158, 'HashCode': '757c8fdd356bf6dc5963ee5226ca5d01',
+          'ArticleID': '9f31f3852052e6f18ec81776e1a2b4e9', 'Title': '明天中午，我们钱塘江上见！', 'Content': '杭州公安',
+          'Time': datetime.datetime(2020, 6, 18, 14, 20, 39),
+          'Url': 'https://mp.weixin.qq.com/s?__biz=MzA4MjM2MDgxMA==&mid=2815614587&idx=1&sn=3e8268a94987623d0963b24685f1437e&chksm=bda09efe8ad717e814361d2574f972de694fa2512beabb2cf993f946e8f818c7401d80110a54#rd',
+          'Heat': 556, 'Reads': 100001, 'Shares': 0, 'Comments': 0, 'Likes': 3900, 'ArticleTitle': '',
+          'ArticleContent': None,
+          'LastTime': datetime.datetime(1000, 1, 1, 0, 0), 'Interval': 1440, 'Original': -1, 'RealOriginal': 1,
+          'CreateTime': datetime.datetime(2020, 7, 2, 17, 8, 12),
+          'UpdateTime': datetime.datetime(2020, 7, 6, 15, 55, 9)},
+         {'ID': 87522, 'TaskID': 158, 'HashCode': 'e9bae51845a4850f6dafc60124b0ef8e',
+          'ArticleID': '21768ff5ba379703c292e0c2dda8ce01', 'Title': '有人在杭州停车场做不可描述之事……结果被人盯上了！', 'Content': '杭州公安',
+          'Time': datetime.datetime(2020, 6, 16, 16, 25, 5),
+          'Url': 'https://mp.weixin.qq.com/s?__biz=MzA4MjM2MDgxMA==&mid=2815614439&idx=1&sn=765565a8cbb62093aab33e1fb5ef9337&chksm=bda09d628ad71474805d12088f3e7c66ef1ef988452b83ede5482711eb84fc63e00afcb1ad9f#rd',
+          'Heat': 234, 'Reads': 100001, 'Shares': 0, 'Comments': 0, 'Likes': 684, 'ArticleTitle': '',
+          'ArticleContent': None,
+          'LastTime': datetime.datetime(1000, 1, 1, 0, 0), 'Interval': 1440, 'Original': -1, 'RealOriginal': 1,
+          'CreateTime': datetime.datetime(2020, 7, 2, 17, 8, 13),
+          'UpdateTime': datetime.datetime(2020, 7, 6, 15, 55, 11)},
+         {'ID': 87540, 'TaskID': 158, 'HashCode': '5534ba266e731721df8e1cea23e581f7',
+          'ArticleID': '13533a79a66b93563f3128657bc14014', 'Title': '全杭州都在寻找“扫堂腿大伯”，刚刚民警找到他了！', 'Content': '杭州公安',
+          'Time': datetime.datetime(2020, 6, 12, 13, 1, 6),
+          'Url': 'https://mp.weixin.qq.com/s?__biz=MzA4MjM2MDgxMA==&mid=2815614068&idx=1&sn=3ecdb4f7a15eb679860ae41d87dc3787&chksm=bda09cf18ad715e756b9cfed8245e9a33f663c1f7a52487247a9552a1362a123455724edb883#rd',
+          'Heat': 233, 'Reads': 62022, 'Shares': 0, 'Comments': 0, 'Likes': 742, 'ArticleTitle': '',
+          'ArticleContent': None,
+          'LastTime': datetime.datetime(1000, 1, 1, 0, 0), 'Interval': 1440, 'Original': -1, 'RealOriginal': 1,
+          'CreateTime': datetime.datetime(2020, 7, 2, 17, 8, 15),
+          'UpdateTime': datetime.datetime(2020, 7, 6, 15, 55, 13)}]
+df1 = DataFrame(data1)
+# df1['TaskID'] = 'a'
+# print(df.append(df1))
+df2 = DataFrame()
+print(df2.append(df1))

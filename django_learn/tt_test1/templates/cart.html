@@ -1,0 +1,132 @@
+{% extends 'base.html' %}
+{% load staticfiles %}
+{% block title %}购物车{% endblock title %}
+{% block body %}
+    <div class="container">
+        <div class="row">
+            <div class="col-md-12">
+                <div class="card text-white bg-primary">
+                    <div class="card-header" contenteditable="true">
+                        <div class="row pi-draggable">
+                            <div class="col-md-4">
+                                <h6 class="">商品名称</h6>
+                            </div>
+                            <div class="col-md-1">
+                                <h6 class="">单位</h6>
+                            </div>
+                            <div class="col-md-1">
+                                <h6 class="">单价</h6>
+                            </div>
+                            <div class="col-md-3">
+                                <h6 class="">数量</h6>
+                            </div>
+                            <div class="col-md-2">
+                                <h6 class="">小计</h6>
+                            </div>
+                            <div class="col-md-1">
+                                <h6 class="">操作</h6>
+                            </div>
+                        </div>
+                    </div>
+                    {% for sku in skus %}
+                        <div class="card-footer py-0">
+                            <div class="row pi-draggable">
+                                <div class="col-lg-4 col-4">
+                                    <div class="form-check">
+                                        <div class="row pi-draggable">
+                                            <div class="px-0 col-lg-1 col-1">
+                                                <div class="form-check">
+                                                    <label class="form-check-label">
+                                                        <input type="checkbox" class="form-check-input checkbox_i"
+                                                               name="checkbox_i"
+                                                               sku_id="{{ sku.id }}"></label>
+                                                </div>
+                                            </div>
+                                            <div class="col-lg-2 col-2 px-0" style="padding-top: 8px;"><img
+                                                    class="img-fluid d-block"
+                                                    src="{{ sku.image.url }}"
+                                                    width="60"></div>
+                                            <div class="col-lg-9 col-9">
+                                                <h6 class="py-2 my-2">{{ sku.name }}</h6>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-md-1">
+                                    <h6 class="py-2 my-2">{{ sku.unite }}</h6>
+                                </div>
+                                <div class="col-md-1">
+                                    <h6 price="{{ sku.id }}" class="py-2 my-2">{{ sku.price }}</h6>
+                                </div>
+                                <div class="col-md-3">
+                                    <div>
+                                        <ul class="pagination pt-1 my-2">
+                                            <li sku_id="{{ sku.id }} " class="page-link less_my"><span>-</span></li>
+                                            <input id="Quantity" style="width:40px" class="text-center"
+                                                   sku="{{ sku.id }}" value="{{ sku.count }}">
+                                            <li sku_id="{{ sku.id }}" class="page-link add_my"><span>+</span></li>
+                                        </ul>
+                                    </div>
+                                </div>
+                                <div class="col-md-2">
+                                    <h6 sku_id="{{ sku.id }}" class="py-2 my-2">{{ sku.amount }}</h6>
+                                </div>
+                                <div class="col-md-1">
+                                    <a><h6 href="" delect_id="{{ sku.id }}" class="text-info delete_sku py-2 my-2">
+                                        删除</h6></a>
+                                </div>
+                            </div>
+                        </div>
+                    {% endfor %}
+                    <div class="card-footer">
+                        <div class="row pi-draggable">
+                            <div class="col-lg-4 col-4">
+                                <div class="form-check">
+                                    <div class="row pi-draggable">
+                                        <div class="px-0 col-lg-1 col-1">
+                                            <div class="form-check">
+                                                <label class="form-check-label">
+                                                    <input type="checkbox" class="form-check-input checkbox_all"
+                                                           name="checkbox_all" value=""></label>
+                                            </div>
+                                        </div>
+                                        <div class="col-lg-3 col-3">
+                                            <h6 class="py-2 my-1"> 全选 </h6>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-md-1">
+                            </div>
+                            <div class="col-md-1">
+                            </div>
+                            <div class="col-md-3">
+                            </div>
+                            <div class="col-md-2">
+                                <div>
+                                    <span class="count"> 0</span>
+                                    <span> 件物品</span>
+                                </div>
+                                <span>共计</span>
+                                <span class="py-2 my-1 zong">0.00￥</span>
+                            </div>
+                            <div class="col-md-1">
+                                <form method="post" action="{% url 'order:place' %}">
+                                    {% csrf_token %}
+                                    <button style="margin-top:8px;" type="submit" id="jiesuan" class="btn btn-danger">
+                                        结算
+                                    </button>
+                                </form>
+                            </div>
+                        </div>
+                        <div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+{% endblock body %}
+{% block topfiles %}
+    <script type="text/javascript" src="{% static 'js/my.js' %}"></script>
+{% endblock topfiles %}

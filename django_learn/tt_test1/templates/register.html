@@ -1,0 +1,41 @@
+{% extends 'base.html' %}
+{% load staticfiles %}
+{% block title %}注册{% endblock title %}
+{% block body %}
+    <div class="py-5 text-center"
+         style="background-image: url('https://static.pingendo.com/cover-bubble-dark.svg');background-size:cover;">
+        <div class="container">
+            <div class="row">
+                <div class="mx-auto col-md-6 col-10 bg-white p-5"
+                     style="	background-image: linear-gradient(to bottom, rgba(0,0,0,0.2), rgba(0,0,0,0.8));	background-position: top left;	background-size: 100%;	background-repeat: repeat;">
+                    {{ errmsg }}
+                    <form method="post" action="{% url 'user:register' %}">
+                        {% csrf_token %}
+                        <div class="form-group"><input type="text" class="form-control my-3" name="user_name" id="form9"
+                                                       placeholder="用户名">
+                            <div class="form-group"><input type="password" class="form-control my-3" placeholder="密码"
+                                                           name="pwd"
+                                                           id="form9">
+                                <div class="form-group"><input type="password" class="form-control my-3"
+                                                               placeholder="确认密码" name="cpwd"
+                                                               id="form9">
+                                    <div class="form-group"><input type="email" class="form-control my-3"
+                                                                   placeholder="邮箱" name="email"
+                                                                   id="form9"></div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="form-group mb-3">
+                            <small class="form-text text-muted text-right"></small>
+                        </div>
+                        <div class="form-check py-2">
+                            <input class="form-check-input" type="checkbox" name="remember"
+                                   value="on" {{ checked }}><label
+                                class="form-check-label" for="exampleCheck1">开启商家店铺</label></div>
+                        <button type="submit" class="btn btn-primary">注册</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+{% endblock body %}

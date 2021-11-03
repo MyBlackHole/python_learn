@@ -1,0 +1,4 @@
+#!/usr/bin/shell
+export VAR1=1
+export VAR2=2.3
+export VAR3=1,2

@@ -1,0 +1,126 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html>
+<head>
+    <title>emplist</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='css/style.css') }}"/>
+</head>
+<body>
+<div id="wrap">
+    <div id="top_content">
+        <div id="header">
+            <div id="rightheader">
+                <p>
+                    2009/11/20
+                    <br/>
+                </p>
+            </div>
+            <div id="topheader">
+                <h1 id="title">
+                    <a href="/">main</a>
+                </h1>
+            </div>
+            <div id="navigation">
+            </div>
+        </div>
+        <div id="content">
+            <p id="whereami">
+            </p>
+            <h1>
+                Welcome!
+            </h1>
+            <input type="text" id="query">
+            <input type="button" id="textbutton" value="查询">
+            <table class="table">
+                <tr class="table_header">
+                    <td>
+                        ID
+                    </td>
+                    <td>
+                        Name
+                    </td>
+                    <td>
+                        Salary
+                    </td>
+                    <td>
+                        Age
+                    </td>
+                    <td>
+                        image
+                    </td>
+                    <td>
+                        Operation
+                    </td>
+                </tr>
+                {% for emp in pag.items %}
+                    <tr class="row1" id="emlist">
+                        <td>
+                            {{ emp.id }}
+                        </td>
+                        <td>
+                            {{ emp.name }}
+                        </td>
+                        <td>
+                            {{ emp.salary }}
+                        </td>
+                        <td>
+                            {{ emp.age }}
+                        </td>
+                        <td>
+                            {% if emp.operation %}
+                                <img src="{{ url_for('static', filename='img/user/' + emp.operation) }}" width="50px">
+                            {% endif %}
+                        </td>
+                        <td>
+                            <a href="{{ url_for('delete',id=emp.id, page=page) }}" ems_id="{{ emp.id }}"
+                               onclick="javascript:return del()">delete emp</a>&nbsp;
+                            <a href="{{ url_for('updateemp',id=emp.id, page=page) }}">update emp</a>
+                        </td>
+                    </tr>
+                {% endfor %}
+            </table>
+            <p>
+                <a type="button" class="button"
+                   href="{{ url_for('addemp', page=page) }}">
+                    Add Employee
+                </a>
+            </p>
+            <ul>
+                {% if pag.has_prev %}
+                    <li><a href="{{ url_for('emplist', page=pag.prev_num) }}">上一页 </a></li>
+                {% endif %}
+                {% for i in pag.iter_pages() %}
+                    {% if page == i %}
+                        <li><a href="{{ url_for('emplist', page=i) }}"><h1>{{ i }} </h1></a>
+                        </li>
+                    {% else %}
+                        <li><a href="{{ url_for('emplist',  page=i) }}">{{ i }} </a></li>
+                    {% endif %}
+                {% endfor %}
+                {% if pag.has_next %}
+                    <li><a href="{{ url_for('emplist', page=pag.next_num) }}"> 下一页</a></li>
+                {% endif %}
+            </ul>
+        </div>
+    </div>
+    <div id=" footer">
+        <div id="footer_bg">
+            {# ABC@126.com#}
+        </div>
+    </div>
+    <script type="text/javascript">
+        function del() {
+            var msg = "确认删除？？？？";
+            if (confirm(msg) == true) {
+                console.log(window.location);
+                return true;
+            } else {
+                return false;
+            }
+        }
+    </script>
+</div>
+</body>
+<script src="{{ url_for('static', filename='js/jquery-3.4.1.min.js') }}"></script>
+<script src="{{ url_for('static', filename='js/my_ajax.js') }}"></script>
+</html>

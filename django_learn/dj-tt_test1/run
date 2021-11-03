@@ -1,0 +1,9 @@
+# 启动fdfs分布式文件系统
+sudo service fdfs_trackerd start
+sudo service fdfs_storaged start
+
+# 启动nginx Web服务器
+sudo /usr/local/nginx/sbin/nginx
+
+# 启动redis缓存数据库
+sudo redis-server /etc/redis/redis.conf

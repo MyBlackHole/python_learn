@@ -1,0 +1,40 @@
+{% extends 'base.html' %}
+{% load staticfiles %}
+{% block title %}用户中心{% endblock title %}
+{% block body %}
+    <div class="container">
+        <div class="row">
+            <div class="col-md-12">
+                <div class="card text-center">
+                    <div class="card-header">
+                        <ul class="nav nav-tabs card-header-tabs">
+                            <li class="nav-item">
+                                <a id="grxx" class="nav-link {% block is_user_user %}{% endblock is_user_user %}"
+                                   data-toggle="tab" data-target="#tabone">个人信息</a>
+                            </li>
+                            <li class="nav-item">
+                                <a id="qbdd" class="nav-link {% block is_user_order %}{% endblock is_user_order %}"
+                                   data-toggle="tab" data-target="#tabtwo">全部订单</a>
+                            </li>
+                            {% block merchant %}{% endblock merchant %}
+                            <li class="nav-item">
+                                <a id="shdz" class="nav-link {% block is_user_address %}{% endblock is_user_address %}"
+                                   data-toggle="tab" data-target="#tabthree">收货地址</a>
+                            </li>
+                        </ul>
+                    </div>
+                    <div class="card-body">
+                        <div class="tab-content mt-2">
+                            {% block user_user %}{% endblock user_user %}
+                            {% block user_address %}{% endblock user_address %}
+                            {% block user_order %}{% endblock user_order %}
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+{% endblock body %}
+{% block topfiles %}
+    <script type="text/javascript" src="{% static 'js/my.js' %}"></script>
+{% endblock topfiles %}

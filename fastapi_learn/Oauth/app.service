@@ -1,0 +1,11 @@
+[Unit]
+Description=app service
+After=network.target
+
+[Service]
+Type=simple
+WorkingDirectory=/home/black/Documents/Code/Python/python_learn/fastapi_learn/Oauth
+ExecStart=python /home/black/Documents/Code/Python/python_learn/fastapi_learn/Oauth/oauth_app.py
+
+[Install]
+WantedBy=multi-user.target

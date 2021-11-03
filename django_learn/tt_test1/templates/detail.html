@@ -1,0 +1,177 @@
+{% extends 'base.html' %}
+{% load staticfiles %}
+{% block title %}商品详情{% endblock title %}
+{% block body %}
+    <div class="container">
+        <ul class="pi-draggable breadcrumb">
+            <li class="breadcrumb-item">全部分类</li>
+            <li class="breadcrumb-item active"><a
+                    href="{% url 'goods:list' sku_goos_type.id 1 %}">{{ sku_goos_type.name }}</a>
+            </li>
+            <li class="breadcrumb-item active"><a
+                    href="{% url 'goods:shop' sku.merchant.id %}">{{ sku.merchant.username }}</a></li>
+            <li class="breadcrumb-item active">{{ sku.name }}商品详情</li>
+        </ul>
+        <div class="row">
+            <div class="col-md-6 col-12 p-3">
+                <div class="col-md-12">
+                    <img class="img-fluid d-block p-3 mx-4" src="{{ sku.image.url }}"
+                         width="400">
+                </div>
+                <div class="col-md-12">
+                    <div class="row">
+                        <div class="col-md-3 col-6" style=""><img class="img-fluid d-block"
+                                                                  src="https://static.pingendo.com/img-placeholder-1.svg"
+                                                                  width="100"></div>
+                        <div class="col-md-3 col-6" style=""><img class="img-fluid d-block"
+                                                                  src="https://static.pingendo.com/img-placeholder-1.svg"
+                                                                  width="100"></div>
+                        <div class="col-md-3 col-6" style=""><img class="img-fluid d-block"
+                                                                  src="https://static.pingendo.com/img-placeholder-1.svg"
+                                                                  width="100"></div>
+                        <div class="col-md-3 col-6" style=""><img class="img-fluid d-block"
+                                                                  src="https://static.pingendo.com/img-placeholder-1.svg"
+                                                                  width="100"></div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-6 col-12 p-3" style="">
+                <div class="container">
+                    <div class="col-md-12 m-2 mt-3">
+                        <div class="card pi-draggable">
+                            <div class="card-header p-2">{{ sku.name }}</div>
+                            <div class=" small p-2">{{ sku.desc }}</div>
+                            <div class="bg-primary  card-body p-2" style="">
+                                <div class="text-white d-flex" style="">
+                                    <span class="small pt-3 text-danger mt-2">￥</span>
+                                    <h1 id="unit_price" class="text-danger py-1 my-1">{{ sku.price }}</h1>
+                                    <span class="small text-info pt-2 pl-5 my-1 mt-3">单位:</span>
+                                    <span class="small text-info pt-2 my-1 mt-3">{{ sku.unite }}</span>
+                                </div>
+                            </div>
+                            <div class="p-2 d-flex">
+                                <div class="container">
+                                    <div class="row">
+                                        <div class=" text-info my-2"> 数量：</div>
+                                        <div>
+                                            <ul class="pagination my-1">
+                                                <li id="less" class="page-link"><span>-</span></li>
+                                                <input id="Quantity" style="width:40px" class="text-center" value="1">
+                                                <li id="add" class="page-link"><span>+</span></li>
+                                            </ul>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class=" p-2 d-flex">
+                                <div class="container">
+                                    <div class="row">
+                                        <div class="text-info my-2"> 其他规格：</div>
+                                        <div>
+                                            <ul>
+                                                {% for sku in same_spu_skus %}
+                                                    <li><a href="{% url 'goods:detail' sku.id %}">{{ sku.name }}</a>
+                                                    </li>
+                                                {% endfor %}
+                                            </ul>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="p-2 d-flex">
+                                <div class="container">
+                                    <div class="row">
+                                        <div class="text-info my-2"> 总价：</div>
+                                        <div>
+                                            <h3 id="total" class="text-danger">{{ sku.price }}￥</h3>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="p-2">
+                                {% csrf_token %}
+                                <a class="btn mx-2 btn-danger">立即购买</a><a id="add_cart" sku_id="{{ sku.id }}"
+                                                                          class="btn mx-2 btn-light">加入购物车</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-md-3 col-0">
+                <div class="row">
+                    <div class="col-lg-12 px-3" style="">
+                        <div class="card-header text-white bg-primary">新品推荐</div>
+                    </div>
+                    {% for sku in new_skus %}
+                        <div class="col-lg-12 px-3 pb-3" style="">
+                            <a href="{% url 'goods:detail' sku.id %}">
+                                <div class="card"><img class="card-img-top"
+                                                       src="{{ sku.image.url }}"
+                                                       alt="Card image cap">
+                                    <div class="card-body">
+                                        <h5 class="card-title text-center"><b>{{ sku.name }}</b></h5>
+                                        <p class="card-text text-center">￥{{ sku.price }}</p>
+                                    </div>
+                                </div>
+                            </a>
+                        </div>
+                    {% endfor %}
+                </div>
+            </div>
+            <div class="col-md-9 col-12">
+                <div class="col-md-12">
+                    <ul class="nav nav-tabs">
+                        <li class="nav-item">
+                            <a href="#home" class="nav-link active" aria-controls="home" aria-selected="true"
+                               data-toggle="tab" id="home-tab" role="tab">商品详情</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="#profile" aria-controls="profile" aria-selected="false"
+                               data-toggle="tab" id="profile-tab" role="tab">评论</a>
+                        </li>
+                    </ul>
+                    <div class="tab-content my-2" id="myTabContent">
+                        <div class="tab-pane fade active show" id="home">
+                            <div class="row">
+                                <div class="container">
+                                    <div class="col-md-12">{{ sku.goods.detail|safe }}<img class="card-img-top"
+                                                                                           src="https://static.pingendo.com/cover-moon.svg"
+                                                                                           alt="Card image cap"><img
+                                            class="card-img-top"
+                                            src="https://static.pingendo.com/cover-moon.svg"
+                                            alt="Card image cap"><img
+                                            class="card-img-top" src="https://static.pingendo.com/cover-moon.svg"
+                                            alt="Card image cap"></div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="tab-pane fade" id="profile" role="tabpanel" aria-labelledby="profile-tab">
+                            {% for order in sku_orders %}
+                                <div class="card text-white bg-info mb-3 pi-draggable" draggable="true">
+                                    <div class="card-header">
+                                        <div class="row pi-draggable">
+                                            <div class="col-md-6">
+                                                <h6 class="mb-0">评论时间：{{ order.update_time }}</h6>
+                                            </div>
+                                            <div class="col-md-2">
+                                                <h6 class="mb-0">用户名:{{ order.order.user.username }}</h6>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="card-body">
+                                        <p class="card-text">评论内容:{{ order.comment }}</p>
+                                    </div>
+                                </div>
+                            {% endfor %}
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+{% endblock body %}
+{% block topfiles %}
+    <script type="text/javascript" src="{% static 'js/my.js' %}"></script>
+{% endblock topfiles %}

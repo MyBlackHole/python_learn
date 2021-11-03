@@ -1,0 +1,545 @@
+{
+  "code": 0,
+  "message": "success",
+  "result": {
+    "list": [
+      {
+        "author": {
+          "avatar": "http://i2.hdslb.com/bfs/face/d93f10a5a473b9651877a9ebe1a5381993943fcf.jpg",
+          "mid": 10054609,
+          "uname": "檀木街",
+          "vip": {
+            "themeType": 0,
+            "vipStatus": 1,
+            "vipType": 1
+          }
+        },
+        "content": "好看！",
+        "ctime": 1569170133,
+        "disliked": 0,
+        "liked": 0,
+        "likes": 0,
+        "mtime": 1569170133,
+        "review_id": 8834136,
+        "user_rating": {
+          "score": 10
+        },
+        "user_season": {
+          "last_ep_id": 71958,
+          "last_ep_index": "1",
+          "last_index_show": "看至第1话"
+        }
+      },
+      {
+        "author": {
+          "avatar": "http://i0.hdslb.com/bfs/face/ecd8c96b4be7c15943561abc768b127d37340fe1.jpg",
+          "mid": 373616892,
+          "uname": "归无妻",
+          "vip": {
+            "themeType": 0,
+            "vipStatus": 1,
+            "vipType": 2
+          }
+        },
+        "content": "非常好看，强推",
+        "ctime": 1569164306,
+        "disliked": 0,
+        "liked": 0,
+        "likes": 0,
+        "mtime": 1569164306,
+        "review_id": 8829404,
+        "user_rating": {
+          "score": 10
+        },
+        "user_season": {
+          "last_ep_id": 72043,
+          "last_ep_index": "24",
+          "last_index_show": "看至第24话"
+        }
+      },
+      {
+        "author": {
+          "avatar": "http://i1.hdslb.com/bfs/face/aea0cd114799d32b0638b6a249829369ae61cdba.jpg",
+          "mid": 86444799,
+          "uname": "理智妖怪",
+          "vip": {
+            "themeType": 0,
+            "vipStatus": 1,
+            "vipType": 1
+          }
+        },
+        "content": "也就看了十来遍，期待第三部",
+        "ctime": 1569163161,
+        "disliked": 0,
+        "liked": 0,
+        "likes": 0,
+        "mtime": 1569163161,
+        "review_id": 8828883,
+        "user_rating": {
+          "score": 10
+        },
+        "user_season": {
+          "last_ep_id": 72057,
+          "last_ep_index": "15",
+          "last_index_show": "看至第15话"
+        }
+      },
+      {
+        "author": {
+          "avatar": "http://i0.hdslb.com/bfs/face/43334e4a5e6e362dfb223509608a5fa48154f92c.jpg",
+          "mid": 289359435,
+          "uname": "卡梅利多AW",
+          "vip": {
+            "themeType": 0,
+            "vipStatus": 1,
+            "vipType": 1
+          }
+        },
+        "content": "又刷了一遍，妹妹篇是真的经典",
+        "ctime": 1569152741,
+        "disliked": 0,
+        "liked": 0,
+        "likes": 0,
+        "mtime": 1569152741,
+        "review_id": 8824966,
+        "user_rating": {
+          "score": 10
+        },
+        "user_season": {
+          "last_ep_id": 72059,
+          "last_ep_index": "17",
+          "last_index_show": "看至第17话"
+        }
+      },
+      {
+        "author": {
+          "avatar": "http://i2.hdslb.com/bfs/face/cdfa80b725e2067625daf0a3ca491dd823f44841.jpg",
+          "mid": 141039028,
+          "uname": "纸花花花花花花花花",
+          "vip": {
+            "themeType": 0,
+            "vipStatus": 1,
+            "vipType": 1
+          }
+        },
+        "content": "话不多说我爱炮姐=v=",
+        "ctime": 1569146817,
+        "disliked": 0,
+        "liked": 0,
+        "likes": 0,
+        "mtime": 1569146817,
+        "review_id": 8823010,
+        "user_rating": {
+          "score": 10
+        },
+        "user_season": {
+          "last_ep_id": 71931,
+          "last_ep_index": "4",
+          "last_index_show": "看至第4话"
+        }
+      },
+      {
+        "author": {
+          "avatar": "http://i1.hdslb.com/bfs/face/426c93cb0766d4a9e8ede028ed93c17404e5437c.jpg",
+          "mid": 27494251,
+          "uname": "无敌小可爱超可爱",
+          "vip": {
+            "themeType": 0,
+            "vipStatus": 1,
+            "vipType": 1
+          }
+        },
+        "content": "真棒，貌似有点简短哈哈",
+        "ctime": 1569143791,
+        "disliked": 0,
+        "liked": 0,
+        "likes": 0,
+        "mtime": 1569143791,
+        "review_id": 8822003,
+        "user_rating": {
+          "score": 10
+        }
+      },
+      {
+        "author": {
+          "avatar": "http://i1.hdslb.com/bfs/face/f857ce8b082850fdd012ad3626708198526d545f.jpg",
+          "mid": 160978818,
+          "uname": "Nexus-Adolescent",
+          "vip": {
+            "themeType": 0,
+            "vipStatus": 1,
+            "vipType": 2
+          }
+        },
+        "content": "从科方过来洗洗眼",
+        "ctime": 1569074704,
+        "disliked": 0,
+        "liked": 0,
+        "likes": 1,
+        "mtime": 1569074704,
+        "review_id": 8802172,
+        "user_rating": {
+          "score": 10
+        },
+        "user_season": {
+          "last_ep_id": 72044,
+          "last_ep_index": "2",
+          "last_index_show": "看至第2话"
+        }
+      },
+      {
+        "author": {
+          "avatar": "http://i2.hdslb.com/bfs/face/2e6d992244ff46d721075f8e31e5f2eb02e94750.jpg",
+          "mid": 276275563,
+          "uname": "陪姐姐的御坂11218号",
+          "vip": {
+            "themeType": 0,
+            "vipStatus": 1,
+            "vipType": 2
+          }
+        },
+        "content": "最爱美琴",
+        "ctime": 1569079478,
+        "disliked": 0,
+        "liked": 0,
+        "likes": 0,
+        "mtime": 1569079478,
+        "review_id": 8804772,
+        "user_rating": {
+          "score": 10
+        },
+        "user_season": {
+          "last_ep_id": 72059,
+          "last_ep_index": "17",
+          "last_index_show": "看至第17话"
+        }
+      },
+      {
+        "author": {
+          "avatar": "http://i2.hdslb.com/bfs/face/481710f2e15f52d77e7f4c684b73af847428de6f.jpg",
+          "mid": 33806783,
+          "uname": "Tet特图",
+          "vip": {
+            "themeType": 0,
+            "vipStatus": 1,
+            "vipType": 2
+          }
+        },
+        "content": "继续",
+        "ctime": 1569078756,
+        "disliked": 0,
+        "liked": 0,
+        "likes": 0,
+        "mtime": 1569078756,
+        "review_id": 8804366,
+        "user_rating": {
+          "score": 10
+        },
+        "user_season": {
+          "last_ep_id": 71958,
+          "last_ep_index": "1",
+          "last_index_show": "看至第1话"
+        }
+      },
+      {
+        "author": {
+          "avatar": "http://i1.hdslb.com/bfs/face/8691f4083856ba3fd8f7bc707693a714c8f1f834.jpg",
+          "mid": 296880417,
+          "uname": "LEVEL5的超电磁炮",
+          "vip": {
+            "themeType": 0,
+            "vipStatus": 0,
+            "vipType": 0
+          }
+        },
+        "content": "我爱御坂美琴！",
+        "ctime": 1569071959,
+        "disliked": 0,
+        "liked": 0,
+        "likes": 0,
+        "mtime": 1569071959,
+        "review_id": 8800638,
+        "user_rating": {
+          "score": 10
+        },
+        "user_season": {
+          "last_ep_id": 72043,
+          "last_ep_index": "24",
+          "last_index_show": "看至第24话"
+        }
+      },
+      {
+        "author": {
+          "avatar": "http://i1.hdslb.com/bfs/face/f85027740ba50ae2e9180bf2f518199f5c205147.jpg",
+          "mid": 328577615,
+          "uname": "没名字可取了WoW",
+          "vip": {
+            "themeType": 0,
+            "vipStatus": 0,
+            "vipType": 0
+          }
+        },
+        "content": "节操社以前的作品牛逼啊",
+        "ctime": 1569067990,
+        "disliked": 0,
+        "liked": 0,
+        "likes": 0,
+        "mtime": 1569067990,
+        "review_id": 8798477,
+        "user_rating": {
+          "score": 10
+        },
+        "user_season": {
+          "last_ep_id": 71933,
+          "last_ep_index": "6",
+          "last_index_show": "看至第6话"
+        }
+      },
+      {
+        "author": {
+          "avatar": "http://i1.hdslb.com/bfs/face/d4480d21ea135972ddfb6fa32b8717587e115680.jpg",
+          "mid": 25277610,
+          "uname": "擅长就义的阿伟同学",
+          "vip": {
+            "themeType": 0,
+            "vipStatus": 1,
+            "vipType": 1
+          }
+        },
+        "content": "看完魔禁第二部之后过来，有利于理解炮姐的经历和她的性格，但主体上剧情内容宜给对炮姐感兴趣的观众食用，以日常和对付各路反派为主，看个爽儿。制作上真就是亲女儿啊，颇为精美。",
+        "ctime": 1568998504,
+        "disliked": 0,
+        "liked": 0,
+        "likes": 0,
+        "mtime": 1568998504,
+        "review_id": 8778217,
+        "user_rating": {
+          "score": 10
+        },
+        "user_season": {
+          "last_ep_id": 72056,
+          "last_ep_index": "14",
+          "last_index_show": "看至第14话"
+        }
+      },
+      {
+        "author": {
+          "avatar": "http://i2.hdslb.com/bfs/face/bf677bbf99aa823e81171319b9ddba0b62bb70ac.jpg",
+          "mid": 27457325,
+          "uname": "绿名怪",
+          "vip": {
+            "themeType": 0,
+            "vipStatus": 0,
+            "vipType": 1
+          }
+        },
+        "content": "吹爆",
+        "ctime": 1568957657,
+        "disliked": 0,
+        "liked": 0,
+        "likes": 0,
+        "mtime": 1568957657,
+        "review_id": 8767441,
+        "user_rating": {
+          "score": 10
+        },
+        "user_season": {
+          "last_ep_id": 71958,
+          "last_ep_index": "1",
+          "last_index_show": "看至第1话"
+        }
+      },
+      {
+        "author": {
+          "avatar": "http://i1.hdslb.com/bfs/face/33c5abb1e9a2dfc976685ae45107c094315a5191.jpg",
+          "mid": 19339091,
+          "uname": "贝吉特゛",
+          "vip": {
+            "themeType": 0,
+            "vipStatus": 1,
+            "vipType": 1
+          }
+        },
+        "content": "期待第三季",
+        "ctime": 1568908368,
+        "disliked": 0,
+        "liked": 0,
+        "likes": 0,
+        "mtime": 1568908368,
+        "review_id": 8763366,
+        "user_rating": {
+          "score": 10
+        },
+        "user_season": {
+          "last_ep_id": 72043,
+          "last_ep_index": "24",
+          "last_index_show": "看至第24话"
+        }
+      },
+      {
+        "author": {
+          "avatar": "http://i1.hdslb.com/bfs/face/e6b95d218ef0f9db4a350b7140d34e10997ed137.jpg",
+          "mid": 23988097,
+          "uname": "世界第一公主殿下D",
+          "vip": {
+            "themeType": 0,
+            "vipStatus": 0,
+            "vipType": 0
+          }
+        },
+        "content": "我喜欢美琴，超喜欢，喜欢她自信，勇敢，喜欢她的一切",
+        "ctime": 1568902652,
+        "disliked": 0,
+        "liked": 0,
+        "likes": 0,
+        "mtime": 1568902652,
+        "review_id": 8761763,
+        "user_rating": {
+          "score": 10
+        },
+        "user_season": {
+          "last_ep_id": 71931,
+          "last_ep_index": "4",
+          "last_index_show": "看至第4话"
+        }
+      },
+      {
+        "author": {
+          "avatar": "http://i1.hdslb.com/bfs/face/421b5f3d763a7a8669e48fc769f8b1a10575510d.jpg",
+          "mid": 272758266,
+          "uname": "yfjdch",
+          "vip": {
+            "themeType": 0,
+            "vipStatus": 1,
+            "vipType": 2
+          }
+        },
+        "content": "好看炸了",
+        "ctime": 1568869837,
+        "disliked": 0,
+        "liked": 0,
+        "likes": 0,
+        "mtime": 1568869837,
+        "review_id": 8755499,
+        "user_rating": {
+          "score": 10
+        },
+        "user_season": {
+          "last_ep_id": 72043,
+          "last_ep_index": "24",
+          "last_index_show": "看至第24话"
+        }
+      },
+      {
+        "author": {
+          "avatar": "http://i1.hdslb.com/bfs/face/32fdb2fb3442ea42364a929ba2a26717eba60e4a.jpg",
+          "mid": 37314641,
+          "uname": "翻车鱼拌菜",
+          "vip": {
+            "themeType": 0,
+            "vipStatus": 1,
+            "vipType": 1
+          }
+        },
+        "content": "从科方过来缓缓",
+        "ctime": 1568213458,
+        "disliked": 0,
+        "liked": 0,
+        "likes": 8,
+        "mtime": 1568213458,
+        "review_id": 8622649,
+        "user_rating": {
+          "score": 10
+        },
+        "user_season": {
+          "last_ep_id": 72016,
+          "last_ep_index": "20",
+          "last_index_show": "看至第20话"
+        }
+      },
+      {
+        "author": {
+          "avatar": "http://i2.hdslb.com/bfs/face/905a5cdfab218dca45f6ee7ad813100f62fd2875.jpg",
+          "mid": 28397781,
+          "uname": "original皇神乐耶",
+          "vip": {
+            "themeType": 0,
+            "vipStatus": 0,
+            "vipType": 0
+          }
+        },
+        "content": "二刷  第一次看是高中的时候  很多年前了 最近一方通行粗来了想说有点忘了以前的一些关联所以又来二刷，看完又一次感受到满满的感动和不舍。这部番里的每一个人我都爱死你们啦！！！",
+        "ctime": 1568788940,
+        "disliked": 0,
+        "liked": 0,
+        "likes": 0,
+        "mtime": 1568788940,
+        "review_id": 8742596,
+        "user_rating": {
+          "score": 10
+        },
+        "user_season": {
+          "last_ep_id": 72043,
+          "last_ep_index": "24",
+          "last_index_show": "看至第24话"
+        }
+      },
+      {
+        "author": {
+          "avatar": "http://i0.hdslb.com/bfs/face/7a4c908091f70bc228890afd14da8e3f66a47d8c.jpg",
+          "mid": 227434937,
+          "uname": "阴影谜",
+          "vip": {
+            "themeType": 0,
+            "vipStatus": 1,
+            "vipType": 2
+          }
+        },
+        "content": "感谢陪伴！",
+        "ctime": 1568687241,
+        "disliked": 0,
+        "liked": 0,
+        "likes": 0,
+        "mtime": 1568687241,
+        "review_id": 8725503,
+        "user_rating": {
+          "score": 10
+        },
+        "user_season": {
+          "last_ep_id": 72059,
+          "last_ep_index": "17",
+          "last_index_show": "看至第17话"
+        }
+      },
+      {
+        "author": {
+          "avatar": "http://i0.hdslb.com/bfs/face/a85a61e71eef2fb29ca4ad0fb4ce24c8a1fa4916.jpg",
+          "mid": 13359218,
+          "uname": "韩文绿同学",
+          "vip": {
+            "themeType": 0,
+            "vipStatus": 0,
+            "vipType": 1
+          }
+        },
+        "content": "好看",
+        "ctime": 1568660730,
+        "cursor": "77975139982434",
+        "disliked": 0,
+        "liked": 0,
+        "likes": 0,
+        "mtime": 1568660730,
+        "review_id": 8723554,
+        "user_rating": {
+          "score": 10
+        },
+        "user_season": {
+          "last_ep_id": 71958,
+          "last_ep_index": "1",
+          "last_index_show": "看至第1话"
+        }
+      }
+    ],
+    "total": 2597
+  }
+}

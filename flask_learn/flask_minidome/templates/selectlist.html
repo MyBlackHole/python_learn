@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="en">
+{% load static %}
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        .list {
+            color: crimson;
+        }
+
+        ul {
+            margin-top: 2px;
+            border: solid 1px #cccccc;
+            max-width: 200px;
+            max-height: none;
+            font-size: 0.875rem;
+            height: auto;
+            background: #FFFFFF;
+            padding-inline-start: 0px;
+        }
+
+        li {
+            line-height: 1.124rem;
+            display: list-item;
+            text-align: -webkit-match-parent;
+            list-style: none;
+            border: solid 2px #000000;
+            max-width: 50px;
+        }
+    </style>
+</head>
+<body>
+<div>
+    <div>
+        <button class="list" id="province">空</button>
+        <ul id="myul1" hidden>
+            <li><a class="province">link 1</a></li>
+            <li><a class="province">link 2</a></li>
+            <li><a class="province">link 3</a></li>
+            <li><a class="province">link 4</a></li>
+        </ul>
+    </div>
+    <div>
+        <button class="list" id="city">空</button>
+        <ul id="myul2" hidden>
+            <li><a class="province">link 1</a></li>
+            <li><a class="province">link 2</a></li>
+            <li><a class="province">link 3</a></li>
+            <li><a class="province">link 4</a></li>
+        </ul>
+    </div>
+    {% csrf_token %}
+</div>
+<input type="text" id="text">
+<button id="button1">查询</button>
+<table id="table">
+    <tr id="tr">
+        <td>1</td>
+        <td>2</td>
+        <td>3</td>
+        <td>4</td>
+    </tr>
+</table>
+</body>
+<script src="{% static 'js/jquery-3.4.1.min.js' %}"></script>
+<script>
+    $('#button1').click(function () {
+        var val = $('#text').val()
+        console.log(val)
+    })
+    $(document).ready(function () {
+        $("#text").keydown(function (event) {
+            {
+                #console.log(event)
+                #
+            }
+            $("input").css("background-color", "#FFFFCC");
+        });
+        $("#text").keyup(function () {
+            console.log(123)
+            $("input").css("background-color", "#D6D6FF");
+            var csrf = $('input[name="csrfmiddlewaretoken"]').val();
+            var name = $('#text').val();
+            $('#tr').empty()
+            $.ajax({
+                type: "post",
+                data: {
+                    'name': name,
+                    'csrfmiddlewaretoken': csrf
+                },
+                // contentType: "application/json",
+                url: "shuibian",
+                success: function (data) {
+                    for (var i = 0; i < data.length; i++) {
+                        $('#tr').append('<tr><td>' + data[i].id + '</td><td>' + data[i].age + '</td><td>' + data[i].date + '</td></tr>');
+                    }
+                },
+            });
+        });
+    });
+    $('.province').click(function () {
+        var province = $(this).text();
+        $('#province').text(province);
+        $('#myul1').prop('hidden', true)
+    });
+
+    $('#city').click(function () {
+        if ($('#myul2').prop('hidden') == true) {
+            $('#myul2').prop('hidden', false);
+            {
+                #console.log()
+                #
+            }
+        } else {
+            $('#myul2').prop('hidden', true)
+        }
+        $('#myul2').append('<li><a class="province">link 5</a></li>')
+    });
+    $('#province').click(function () {
+        if ($('#myul1').prop('hidden') == true) {
+            $('#myul1').prop('hidden', false);
+            {
+                #console.log()
+                #
+            }
+        } else {
+            $('#myul1').prop('hidden', true)
+        }
+        $('#myul1').append('<li><a class="province">link 5</a></li>')
+    });
+</script>
+</html>
