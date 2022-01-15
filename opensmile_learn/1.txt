@@ -1,0 +1,464 @@
+[ 07.12.2021 - 11:18:53 ]
+    (MSG) [2] SMILEapi: openSMILE starting!
+[ 07.12.2021 - 11:18:53 ]
+    (MSG) [2] SMILEapi: config file is: /home/black/.local/lib/python3.9/site-packages/opensmile/core/config/compare/IS10_paraling.conf
+[ 07.12.2021 - 11:18:53 ]
+    (MSG) [2] cComponentManager: successfully registered 103 component types.
+[ 07.12.2021 - 11:18:53 ]
+    (MSG) [3] configManager: trying to read config file from disk: '/home/black/.local/lib/python3.9/site-packages/opensmile/core/config/compare/IS10_paraling.conf'
+[ 07.12.2021 - 11:18:53 ]
+    (MSG) [3] configManager: successfully opened file '/home/black/.local/lib/python3.9/site-packages/opensmile/core/config/compare/IS10_paraling.conf', loading it.
+[ 07.12.2021 - 11:18:53 ]
+    (MSG) [4] configManager: reading lines...
+[ 07.12.2021 - 11:18:53 ]
+    (MSG) [3] configManager: trying to read config file from disk: '/home/black/.local/lib/python3.9/site-packages/opensmile/core/config/shared/standard_external_wave_input.conf.inc'
+[ 07.12.2021 - 11:18:53 ]
+    (MSG) [3] configManager: successfully opened file '/home/black/.local/lib/python3.9/site-packages/opensmile/core/config/shared/standard_external_wave_input.conf.inc', loading it.
+[ 07.12.2021 - 11:18:53 ]
+    (MSG) [4] configManager: reading lines...
+[ 07.12.2021 - 11:18:53 ]
+    (WRN) [4] configManager: cFileConfigReader::addInst:  duplicate instance 'componentInstances' in config file (type='cComponentManager'), these instances will be merged to one.
+[ 07.12.2021 - 11:18:53 ]
+    (MSG) [3] configManager: successfully read config file '/home/black/.local/lib/python3.9/site-packages/opensmile/core/config/shared/standard_external_wave_input.conf.inc'
+[ 07.12.2021 - 11:18:53 ]
+    (MSG) [3] configManager: trying to read config file from disk: 'IS10_paraling_core.lld.conf.inc'
+[ 07.12.2021 - 11:18:53 ]
+    (MSG) [3] configManager: trying to read config file from disk: '/home/black/.local/lib/python3.9/site-packages/opensmile/core/config/compare/IS10_paraling_core.lld.conf.inc'
+[ 07.12.2021 - 11:18:53 ]
+    (MSG) [3] configManager: successfully opened file '/home/black/.local/lib/python3.9/site-packages/opensmile/core/config/compare/IS10_paraling_core.lld.conf.inc', loading it.
+[ 07.12.2021 - 11:18:53 ]
+    (MSG) [4] configManager: reading lines...
+[ 07.12.2021 - 11:18:53 ]
+    (WRN) [4] configManager: cFileConfigReader::addInst:  duplicate instance 'componentInstances' in config file (type='cComponentManager'), these instances will be merged to one.
+[ 07.12.2021 - 11:18:53 ]
+    (MSG) [3] configManager: trying to read config file from disk: '/home/black/.local/lib/python3.9/site-packages/opensmile/core/config/shared/BufferModeRb.conf.inc'
+[ 07.12.2021 - 11:18:53 ]
+    (MSG) [3] configManager: successfully opened file '/home/black/.local/lib/python3.9/site-packages/opensmile/core/config/shared/BufferModeRb.conf.inc', loading it.
+[ 07.12.2021 - 11:18:53 ]
+    (MSG) [4] configManager: reading lines...
+[ 07.12.2021 - 11:18:53 ]
+    (MSG) [3] configManager: successfully read config file '/home/black/.local/lib/python3.9/site-packages/opensmile/core/config/shared/BufferModeRb.conf.inc'
+[ 07.12.2021 - 11:18:53 ]
+    (MSG) [3] configManager: trying to read config file from disk: '../shared/BufferModeRb.conf.inc'
+[ 07.12.2021 - 11:18:53 ]
+    (MSG) [3] configManager: trying to read config file from disk: '/home/black/.local/lib/python3.9/site-packages/opensmile/core/config/compare/../shared/BufferModeRb.conf.inc'
+[ 07.12.2021 - 11:18:53 ]
+    (MSG) [3] configManager: successfully opened file '/home/black/.local/lib/python3.9/site-packages/opensmile/core/config/compare/../shared/BufferModeRb.conf.inc', loading it.
+[ 07.12.2021 - 11:18:53 ]
+    (MSG) [4] configManager: reading lines...
+[ 07.12.2021 - 11:18:53 ]
+    (MSG) [3] configManager: successfully read config file '/home/black/.local/lib/python3.9/site-packages/opensmile/core/config/compare/../shared/BufferModeRb.conf.inc'
+[ 07.12.2021 - 11:18:53 ]
+    (MSG) [3] configManager: found config file '/home/black/.local/lib/python3.9/site-packages/opensmile/core/config/shared/BufferModeRb.conf.inc' in cache.
+[ 07.12.2021 - 11:18:53 ]
+    (MSG) [4] configManager: reading lines...
+[ 07.12.2021 - 11:18:53 ]
+    (MSG) [3] configManager: successfully read config file '/home/black/.local/lib/python3.9/site-packages/opensmile/core/config/shared/BufferModeRb.conf.inc'
+[ 07.12.2021 - 11:18:53 ]
+    (MSG) [3] configManager: trying to read config file from disk: '../shared/BufferMode.conf.inc'
+[ 07.12.2021 - 11:18:53 ]
+    (MSG) [3] configManager: trying to read config file from disk: '/home/black/.local/lib/python3.9/site-packages/opensmile/core/config/compare/../shared/BufferMode.conf.inc'
+[ 07.12.2021 - 11:18:53 ]
+    (MSG) [3] configManager: successfully opened file '/home/black/.local/lib/python3.9/site-packages/opensmile/core/config/compare/../shared/BufferMode.conf.inc', loading it.
+[ 07.12.2021 - 11:18:53 ]
+    (MSG) [4] configManager: reading lines...
+[ 07.12.2021 - 11:18:53 ]
+    (MSG) [3] configManager: successfully read config file '/home/black/.local/lib/python3.9/site-packages/opensmile/core/config/compare/../shared/BufferMode.conf.inc'
+[ 07.12.2021 - 11:18:53 ]
+    (MSG) [3] configManager: found config file '/home/black/.local/lib/python3.9/site-packages/opensmile/core/config/compare/../shared/BufferMode.conf.inc' in cache.
+[ 07.12.2021 - 11:18:53 ]
+    (MSG) [4] configManager: reading lines...
+[ 07.12.2021 - 11:18:53 ]
+    (MSG) [3] configManager: successfully read config file '/home/black/.local/lib/python3.9/site-packages/opensmile/core/config/compare/../shared/BufferMode.conf.inc'
+[ 07.12.2021 - 11:18:53 ]
+    (MSG) [3] configManager: found config file '/home/black/.local/lib/python3.9/site-packages/opensmile/core/config/compare/../shared/BufferMode.conf.inc' in cache.
+[ 07.12.2021 - 11:18:53 ]
+    (MSG) [4] configManager: reading lines...
+[ 07.12.2021 - 11:18:53 ]
+    (MSG) [3] configManager: successfully read config file '/home/black/.local/lib/python3.9/site-packages/opensmile/core/config/compare/../shared/BufferMode.conf.inc'
+[ 07.12.2021 - 11:18:53 ]
+    (MSG) [3] configManager: found config file '/home/black/.local/lib/python3.9/site-packages/opensmile/core/config/compare/../shared/BufferMode.conf.inc' in cache.
+[ 07.12.2021 - 11:18:53 ]
+    (MSG) [4] configManager: reading lines...
+[ 07.12.2021 - 11:18:53 ]
+    (MSG) [3] configManager: successfully read config file '/home/black/.local/lib/python3.9/site-packages/opensmile/core/config/compare/../shared/BufferMode.conf.inc'
+[ 07.12.2021 - 11:18:53 ]
+    (MSG) [3] configManager: successfully read config file '/home/black/.local/lib/python3.9/site-packages/opensmile/core/config/compare/IS10_paraling_core.lld.conf.inc'
+[ 07.12.2021 - 11:18:53 ]
+    (MSG) [3] configManager: trying to read config file from disk: 'IS10_paraling_core.func.conf.inc'
+[ 07.12.2021 - 11:18:53 ]
+    (MSG) [3] configManager: trying to read config file from disk: '/home/black/.local/lib/python3.9/site-packages/opensmile/core/config/compare/IS10_paraling_core.func.conf.inc'
+[ 07.12.2021 - 11:18:53 ]
+    (MSG) [3] configManager: successfully opened file '/home/black/.local/lib/python3.9/site-packages/opensmile/core/config/compare/IS10_paraling_core.func.conf.inc', loading it.
+[ 07.12.2021 - 11:18:53 ]
+    (MSG) [4] configManager: reading lines...
+[ 07.12.2021 - 11:18:53 ]
+    (WRN) [4] configManager: cFileConfigReader::addInst:  duplicate instance 'componentInstances' in config file (type='cComponentManager'), these instances will be merged to one.
+[ 07.12.2021 - 11:18:53 ]
+    (MSG) [3] configManager: found config file '/home/black/.local/lib/python3.9/site-packages/opensmile/core/config/shared/BufferModeRb.conf.inc' in cache.
+[ 07.12.2021 - 11:18:53 ]
+    (MSG) [4] configManager: reading lines...
+[ 07.12.2021 - 11:18:53 ]
+    (MSG) [3] configManager: successfully read config file '/home/black/.local/lib/python3.9/site-packages/opensmile/core/config/shared/BufferModeRb.conf.inc'
+[ 07.12.2021 - 11:18:53 ]
+    (MSG) [3] configManager: trying to read config file from disk: '/home/black/.local/lib/python3.9/site-packages/opensmile/core/config/shared/FrameModeFunctionals.conf.inc'
+[ 07.12.2021 - 11:18:53 ]
+    (MSG) [3] configManager: successfully opened file '/home/black/.local/lib/python3.9/site-packages/opensmile/core/config/shared/FrameModeFunctionals.conf.inc', loading it.
+[ 07.12.2021 - 11:18:53 ]
+    (MSG) [4] configManager: reading lines...
+[ 07.12.2021 - 11:18:53 ]
+    (MSG) [3] configManager: successfully read config file '/home/black/.local/lib/python3.9/site-packages/opensmile/core/config/shared/FrameModeFunctionals.conf.inc'
+[ 07.12.2021 - 11:18:53 ]
+    (MSG) [3] configManager: found config file '/home/black/.local/lib/python3.9/site-packages/opensmile/core/config/shared/BufferModeRb.conf.inc' in cache.
+[ 07.12.2021 - 11:18:53 ]
+    (MSG) [4] configManager: reading lines...
+[ 07.12.2021 - 11:18:53 ]
+    (MSG) [3] configManager: successfully read config file '/home/black/.local/lib/python3.9/site-packages/opensmile/core/config/shared/BufferModeRb.conf.inc'
+[ 07.12.2021 - 11:18:53 ]
+    (MSG) [3] configManager: found config file '/home/black/.local/lib/python3.9/site-packages/opensmile/core/config/shared/FrameModeFunctionals.conf.inc' in cache.
+[ 07.12.2021 - 11:18:53 ]
+    (MSG) [4] configManager: reading lines...
+[ 07.12.2021 - 11:18:53 ]
+    (MSG) [3] configManager: successfully read config file '/home/black/.local/lib/python3.9/site-packages/opensmile/core/config/shared/FrameModeFunctionals.conf.inc'
+[ 07.12.2021 - 11:18:53 ]
+    (MSG) [3] configManager: found config file '/home/black/.local/lib/python3.9/site-packages/opensmile/core/config/shared/BufferModeRb.conf.inc' in cache.
+[ 07.12.2021 - 11:18:53 ]
+    (MSG) [4] configManager: reading lines...
+[ 07.12.2021 - 11:18:53 ]
+    (MSG) [3] configManager: successfully read config file '/home/black/.local/lib/python3.9/site-packages/opensmile/core/config/shared/BufferModeRb.conf.inc'
+[ 07.12.2021 - 11:18:53 ]
+    (MSG) [3] configManager: found config file '/home/black/.local/lib/python3.9/site-packages/opensmile/core/config/shared/FrameModeFunctionals.conf.inc' in cache.
+[ 07.12.2021 - 11:18:53 ]
+    (MSG) [4] configManager: reading lines...
+[ 07.12.2021 - 11:18:53 ]
+    (MSG) [3] configManager: successfully read config file '/home/black/.local/lib/python3.9/site-packages/opensmile/core/config/shared/FrameModeFunctionals.conf.inc'
+[ 07.12.2021 - 11:18:53 ]
+    (MSG) [3] configManager: successfully read config file '/home/black/.local/lib/python3.9/site-packages/opensmile/core/config/compare/IS10_paraling_core.func.conf.inc'
+[ 07.12.2021 - 11:18:53 ]
+    (WRN) [4] configManager: cFileConfigReader::addInst:  duplicate instance 'componentInstances' in config file (type='cComponentManager'), these instances will be merged to one.
+[ 07.12.2021 - 11:18:53 ]
+    (MSG) [3] configManager: trying to read config file from disk: '/home/black/.local/lib/python3.9/site-packages/opensmile/core/config/shared/standard_external_data_output_single.conf.inc'
+[ 07.12.2021 - 11:18:53 ]
+    (MSG) [3] configManager: successfully opened file '/home/black/.local/lib/python3.9/site-packages/opensmile/core/config/shared/standard_external_data_output_single.conf.inc', loading it.
+[ 07.12.2021 - 11:18:53 ]
+    (MSG) [4] configManager: reading lines...
+[ 07.12.2021 - 11:18:53 ]
+    (WRN) [4] configManager: cFileConfigReader::addInst:  duplicate instance 'componentInstances' in config file (type='cComponentManager'), these instances will be merged to one.
+[ 07.12.2021 - 11:18:53 ]
+    (MSG) [3] configManager: successfully read config file '/home/black/.local/lib/python3.9/site-packages/opensmile/core/config/shared/standard_external_data_output_single.conf.inc'
+[ 07.12.2021 - 11:18:53 ]
+    (MSG) [3] configManager: successfully read config file '/home/black/.local/lib/python3.9/site-packages/opensmile/core/config/compare/IS10_paraling.conf'
+[ 07.12.2021 - 11:18:53 ]
+    (WRN) [5] configManager: (line 55) array type field with only one element and no array index in [], assuming arrT=10 and N=1
+[ 07.12.2021 - 11:18:53 ]
+    (WRN) [5] configManager: (line 171) array type field with only one element and no array index in [], assuming arrT=10 and N=1
+[ 07.12.2021 - 11:18:53 ]
+    (WRN) [5] configManager: (line 65) array type field with only one element and no array index in [], assuming arrT=10 and N=1
+[ 07.12.2021 - 11:18:53 ]
+    (WRN) [5] configManager: (line 184) array type field with only one element and no array index in [], assuming arrT=10 and N=1
+[ 07.12.2021 - 11:18:53 ]
+    (WRN) [5] configManager: (line 231) array type field with only one element and no array index in [], assuming arrT=10 and N=1
+[ 07.12.2021 - 11:18:53 ]
+    (WRN) [5] configManager: (line 14) array type field with only one element and no array index in [], assuming arrT=10 and N=1
+[ 07.12.2021 - 11:18:53 ]
+    (WRN) [5] configManager: (line 72) array type field with only one element and no array index in [], assuming arrT=10 and N=1
+[ 07.12.2021 - 11:18:53 ]
+    (WRN) [5] configManager: (line 190) array type field with only one element and no array index in [], assuming arrT=10 and N=1
+[ 07.12.2021 - 11:18:53 ]
+    (WRN) [5] configManager: (line 76) array type field with only one element and no array index in [], assuming arrT=10 and N=1
+[ 07.12.2021 - 11:18:53 ]
+    (WRN) [5] configManager: (line 194) array type field with only one element and no array index in [], assuming arrT=10 and N=1
+[ 07.12.2021 - 11:18:53 ]
+    (WRN) [5] configManager: (line 179) array type field with only one element and no array index in [], assuming arrT=10 and N=1
+[ 07.12.2021 - 11:18:53 ]
+    (WRN) [5] configManager: (line 274) array type field with only one element and no array index in [], assuming arrT=10 and N=1
+[ 07.12.2021 - 11:18:53 ]
+    (WRN) [5] configManager: (line 290) array type field with only one element and no array index in [], assuming arrT=10 and N=1
+[ 07.12.2021 - 11:18:53 ]
+    (WRN) [5] configManager: (line 238) array type field with only one element and no array index in [], assuming arrT=10 and N=1
+[ 07.12.2021 - 11:18:53 ]
+    (WRN) [5] configManager: (line 82) array type field with only one element and no array index in [], assuming arrT=10 and N=1
+[ 07.12.2021 - 11:18:53 ]
+    (WRN) [5] configManager: (line 260) array type field with only one element and no array index in [], assuming arrT=10 and N=1
+[ 07.12.2021 - 11:18:53 ]
+    (WRN) [5] configManager: (line 200) array type field with only one element and no array index in [], assuming arrT=10 and N=1
+[ 07.12.2021 - 11:18:53 ]
+    (WRN) [5] configManager: (line 220) array type field with only one element and no array index in [], assuming arrT=10 and N=1
+[ 07.12.2021 - 11:18:53 ]
+    (WRN) [5] configManager: (line 211) array type field with only one element and no array index in [], assuming arrT=10 and N=1
+[ 07.12.2021 - 11:18:53 ]
+    (WRN) [5] configManager: (line 116) array type field with only one element and no array index in [], assuming arrT=10 and N=1
+[ 07.12.2021 - 11:18:53 ]
+    (WRN) [5] configManager: (line 132) array type field with only one element and no array index in [], assuming arrT=10 and N=1
+[ 07.12.2021 - 11:18:53 ]
+    (WRN) [5] configManager: (line 148) array type field with only one element and no array index in [], assuming arrT=10 and N=1
+[ 07.12.2021 - 11:18:53 ]
+    (WRN) [5] configManager: (line 152) array type field with only one element and no array index in [], assuming arrT=10 and N=1
+[ 07.12.2021 - 11:18:53 ]
+    (WRN) [5] configManager: (line 98) array type field with only one element and no array index in [], assuming arrT=10 and N=1
+[ 07.12.2021 - 11:18:53 ]
+    (WRN) [5] configManager: (line 244) array type field with only one element and no array index in [], assuming arrT=10 and N=1
+[ 07.12.2021 - 11:18:53 ]
+    (WRN) [5] configManager: (line 256) array type field with only one element and no array index in [], assuming arrT=10 and N=1
+[ 07.12.2021 - 11:18:53 ]
+    (WRN) [5] configManager: (line 24) array type field with only one element and no array index in [], assuming arrT=10 and N=1
+[ 07.12.2021 - 11:18:53 ]
+    (WRN) [5] configManager: (line 105) array type field with only one element and no array index in [], assuming arrT=10 and N=1
+[ 07.12.2021 - 11:18:53 ]
+    (WRN) [5] configManager: (line 167) array type field with only one element and no array index in [], assuming arrT=10 and N=1
+[ 07.12.2021 - 11:18:53 ]
+    (MSG) [3] instance 'is10_fftmagphase40': mindBp = -29.697998
+[ 07.12.2021 - 11:18:53 ]
+    (MSG) [3] instance 'is10_fftmagphase': mindBp = -29.697998
+[ 07.12.2021 - 11:18:53 ]
+    (MSG) [3] cComponentManager: successfully registered 34 of 34 component instances (non dataMemory type)
+[ 07.12.2021 - 11:18:53 ]
+    (MSG) [3] cComponentManager: successfully registered 1 of 1 dataMemory instances
+[ 07.12.2021 - 11:18:53 ]
+    (MSG) [4] dataMemory: query read config [wave]: 0 (min -1, max: 0)
+[ 07.12.2021 - 11:18:53 ]
+    (MSG) [4] dataMemory: query read config [wave]: 3087 (min -1, max: 0)
+[ 07.12.2021 - 11:18:53 ]
+    (MSG) [4] dataMemory: query read config [is10_frames40]: 0 (min -1, max: 0)
+[ 07.12.2021 - 11:18:53 ]
+    (MSG) [4] dataMemory: query read config [is10_frames40]: 1 (min -1, max: 0)
+[ 07.12.2021 - 11:18:53 ]
+    (MSG) [4] dataMemory: query read config [is10_win40frame]: 0 (min -1, max: 0)
+[ 07.12.2021 - 11:18:53 ]
+    (MSG) [4] dataMemory: query read config [is10_win40frame]: 1 (min -1, max: 0)
+[ 07.12.2021 - 11:18:53 ]
+    (MSG) [4] dataMemory: query read config [is10_fftc40]: 0 (min -1, max: 0)
+[ 07.12.2021 - 11:18:53 ]
+    (MSG) [4] dataMemory: query read config [is10_fftc40]: 1 (min -1, max: 0)
+[ 07.12.2021 - 11:18:53 ]
+    (MSG) [4] dataMemory: query read config [is10_fftmag40]: 0 (min -1, max: 0)
+[ 07.12.2021 - 11:18:53 ]
+    (MSG) [4] dataMemory: query read config [is10_fftmag40]: 1 (min -1, max: 0)
+[ 07.12.2021 - 11:18:53 ]
+    (MSG) [4] dataMemory: query read config [is10_hps]: 0 (min -1, max: 0)
+[ 07.12.2021 - 11:18:53 ]
+    (MSG) [4] dataMemory: query read config [is10_hps]: 1 (min -1, max: 0)
+[ 07.12.2021 - 11:18:53 ]
+    (MSG) [4] dataMemory: query read config [is10_pitchShs]: 0 (min -1, max: 0)
+[ 07.12.2021 - 11:18:53 ]
+    (MSG) [4] dataMemory: query read config [is10_pitchShs]: 1 (min -1, max: 0)
+[ 07.12.2021 - 11:18:53 ]
+    (MSG) [3] instance 'is10_pitchSmooth': voicing cutoff read from input level 0 = 0.700000
+[ 07.12.2021 - 11:18:53 ]
+    (MSG) [4] dataMemory: query read config [is10_pitchShs]: 0 (min 1, max: 1)
+[ 07.12.2021 - 11:18:53 ]
+    (MSG) [4] dataMemory: query read config [is10_pitchShs]: 1 (min 1, max: 1)
+[ 07.12.2021 - 11:18:53 ]
+    (MSG) [3] instance 'is10_pitchSmooth2': voicing cutoff read from input level 0 = 0.700000
+[ 07.12.2021 - 11:18:53 ]
+    (MSG) [4] dataMemory: query read config [wave]: 0 (min 3087, max: 3087)
+[ 07.12.2021 - 11:18:53 ]
+    (MSG) [4] dataMemory: query read config [wave]: 1544 (min 3087, max: 3087)
+[ 07.12.2021 - 11:18:53 ]
+    (MSG) [4] dataMemory: query read config [is10_frames]: 0 (min 3087, max: 0)
+[ 07.12.2021 - 11:18:53 ]
+    (MSG) [4] dataMemory: query read config [is10_frames]: 1 (min 3087, max: 0)
+[ 07.12.2021 - 11:18:53 ]
+    (MSG) [4] dataMemory: query read config [is10_framespe]: 0 (min 3087, max: 0)
+[ 07.12.2021 - 11:18:53 ]
+    (MSG) [4] dataMemory: query read config [is10_framespe]: 1 (min 3087, max: 0)
+[ 07.12.2021 - 11:18:53 ]
+    (MSG) [4] dataMemory: query read config [is10_winframe]: 0 (min 3087, max: 0)
+[ 07.12.2021 - 11:18:53 ]
+    (MSG) [4] dataMemory: query read config [is10_winframe]: 1 (min 3087, max: 0)
+[ 07.12.2021 - 11:18:53 ]
+    (MSG) [4] dataMemory: query read config [is10_fftc]: 0 (min 3087, max: 0)
+[ 07.12.2021 - 11:18:53 ]
+    (MSG) [4] dataMemory: query read config [is10_fftc]: 1 (min 3087, max: 0)
+[ 07.12.2021 - 11:18:53 ]
+    (MSG) [4] dataMemory: query read config [is10_fftmag]: 0 (min 3087, max: 0)
+[ 07.12.2021 - 11:18:53 ]
+    (MSG) [4] dataMemory: query read config [is10_fftmag]: 1 (min 3087, max: 0)
+[ 07.12.2021 - 11:18:53 ]
+    (MSG) [4] dataMemory: query read config [is10_mspec1]: 0 (min 3087, max: 0)
+[ 07.12.2021 - 11:18:53 ]
+    (MSG) [4] dataMemory: query read config [is10_mspec1]: 1 (min 3087, max: 0)
+[ 07.12.2021 - 11:18:53 ]
+    (MSG) [4] dataMemory: query read config [is10_fftmag]: 0 (min 1, max: 1)
+[ 07.12.2021 - 11:18:53 ]
+    (MSG) [4] dataMemory: query read config [is10_fftmag]: 1 (min 1, max: 1)
+[ 07.12.2021 - 11:18:53 ]
+    (MSG) [4] dataMemory: query read config [is10_mspec2]: 0 (min 1, max: 0)
+[ 07.12.2021 - 11:18:53 ]
+    (MSG) [4] dataMemory: query read config [is10_mspec2]: 1 (min 1, max: 0)
+[ 07.12.2021 - 11:18:53 ]
+    (MSG) [4] dataMemory: query read config [is10_frames]: 0 (min 1, max: 1)
+[ 07.12.2021 - 11:18:53 ]
+    (MSG) [4] dataMemory: query read config [is10_frames]: 1 (min 1, max: 1)
+[ 07.12.2021 - 11:18:53 ]
+    (MSG) [4] dataMemory: query read config [is10_pitchF]: 0 (min 1, max: 0)
+[ 07.12.2021 - 11:18:53 ]
+    (MSG) [4] dataMemory: query read config [is10_pitchF]: 0 (min 1, max: 0)
+[ 07.12.2021 - 11:18:53 ]
+    (MSG) [4] dataMemory: query read config [is10_pitchF]: 0 (min 1, max: 0)
+[ 07.12.2021 - 11:18:53 ]
+    (MSG) [4] dataMemory: query read config [wave]: 0 (min 1544, max: 3087)
+[ 07.12.2021 - 11:18:53 ]
+    (MSG) [4] dataMemory: query read config [wave]: 88200 (min 1544, max: 3087)
+[ 07.12.2021 - 11:18:53 ]
+    (MSG) [4] dataMemory: query read config [is10_pitchF]: 1 (min 1, max: 0)
+[ 07.12.2021 - 11:18:53 ]
+    (MSG) [4] dataMemory: query read config [is10_fftc]: 0 (min 1, max: 1)
+[ 07.12.2021 - 11:18:53 ]
+    (MSG) [4] dataMemory: query read config [is10_fftc]: 1 (min 1, max: 1)
+[ 07.12.2021 - 11:18:53 ]
+    (MSG) [2] instance 'is10_res': adjusting resampleRatio from 0.249433 to 0.249320 to match next integer frame size! (targetFs* = 10995.013599)
+[ 07.12.2021 - 11:18:53 ]
+    (MSG) [4] dataMemory: query read config [is10_outpR]: 0 (min 1, max: 0)
+[ 07.12.2021 - 11:18:53 ]
+    (MSG) [4] dataMemory: query read config [is10_outpR]: 1 (min 1, max: 0)
+[ 07.12.2021 - 11:18:53 ]
+    (MSG) [4] dataMemory: query read config [is10_lpc]: 0 (min 1, max: 0)
+[ 07.12.2021 - 11:18:53 ]
+    (MSG) [4] dataMemory: query read config [is10_lpc]: 1 (min 1, max: 0)
+[ 07.12.2021 - 11:18:53 ]
+    (MSG) [4] dataMemory: query read config [is10_intens]: 0 (min 1, max: 0)
+[ 07.12.2021 - 11:18:53 ]
+    (MSG) [4] dataMemory: query read config [is10_mfcc]: 0 (min 3087, max: 0)
+[ 07.12.2021 - 11:18:53 ]
+    (MSG) [4] dataMemory: query read config [is10_mspec2log]: 0 (min 1, max: 0)
+[ 07.12.2021 - 11:18:53 ]
+    (MSG) [4] dataMemory: query read config [is10_lsp]: 0 (min 1, max: 0)
+[ 07.12.2021 - 11:18:53 ]
+    (MSG) [4] dataMemory: query read config [is10_pitch]: 0 (min -1, max: 0)
+[ 07.12.2021 - 11:18:53 ]
+    (WRN) [2] instance 'is10_lld.reader': Inconsistency in input level parameters. growDyn on first (#1) input = 0, growDyn on input # 5 (is10_pitch) = 1. This might cause the processing to hang unpredictably or cause incomplete processing.
+[ 07.12.2021 - 11:18:53 ]
+    (WRN) [2] instance 'is10_lld.reader': Inconsistency in input level parameters. isRb on first (#1) input = 1, isRb on input # 5 (is10_pitch) = 0. This might cause the processing to hang unpredictably or cause incomplete processing.
+[ 07.12.2021 - 11:18:53 ]
+    (WRN) [1] instance 'is10_lld.reader': Input level buffer sizes (levelconf.nT) are inconsistent. Level 'is10_intens' has size 5 which is smaller than the max. input size of all input levels (10). This might cause the processing to hang unpredictably or cause incomplete processing.
+[ 07.12.2021 - 11:18:53 ]
+    (WRN) [1] instance 'is10_lld.reader': Input level buffer sizes (levelconf.nT) are inconsistent. Level 'is10_mfcc' has size 5 which is smaller than the max. input size of all input levels (10). This might cause the processing to hang unpredictably or cause incomplete processing.
+[ 07.12.2021 - 11:18:53 ]
+    (WRN) [1] instance 'is10_lld.reader': Input level buffer sizes (levelconf.nT) are inconsistent. Level 'is10_mspec2log' has size 5 which is smaller than the max. input size of all input levels (10). This might cause the processing to hang unpredictably or cause incomplete processing.
+[ 07.12.2021 - 11:18:53 ]
+    (WRN) [1] instance 'is10_lld.reader': Input level buffer sizes (levelconf.nT) are inconsistent. Level 'is10_lsp' has size 5 which is smaller than the max. input size of all input levels (10). This might cause the processing to hang unpredictably or cause incomplete processing.
+[ 07.12.2021 - 11:18:53 ]
+    (MSG) [4] dataMemory: query read config [is10_intens]: 1 (min 1, max: 0)
+[ 07.12.2021 - 11:18:53 ]
+    (MSG) [4] dataMemory: query read config [is10_mfcc]: 1 (min 3087, max: 0)
+[ 07.12.2021 - 11:18:53 ]
+    (MSG) [4] dataMemory: query read config [is10_mspec2log]: 1 (min 1, max: 0)
+[ 07.12.2021 - 11:18:53 ]
+    (MSG) [4] dataMemory: query read config [is10_lsp]: 1 (min 1, max: 0)
+[ 07.12.2021 - 11:18:53 ]
+    (MSG) [4] dataMemory: query read config [is10_pitch]: 1 (min -1, max: 0)
+[ 07.12.2021 - 11:18:53 ]
+    (MSG) [4] dataMemory: query read config [is10_intens]: 4 (min 1, max: 1)
+[ 07.12.2021 - 11:18:53 ]
+    (MSG) [4] dataMemory: query read config [is10_mfcc]: 4 (min 1, max: 1)
+[ 07.12.2021 - 11:18:53 ]
+    (MSG) [4] dataMemory: query read config [is10_mspec2log]: 4 (min 1, max: 1)
+[ 07.12.2021 - 11:18:53 ]
+    (MSG) [4] dataMemory: query read config [is10_lsp]: 4 (min 1, max: 1)
+[ 07.12.2021 - 11:18:53 ]
+    (MSG) [4] dataMemory: query read config [is10_pitch]: 4 (min 1, max: 1)
+[ 07.12.2021 - 11:18:53 ]
+    (MSG) [4] dataMemory: query read config [is10_pitchF]: 0 (min 1, max: 1)
+[ 07.12.2021 - 11:18:53 ]
+    (MSG) [4] dataMemory: query read config [is10_jitter]: 0 (min 1544, max: 0)
+[ 07.12.2021 - 11:18:53 ]
+    (WRN) [2] instance 'is10_lld2.reader': Inconsistency in input level parameters. growDyn on first (#1) input = 1, growDyn on input # 2 (is10_jitter) = 0. This might cause the processing to hang unpredictably or cause incomplete processing.
+[ 07.12.2021 - 11:18:53 ]
+    (WRN) [2] instance 'is10_lld2.reader': Inconsistency in input level parameters. isRb on first (#1) input = 0, isRb on input # 2 (is10_jitter) = 1. This might cause the processing to hang unpredictably or cause incomplete processing.
+[ 07.12.2021 - 11:18:53 ]
+    (WRN) [1] instance 'is10_lld2.reader': Input level buffer sizes (levelconf.nT) are inconsistent. Level 'is10_jitter' has size 5 which is smaller than the max. input size of all input levels (10). This might cause the processing to hang unpredictably or cause incomplete processing.
+[ 07.12.2021 - 11:18:53 ]
+    (MSG) [4] dataMemory: query read config [is10_pitchF]: 1 (min 1, max: 1)
+[ 07.12.2021 - 11:18:53 ]
+    (MSG) [4] dataMemory: query read config [is10_jitter]: 1 (min 1544, max: 0)
+[ 07.12.2021 - 11:18:53 ]
+    (MSG) [4] dataMemory: query read config [is10_pitchF]: 4 (min 1, max: 1)
+[ 07.12.2021 - 11:18:53 ]
+    (MSG) [4] dataMemory: query read config [is10_jitter]: 4 (min 1, max: 1)
+[ 07.12.2021 - 11:18:53 ]
+    (MSG) [4] dataMemory: query read config [is10_lld1]: 0 (min 1, max: 0)
+[ 07.12.2021 - 11:18:53 ]
+    (MSG) [4] dataMemory: query read config [is10_lld1]: 1 (min 1, max: 0)
+[ 07.12.2021 - 11:18:53 ]
+    (MSG) [4] dataMemory: query read config [is10_lld1]: 6 (min 1, max: 1)
+[ 07.12.2021 - 11:18:53 ]
+    (MSG) [4] dataMemory: query read config [is10_lld2]: 0 (min 1, max: 0)
+[ 07.12.2021 - 11:18:53 ]
+    (MSG) [4] dataMemory: query read config [is10_lld2]: 1 (min 1, max: 0)
+[ 07.12.2021 - 11:18:53 ]
+    (MSG) [4] dataMemory: query read config [is10_lld2]: 6 (min 1, max: 1)
+[ 07.12.2021 - 11:18:53 ]
+    (MSG) [4] dataMemory: query read config [is10_lld1]: 0 (min 1, max: 6)
+[ 07.12.2021 - 11:18:53 ]
+    (MSG) [4] dataMemory: query read config [is10_lld1_de]: 0 (min 1, max: 0)
+[ 07.12.2021 - 11:18:53 ]
+    (MSG) [4] dataMemory: query read config [is10_lld1]: 0 (min 1, max: 6)
+[ 07.12.2021 - 11:18:53 ]
+    (MSG) [4] dataMemory: query read config [is10_lld1_de]: 0 (min 1, max: 0)
+[ 07.12.2021 - 11:18:53 ]
+    (MSG) [4] dataMemory: query read config [is10_lld2]: 0 (min 1, max: 6)
+[ 07.12.2021 - 11:18:53 ]
+    (MSG) [4] dataMemory: query read config [is10_lld2_de]: 0 (min 1, max: 0)
+[ 07.12.2021 - 11:18:53 ]
+    (MSG) [4] dataMemory: query read config [is10_lld2]: 0 (min 1, max: 6)
+[ 07.12.2021 - 11:18:53 ]
+    (MSG) [4] dataMemory: query read config [is10_lld2_de]: 0 (min 1, max: 0)
+[ 07.12.2021 - 11:18:53 ]
+    (MSG) [4] dataMemory: query read config [is10_lld1]: 0 (min 1, max: 6)
+[ 07.12.2021 - 11:18:53 ]
+    (MSG) [4] dataMemory: query read config [is10_lld2]: 0 (min 1, max: 6)
+[ 07.12.2021 - 11:18:53 ]
+    (MSG) [4] dataMemory: query read config [is10_lld1]: 1 (min 1, max: 6)
+[ 07.12.2021 - 11:18:53 ]
+    (MSG) [4] dataMemory: query read config [is10_lld2]: 1 (min 1, max: 6)
+[ 07.12.2021 - 11:18:53 ]
+    (MSG) [4] dataMemory: query read config [is10_lld1_de]: 0 (min 1, max: 0)
+[ 07.12.2021 - 11:18:53 ]
+    (MSG) [4] dataMemory: query read config [is10_lld2_de]: 0 (min 1, max: 0)
+[ 07.12.2021 - 11:18:53 ]
+    (MSG) [4] dataMemory: query read config [is10_lld1_de]: 1 (min 1, max: 0)
+[ 07.12.2021 - 11:18:53 ]
+    (MSG) [4] dataMemory: query read config [is10_lld2_de]: 1 (min 1, max: 0)
+[ 07.12.2021 - 11:18:53 ]
+    (MSG) [4] dataMemory: query read config [is10_funct]: 0 (min 1, max: 0)
+[ 07.12.2021 - 11:18:53 ]
+    (MSG) [4] dataMemory: query read config [is10_functNz]: 0 (min 1, max: 0)
+[ 07.12.2021 - 11:18:53 ]
+    (MSG) [4] dataMemory: query read config [is10_functOnsets]: 0 (min 1, max: 0)
+[ 07.12.2021 - 11:18:53 ]
+    (MSG) [4] dataMemory: query read config [is10_funct]: 1 (min 1, max: 0)
+[ 07.12.2021 - 11:18:53 ]
+    (MSG) [4] dataMemory: query read config [is10_functNz]: 1 (min 1, max: 0)
+[ 07.12.2021 - 11:18:53 ]
+    (MSG) [4] dataMemory: query read config [is10_functOnsets]: 1 (min 1, max: 0)
+[ 07.12.2021 - 11:18:53 ]
+    (MSG) [4] dataMemory: query read config [func]: 0 (min 1, max: 0)
+[ 07.12.2021 - 11:18:53 ]
+    (MSG) [4] dataMemory: query read config [func]: 2 (min 1, max: 0)
+[ 07.12.2021 - 11:18:53 ]
+    (MSG) [3] cComponentManager: successfully configured 34 of 34 component instances (non dataMemory type)
+[ 07.12.2021 - 11:18:53 ]
+    (MSG) [3] cComponentManager: successfully configured 1 of 1 dataMemory instances
+[ 07.12.2021 - 11:18:53 ]
+    (MSG) [3] cComponentManager: finalised component instance 'dataMemory' (type 'cDataMemory'), index 0
+[ 07.12.2021 - 11:18:53 ]
+    (MSG) [3] cComponentManager: successfully finalised 1 of 1 dataMemory instances
+[ 07.12.2021 - 11:18:53 ]
+    (MSG) [2] cComponentManager: successfully finished createInstances (34 component instances were finalised, 1 data memories were finalised)
+[ 07.12.2021 - 11:18:53 ]
+    (MSG) [2] cComponentManager: starting single thread processing loop
+[ 07.12.2021 - 11:18:53 ]
+    (WRN) [3] instance 'is10_pitchJitter': Discontinuity in input indices... 441 != 0  (v: 441, lastm: 0, tr 441, mr 2646 - ppLen 441). This warning is ok, if you encounter it at the beginning and a pitchSmoother component is causing a delay of the pitch frames.
+[ 07.12.2021 - 11:18:53 ]
+    (WRN) [2] cComponentManager: The following component(s) could not perform any work because destination levels are full but no other component performed any work either: is10_mfcc is10_vo is10_lsp is10_intens. Processing will possibly be incomplete. For more details, enable the execDebug option of cComponentManager.
+[ 07.12.2021 - 11:18:53 ]
+    (MSG) [3] cComponentManager: Setting EOI condition = 1. EOI counter = 1. tickNr = 524
+[ 07.12.2021 - 11:18:53 ]
+    (MSG) [3] cComponentManager: Some components performed work since we entered the EOI condition. Exiting inner tick loop
+[ 07.12.2021 - 11:18:53 ]
+    (MSG) [3] cComponentManager: Starting the next tick loop iteration. EOI counter = 1. tickNr = 532
+[ 07.12.2021 - 11:18:53 ]
+    (MSG) [3] cComponentManager: Empty tick loop iteration # 1. tickNr = 533. End of processing loop.
+[ 07.12.2021 - 11:18:53 ]
+    (MSG) [2] cComponentManager: Processing finished! System ran for 533 ticks.

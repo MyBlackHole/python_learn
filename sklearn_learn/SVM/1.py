@@ -21,8 +21,16 @@ x = np.concatenate((pos['words'], neg['words']))
 y = np.concatenate((np.ones(len(pos)), np.zeros(len(neg))))
 
 # 训练词向量128维
-word2vec = Word2Vec(x, size=128, window=3, min_count=5, sg=1, hs=1, iter=10, workers=25)
+word2vec = Word2Vec(x,
+                    size=128,
+                    window=3,
+                    min_count=5,
+                    sg=1,
+                    hs=1,
+                    iter=10,
+                    workers=25)
 word2vec.save('word2vec.model')
+
 
 # 封装词转换词向量的方法，list型
 def total_vector(words):
@@ -33,6 +41,7 @@ def total_vector(words):
         except KeyError:
             continue
     return vec
+
 
 # 对x所有词转换成词向量，即合成训练集
 train_vec = np.concatenate([total_vector(words) for words in x])

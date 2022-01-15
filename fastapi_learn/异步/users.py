@@ -17,8 +17,14 @@ __author__ = 'Black Hole'
 from fastapi import APIRouter
 
 router = APIRouter()
+import time
 
 
 @router.get('/')
 async def get():
-    return {'black': 'hole'}
+    return {'msg': 'black hole'}
+
+@router.get('/my_time')
+async def my_time():
+    time.sleep(10)
+    return {'msg': 'my_time'}

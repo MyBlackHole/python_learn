@@ -10,9 +10,9 @@ def main():
     with grpc.insecure_channel("{0}:{1}".format(_HOST, _PORT)) as channel:
         client = compute_pb2_grpc.ComputeStub(channel=channel)
         response = client.SayHello(compute_pb2.HelloRequest(helloworld="123456"))
-    print("SayHello: " + response.result)
-        response = client.SayHello(compute_pb2.HelloRequest(helloworld="123456"))
-    print("SayHello: " + response.result)
+        print("SayHello: " + response.result)
+        # response = client.SayHello(compute_pb2.HelloRequest(helloworld="123456"))
+        # print("SayHello: " + response.result)
 
 
 

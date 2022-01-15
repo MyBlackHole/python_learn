@@ -51,3 +51,4 @@ print(fake.district())
 print(fake.license_plate())
 
 print(fake.user_agent())
+print(fake.word(ext_word_list=None))

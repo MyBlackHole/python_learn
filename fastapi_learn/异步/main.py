@@ -14,12 +14,19 @@
 
 __author__ = 'Black Hole'
 
-from . import users
+import users
 import uvicorn
 from fastapi import FastAPI
 
 app = FastAPI()
-app.include_router(users.router, prefix='/users', tags=['users'])
+@app.get('/')
+async def get():
+    return {'msg': 'black hole'}
+
+@app.get('/my_time')
+async def my_time():
+    time.sleep(10)
+    return {'msg': 'my_time'}
 
 if __name__ == "__main__":
     uvicorn.run(app)

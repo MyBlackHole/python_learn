@@ -15,10 +15,9 @@
 __author__ = 'Black Hole'
 from typing import Optional
 
-from contextlib import contextmanager
 from fastapi import FastAPI
-from pydantic import BaseModel
-from fastapi.params import Query
+# from pydantic import BaseModel
+# from fastapi.params import Query
 
 app = FastAPI()
 
@@ -28,27 +27,27 @@ def read_item(item_id: int, q: Optional[str] = None):
     return {"item_id": item_id, "q": q}
 
 
-class Item(BaseModel):
-    name: str
-    # description: Optional[str] = None
-    # price: float
-    # tax: Optional[float] = None
-    # json1: dict
-    # text: Json
+# class Item(BaseModel):
+#     name: str
+#     # description: Optional[str] = None
+#     # price: float
+#     # tax: Optional[float] = None
+#     # json1: dict
+#     # text: Json
 
 
-@app.post("/post")
-def post_item(item: Item, item1: Item = Query(default=Item(**{}))):
-    print(item)
-    return item
+# @app.post("/post")
+# def post_item(item: Item, item1: Item = Query(default=Item(**{}))):
+#     print(item)
+#     return item
 
 
-@app.put("/items/{item_id}")
-async def create_item(item_id: int, item: Item, q: Optional[str] = None):
-    result = {"item_id": item_id, **item.dict()}
-    if q:
-        result.update({"q": q})
-    return result
+# @app.put("/items/{item_id}")
+# async def create_item(item_id: int, item: Item, q: Optional[str] = None):
+#     result = {"item_id": item_id, **item.dict()}
+#     if q:
+#         result.update({"q": q})
+    # return result
 
 
 @app.get("/ok")
@@ -56,9 +55,9 @@ def get(a: str):
     return {1:a}
 
 
-@app.post("/ok")
-def get():
-    return {1:1}
+# @app.post("/ok")
+# def get():
+#     return {1:1}
 
 
 # @app.middleware('http')
@@ -78,8 +77,8 @@ if __name__ == "__main__":
     # Thread(target=func).start()
     import uvicorn
 
-    uvicorn.run(app="app:app", host="0.0.0.0", port=8080)
-    # uvicorn.run(app, host="0.0.0.0", port=8010, ssl_keyfile='/home/black/Documents/Code/Python/python_learn/fastapi_learn/secret.key', ssl_certfile='/home/black/Documents/Code/Python/python_learn/fastapi_learn/secret.pem')
+    # uvicorn.run(app="app:app", host="0.0.0.0", port=8080)
+    uvicorn.run(app, host="0.0.0.0", port=8010, ssl_keyfile='secret.key', ssl_certfile='secret.pem')
     # import os
     #
     # os.system("uvicorn 1:app --reload")
