@@ -18,14 +18,14 @@ __author__ = 'Black Hole'
 from pymongo import MongoClient
 
 # 服务链接
-mongodb_link = MongoClient(host="192.168.5.52", port=27017, username="root", password="root")
+mongodb_link = MongoClient(host="192.168.5.233", port=27017, username="root", password="3edc#EDC")
 
 # # 所有数据库
 # for i, item in enumerate(mongodb_link.list_databases()):
 #     print(f'{i}: {item}')
 
 # 集合选择
-test = mongodb_link['test']
+test = mongodb_link['teacher_questions']
 
 # test.authenticate("root", "root")
 # # 所有表
@@ -33,15 +33,15 @@ test = mongodb_link['test']
 
 
 # 文档选择
-test = test['test']
+test = test['b73378d8750b11ec9e28e0d55eeff354']
 
 # 插入数据
-mydict = {"_id": 11, "alexa": "1", "url": "https://www.baidu.com"}
+mydict = {"_id": "811668f46e2cdddfa83eedfbdf2b2e43"}
 
-x = test.insert_one(mydict)
+# x = test.insert_one(mydict)
 
-# 插入成功返回id
-print(x.inserted_id)
+# # 插入成功返回id
+# print(x.inserted_id)
 
 # 查询
 # data = test.find({"$or": [{"_id": 10}, {"_id": 11}]})
@@ -50,14 +50,15 @@ print(x.inserted_id)
 # for item in data:
 #     print(item)
 
-data = test.find_one({"_id": 11}, {"_id": 0})
-print(1, data)
+# data = test.find_one({"_id": 11}, {"_id": 0})
+data = test.find(mydict)
+print(1, list(data))
 
-x = test.delete_one({"alexa": "1"})
-print(x.deleted_count)
+# x = test.delete_one({"alexa": "1"})
+# print(x.deleted_count)
 
-x = test.delete_many({"alexa": "1"})
-print(x.deleted_count)
+# x = test.delete_many({"alexa": "1"})
+# print(x.deleted_count)
 
 # data = test.find()
 # print(list(data))

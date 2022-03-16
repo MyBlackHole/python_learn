@@ -97,7 +97,10 @@ def getRoute():
     # Failed to load resource: net::ERR_FAILED
     return {"code": 200, "msg": None, "data": {"username": "admin"}}
 
-@app.get("/api/getProductList")
+@app.get(
+    "/api/getProductList",
+    description="<a href='https://api.metaengine.yzbtkj.cn/static_file/caption/课程配置阶段结构.html'>kjsdfk </a>",
+)
 def logout():
     data_list = [
         {

@@ -17,41 +17,259 @@
             </head>
             <body>
                 <article class="markdown-body" id="markdown-body">
-                    <h1 id="ffmpeg-readme">FFmpeg README</h1>
-<p>FFmpeg is a collection of libraries and tools to process multimedia content
-such as audio, video, subtitles and related metadata.</p>
-<h2 id="libraries">Libraries</h2>
+                    <h1 id="_1"><center> 结构化课程交互</h1>
+<h4 id="1">1. 气泡类型</h4>
+<div class="highlight"><pre><span></span><code><span class="linenos" data-linenos="1 "></span>    text: 文本
+<span class="linenos" data-linenos="2 "></span>    image: 图片
+<span class="linenos" data-linenos="3 "></span>    video: 视频
+<span class="linenos" data-linenos="4 "></span>    card: 卡片
+<span class="linenos" data-linenos="5 "></span>    interaction: 互动类型
+</code></pre></div>
+<h4 id="2">2.支持的课程流格式(消息类型)</h4>
+<div class="highlight"><pre><span></span><code><span class="linenos" data-linenos="1 "></span>    text: 文本消息
+<span class="linenos" data-linenos="2 "></span>    seperate_line: 分割消息
+<span class="linenos" data-linenos="3 "></span>    problem: 问题消息
+<span class="linenos" data-linenos="4 "></span>    card: 卡片消息
+<span class="linenos" data-linenos="5 "></span>    interaction: 互动消息
+<span class="linenos" data-linenos="6 "></span>    select_img: 触发选择图片消息
+<span class="linenos" data-linenos="7 "></span>    intro: 介绍
+</code></pre></div>
+<h4 id="3">3. 课程配置阶段格式</h4>
 <ul>
-<li><code>libavcodec</code> provides implementation of a wider range of codecs.</li>
-<li><code>libavformat</code> implements streaming protocols, container formats and basic I/O access.</li>
-<li><code>libavutil</code> includes hashers, decompressors and miscellaneous utility functions.</li>
-<li><code>libavfilter</code> provides means to alter decoded audio and video through a directed graph of connected filters.</li>
-<li><code>libavdevice</code> provides an abstraction to access capture and playback devices.</li>
-<li><code>libswresample</code> implements audio mixing and resampling routines.</li>
-<li><code>libswscale</code> implements color conversion and scaling routines.</li>
+<li>课程的内容配置(<code>lesson_content</code>)</li>
 </ul>
-<h2 id="tools">Tools</h2>
+<p><div class="highlight"><pre><span></span><code><span class="linenos" data-linenos="1 "></span><span class="p">[</span>
+<span class="linenos" data-linenos="2 "></span>    <span class="p">{</span>
+<span class="linenos" data-linenos="3 "></span>        <span class="nt">&quot;title&quot;</span><span class="p">:</span> <span class="s2">&quot;&quot;</span><span class="p">,</span> <span class="err">//</span> <span class="err">知识点标题</span>
+<span class="linenos" data-linenos="4 "></span>        <span class="nt">&quot;est_time&quot;</span><span class="p">:</span> <span class="mi">3</span><span class="p">,</span>  <span class="err">//</span> <span class="err">该知识点预计时长</span>
+<span class="linenos" data-linenos="5 "></span>        <span class="nt">&quot;content_type&quot;</span><span class="p">:</span> <span class="s2">&quot;&quot;</span><span class="p">,</span>  <span class="err">//</span> <span class="err">知识点类型,</span> <span class="err">默认为空串,</span> <span class="err">该内容由算法生成</span>
+<span class="linenos" data-linenos="6 "></span>        <span class="nt">&quot;info_unit_list&quot;</span><span class="p">:</span> <span class="p">[]</span> <span class="err">//</span> <span class="err">知识点中的所有气泡</span>
+<span class="linenos" data-linenos="7 "></span>    <span class="p">}</span>
+<span class="linenos" data-linenos="8 "></span><span class="p">]</span>
+</code></pre></div>
+* 气泡结构详情(<code>info_unit_list</code>)
+<div class="highlight"><pre><span></span><code><span class="linenos" data-linenos="1 "></span><span class="p">[</span>
+<span class="linenos" data-linenos="2 "></span>    <span class="p">{</span>
+<span class="linenos" data-linenos="3 "></span>        <span class="nt">&quot;val&quot;</span><span class="p">:</span> <span class="s2">&quot;在工作中被顾客拒绝，影响了收入，你就要用本“场景互动案例法”&quot;</span><span class="p">,</span> <span class="err">//</span> <span class="err">气泡内容</span>
+<span class="linenos" data-linenos="4 "></span>        <span class="nt">&quot;type&quot;</span><span class="p">:</span> <span class="s2">&quot;text&quot;</span><span class="p">,</span> <span class="err">//</span> <span class="err">气泡类型</span>
+<span class="linenos" data-linenos="5 "></span>        <span class="nt">&quot;params&quot;</span><span class="p">:</span> <span class="p">{}</span>  <span class="err">//</span> <span class="err">操作区配置</span>
+<span class="linenos" data-linenos="6 "></span>    <span class="p">}</span>
+<span class="linenos" data-linenos="7 "></span><span class="p">]</span>
+</code></pre></div></p>
+<p><strong>说明:</strong> </p>
 <ul>
-<li><a href="https://ffmpeg.org/ffmpeg.html">ffmpeg</a> is a command line toolbox to
-  manipulate, convert and stream multimedia content.</li>
-<li><a href="https://ffmpeg.org/ffplay.html">ffplay</a> is a minimalistic multimedia player.</li>
-<li><a href="https://ffmpeg.org/ffprobe.html">ffprobe</a> is a simple analysis tool to inspect
-  multimedia content.</li>
-<li>Additional small tools such as <code>aviocat</code>, <code>ismindex</code> and <code>qt-faststart</code>.</li>
+<li>
+<p>1.卡片类型(<code>type="card"</code>)的文本结构为以下json格式序列化的字符串(<code>val</code>):
+    <div class="highlight"><pre><span></span><code><span class="linenos" data-linenos="1 "></span><span class="p">{</span>
+<span class="linenos" data-linenos="2 "></span>    <span class="nt">&quot;head&quot;</span><span class="p">:</span> <span class="s2">&quot;&quot;</span><span class="p">,</span>
+<span class="linenos" data-linenos="3 "></span>    <span class="nt">&quot;text&quot;</span><span class="p">:</span> <span class="s2">&quot;&quot;</span><span class="p">,</span>
+<span class="linenos" data-linenos="4 "></span>    <span class="nt">&quot;bottom&quot;</span><span class="p">:</span> <span class="s2">&quot;&quot;</span><span class="p">,</span>
+<span class="linenos" data-linenos="5 "></span>    <span class="nt">&quot;headico&quot;</span><span class="p">:</span> <span class="s2">&quot;&quot;</span><span class="p">,</span>
+<span class="linenos" data-linenos="6 "></span>    <span class="nt">&quot;bottomico&quot;</span><span class="p">:</span> <span class="s2">&quot;&quot;</span>
+<span class="linenos" data-linenos="7 "></span><span class="p">}</span>
+</code></pre></div></p>
+</li>
+<li>
+<p>2.视频类型(<code>type="video"</code>)的文本结构为以下json格式序列化的字符串('val'):
+    <div class="highlight"><pre><span></span><code><span class="linenos" data-linenos="1 "></span><span class="p">{</span>
+<span class="linenos" data-linenos="2 "></span>    <span class="nt">&quot;url&quot;</span><span class="p">:</span> <span class="s2">&quot;&quot;</span><span class="p">,</span>
+<span class="linenos" data-linenos="3 "></span>    <span class="nt">&quot;info_type&quot;</span><span class="p">:</span> <span class="s2">&quot;video&quot;</span>
+<span class="linenos" data-linenos="4 "></span><span class="p">}</span>
+</code></pre></div></p>
+</li>
+<li>
+<p>操作区配置详情(<code>params</code>)</p>
+</li>
 </ul>
-<h2 id="documentation">Documentation</h2>
-<p>The offline documentation is available in the <strong>doc/</strong> directory.</p>
-<p>The online documentation is available in the main <a href="https://ffmpeg.org">website</a>
-and in the <a href="https://trac.ffmpeg.org">wiki</a>.</p>
-<h3 id="examples">Examples</h3>
-<p>Coding examples are available in the <strong>doc/examples</strong> directory.</p>
-<h2 id="license">License</h2>
-<p>FFmpeg codebase is mainly LGPL-licensed with optional components licensed under
-GPL. Please refer to the LICENSE file for detailed information.</p>
-<h2 id="contributing">Contributing</h2>
-<p>Patches should be submitted to the ffmpeg-devel mailing list using
-<code>git format-patch</code> or <code>git send-email</code>. Github pull requests should be
-avoided because they are not part of our review process and will be ignored.</p>
+<div class="highlight"><pre><span></span><code><span class="linenos" data-linenos=" 1 "></span><span class="p">{</span>
+<span class="linenos" data-linenos=" 2 "></span>    <span class="nt">&quot;control_msg&quot;</span><span class="p">:</span> <span class="s2">&quot;&quot;</span><span class="p">,</span>  <span class="err">//</span> <span class="err">操作说明</span>
+<span class="linenos" data-linenos=" 3 "></span>    <span class="nt">&quot;control_type&quot;</span><span class="p">:</span> <span class="s2">&quot;select_opt&quot;</span><span class="p">,</span>  <span class="err">//</span> <span class="err">操作类型</span>
+<span class="linenos" data-linenos=" 4 "></span>    <span class="nt">&quot;control_param&quot;</span><span class="p">:</span> <span class="p">{</span>
+<span class="linenos" data-linenos=" 5 "></span>        <span class="nt">&quot;opt_list&quot;</span><span class="p">:</span> <span class="p">[</span>
+<span class="linenos" data-linenos=" 6 "></span>            <span class="p">{</span>
+<span class="linenos" data-linenos=" 7 "></span>                <span class="nt">&quot;goto&quot;</span><span class="p">:</span> <span class="s2">&quot;&quot;</span><span class="p">,</span>  <span class="err">//</span> <span class="err">特殊goto值:</span> <span class="err">goto:</span> <span class="err">pay</span> <span class="err">代表触发支付</span>
+<span class="linenos" data-linenos=" 8 "></span>                <span class="nt">&quot;text&quot;</span><span class="p">:</span> <span class="s2">&quot;&quot;</span><span class="p">,</span> <span class="err">//</span> <span class="err">按钮名称</span>
+<span class="linenos" data-linenos=" 9 "></span>                <span class="nt">&quot;similarValue&quot;</span><span class="p">:</span> <span class="s2">&quot;&quot;</span><span class="p">,</span>
+<span class="linenos" data-linenos="10 "></span>                <span class="nt">&quot;representativeValue&quot;</span><span class="p">:</span> <span class="s2">&quot;&quot;</span><span class="p">,</span>
+<span class="linenos" data-linenos="11 "></span>                <span class="nt">&quot;record&quot;</span><span class="p">:</span> <span class="s2">&quot;&quot;</span>
+<span class="linenos" data-linenos="12 "></span>            <span class="p">}</span>  <span class="err">//</span> <span class="err">按钮信息</span>
+<span class="linenos" data-linenos="13 "></span>        <span class="p">]</span>
+<span class="linenos" data-linenos="14 "></span>    <span class="p">}</span>
+<span class="linenos" data-linenos="15 "></span><span class="p">}</span>
+</code></pre></div>
+<h4 id="4">4.课程显示阶段格式</h4>
+<ul>
+<li>获取课程流的参数结构</li>
+</ul>
+<div class="highlight"><pre><span></span><code><span class="linenos" data-linenos=" 1 "></span><span class="p">{</span>
+<span class="linenos" data-linenos=" 2 "></span>    <span class="nt">&quot;key&quot;</span><span class="p">:</span> <span class="s2">&quot;&quot;</span><span class="p">,</span>
+<span class="linenos" data-linenos=" 3 "></span>    <span class="nt">&quot;secret&quot;</span><span class="p">:</span> <span class="s2">&quot;&quot;</span><span class="p">,</span>
+<span class="linenos" data-linenos=" 4 "></span>    <span class="nt">&quot;person_id&quot;</span><span class="p">:</span> <span class="s2">&quot;&quot;</span><span class="p">,</span>
+<span class="linenos" data-linenos=" 5 "></span>    <span class="nt">&quot;lesson_id&quot;</span><span class="p">:</span> <span class="s2">&quot;&quot;</span><span class="p">,</span>
+<span class="linenos" data-linenos=" 6 "></span>    <span class="nt">&quot;app_id&quot;</span><span class="p">:</span> <span class="s2">&quot;&quot;</span><span class="p">,</span>
+<span class="linenos" data-linenos=" 7 "></span>    <span class="nt">&quot;learn_time&quot;</span><span class="p">:</span> <span class="mi">0</span><span class="p">,</span> <span class="err">//</span> <span class="err">是否为首次学习:</span> <span class="err">0:</span> <span class="err">是,</span> <span class="err">1:</span> <span class="err">不是</span>
+<span class="linenos" data-linenos=" 8 "></span>    <span class="nt">&quot;finish_last_learn&quot;</span><span class="p">:</span> <span class="mi">0</span><span class="p">,</span>  <span class="err">//</span> <span class="err">上次学习是否结束:</span> <span class="err">0:</span> <span class="err">未结束</span> <span class="err">1:</span> <span class="err">已结束</span>
+<span class="linenos" data-linenos=" 9 "></span>    <span class="nt">&quot;last_loc&quot;</span><span class="p">:</span> <span class="s2">&quot;0&quot;</span><span class="p">,</span>  <span class="err">//</span> <span class="err">学习进度:</span> <span class="err">0:</span> <span class="err">学习结束或首次学习</span>
+<span class="linenos" data-linenos="10 "></span>    <span class="nt">&quot;version&quot;</span><span class="p">:</span> <span class="s2">&quot;v2&quot;</span>  <span class="err">//</span> <span class="err">版本</span><span class="p">:</span> <span class="err">v</span><span class="mi">2</span><span class="err">版本</span><span class="p">:</span> <span class="err">根据课程配置信息获取课程流</span>
+<span class="linenos" data-linenos="11 "></span><span class="p">}</span>
+</code></pre></div>
+<ul>
+<li>课程显示结构</li>
+</ul>
+<div class="highlight"><pre><span></span><code><span class="linenos" data-linenos="1 "></span><span class="p">{</span>
+<span class="linenos" data-linenos="2 "></span>    <span class="nt">&quot;lesson_title&quot;</span><span class="p">:</span> <span class="s2">&quot;&quot;</span><span class="p">,</span>  <span class="err">//</span> <span class="err">课程标题</span>
+<span class="linenos" data-linenos="3 "></span>    <span class="nt">&quot;flow&quot;</span><span class="p">:</span> <span class="p">[]</span>  <span class="err">//</span> <span class="err">课程流信息</span>
+<span class="linenos" data-linenos="4 "></span><span class="p">}</span>
+</code></pre></div>
+<ul>
+<li>
+<p>课程流结构</p>
+<ul>
+<li>
+<p>前置固定结构(位置为课程流信息列表的开头), 分为三种</p>
+<p>1.首次学习(<code>learn_time=0</code>):
+<div class="highlight"><pre><span></span><code><span class="linenos" data-linenos=" 1 "></span><span class="p">{</span>
+<span class="linenos" data-linenos=" 2 "></span>    <span class="nt">&quot;loc&quot;</span><span class="p">:</span> <span class="s2">&quot;0.1&quot;</span><span class="p">,</span>
+<span class="linenos" data-linenos=" 3 "></span>    <span class="nt">&quot;info_type&quot;</span><span class="p">:</span> <span class="s2">&quot;text&quot;</span><span class="p">,</span>
+<span class="linenos" data-linenos=" 4 "></span>    <span class="nt">&quot;type&quot;</span><span class="p">:</span> <span class="s2">&quot;text&quot;</span><span class="p">,</span>
+<span class="linenos" data-linenos=" 5 "></span>    <span class="nt">&quot;text&quot;</span><span class="p">:</span> <span class="s2">&quot;欢迎学习本节课！我们与传统课程一样，都包含：知识学习、案例演练、老师点评3个环节。&quot;</span><span class="p">,</span>
+<span class="linenos" data-linenos=" 6 "></span>    <span class="nt">&quot;content_type&quot;</span><span class="p">:</span> <span class="s2">&quot;intro&quot;</span>
+<span class="linenos" data-linenos=" 7 "></span><span class="p">}</span><span class="err">,</span>
+<span class="linenos" data-linenos=" 8 "></span><span class="p">{</span>
+<span class="linenos" data-linenos=" 9 "></span>    <span class="nt">&quot;loc&quot;</span><span class="p">:</span> <span class="s2">&quot;0.2&quot;</span><span class="p">,</span>
+<span class="linenos" data-linenos="10 "></span>    <span class="nt">&quot;info_type&quot;</span><span class="p">:</span> <span class="s2">&quot;text&quot;</span><span class="p">,</span>
+<span class="linenos" data-linenos="11 "></span>    <span class="nt">&quot;type&quot;</span><span class="p">:</span> <span class="s2">&quot;text&quot;</span><span class="p">,</span>
+<span class="linenos" data-linenos="12 "></span>    <span class="nt">&quot;text&quot;</span><span class="p">:</span> <span class="s2">&quot;但传统课程只讲理论，太枯燥，上课效果差，与你的工作脱钩。&lt;br/&gt;&lt;br/&gt;而我们是游戏式课程，更有趣。上课效果好，能帮助你的工作。&quot;</span><span class="p">,</span>
+<span class="linenos" data-linenos="13 "></span>    <span class="nt">&quot;content_type&quot;</span><span class="p">:</span> <span class="s2">&quot;intro&quot;</span>
+<span class="linenos" data-linenos="14 "></span><span class="p">}</span><span class="err">,</span>
+<span class="linenos" data-linenos="15 "></span><span class="p">{</span>
+<span class="linenos" data-linenos="16 "></span>    <span class="nt">&quot;loc&quot;</span><span class="p">:</span> <span class="s2">&quot;0.3&quot;</span><span class="p">,</span>
+<span class="linenos" data-linenos="17 "></span>    <span class="nt">&quot;type&quot;</span><span class="p">:</span> <span class="s2">&quot;interaction&quot;</span><span class="p">,</span>
+<span class="linenos" data-linenos="18 "></span>    <span class="nt">&quot;info_type&quot;</span><span class="p">:</span> <span class="s2">&quot;text&quot;</span><span class="p">,</span>
+<span class="linenos" data-linenos="19 "></span>    <span class="nt">&quot;text&quot;</span><span class="p">:</span> <span class="s2">&quot;（在下方区域做出选择）&quot;</span><span class="p">,</span>
+<span class="linenos" data-linenos="20 "></span>    <span class="nt">&quot;url&quot;</span><span class="p">:</span> <span class="s2">&quot;&quot;</span><span class="p">,</span>
+<span class="linenos" data-linenos="21 "></span>    <span class="nt">&quot;content_type&quot;</span><span class="p">:</span> <span class="s2">&quot;intro&quot;</span><span class="p">,</span>
+<span class="linenos" data-linenos="22 "></span>    <span class="nt">&quot;control_msg&quot;</span><span class="p">:</span> <span class="s2">&quot;&quot;</span><span class="p">,</span>
+<span class="linenos" data-linenos="23 "></span>    <span class="nt">&quot;control_type&quot;</span><span class="p">:</span> <span class="s2">&quot;select_opt&quot;</span><span class="p">,</span>
+<span class="linenos" data-linenos="24 "></span>    <span class="nt">&quot;control_param&quot;</span><span class="p">:</span> <span class="p">{</span>
+<span class="linenos" data-linenos="25 "></span>        <span class="nt">&quot;opt_list&quot;</span><span class="p">:</span> <span class="p">[</span>
+<span class="linenos" data-linenos="26 "></span>            <span class="p">{</span>
+<span class="linenos" data-linenos="27 "></span>                <span class="nt">&quot;text&quot;</span><span class="p">:</span> <span class="s2">&quot;以上内容我看完了，继续看后续的内容&quot;</span><span class="p">,</span>
+<span class="linenos" data-linenos="28 "></span>                <span class="nt">&quot;goto&quot;</span><span class="p">:</span> <span class="s2">&quot;1&quot;</span>
+<span class="linenos" data-linenos="29 "></span>            <span class="p">}</span>
+<span class="linenos" data-linenos="30 "></span>        <span class="p">]</span>
+<span class="linenos" data-linenos="31 "></span>    <span class="p">}</span>
+<span class="linenos" data-linenos="32 "></span><span class="p">}</span>
+</code></pre></div>
+2. 非首次学习, 上次学习未结束(<code>learn_time=1; finish_last_learn=0</code>)
+<div class="highlight"><pre><span></span><code><span class="linenos" data-linenos=" 1 "></span><span class="p">{</span>
+<span class="linenos" data-linenos=" 2 "></span>    <span class="nt">&quot;loc&quot;</span><span class="p">:</span> <span class="s2">&quot;0.1&quot;</span><span class="p">,</span>
+<span class="linenos" data-linenos=" 3 "></span>    <span class="nt">&quot;info_type&quot;</span><span class="p">:</span> <span class="s2">&quot;text&quot;</span><span class="p">,</span>
+<span class="linenos" data-linenos=" 4 "></span>    <span class="nt">&quot;type&quot;</span><span class="p">:</span> <span class="s2">&quot;text&quot;</span><span class="p">,</span>
+<span class="linenos" data-linenos=" 5 "></span>    <span class="nt">&quot;text&quot;</span><span class="p">:</span> <span class="s2">&quot;上一节课你没有全部学完，你可以继续学习上一节课未学完的内容，也可以学新的一节课：&lt;br/&gt;（1）从上一节课未学完的地方开始学习可以获得更好的学习效果，对工作产生帮助&lt;br/&gt;（2）学习新的一节课，能让你获得更多知识，但无法与之前学过的内容关联，效果没那么好&quot;</span><span class="p">,</span>
+<span class="linenos" data-linenos=" 6 "></span>    <span class="nt">&quot;content_type&quot;</span><span class="p">:</span> <span class="s2">&quot;intro&quot;</span>
+<span class="linenos" data-linenos=" 7 "></span><span class="p">}</span><span class="err">,</span>
+<span class="linenos" data-linenos=" 8 "></span><span class="p">{</span>
+<span class="linenos" data-linenos=" 9 "></span>    <span class="nt">&quot;loc&quot;</span><span class="p">:</span> <span class="s2">&quot;0.2&quot;</span><span class="p">,</span>
+<span class="linenos" data-linenos="10 "></span>    <span class="nt">&quot;type&quot;</span><span class="p">:</span> <span class="s2">&quot;interaction&quot;</span><span class="p">,</span>
+<span class="linenos" data-linenos="11 "></span>    <span class="nt">&quot;info_type&quot;</span><span class="p">:</span> <span class="s2">&quot;text&quot;</span><span class="p">,</span>
+<span class="linenos" data-linenos="12 "></span>    <span class="nt">&quot;text&quot;</span><span class="p">:</span> <span class="s2">&quot;（阅读后在操作区点击继续）&quot;</span><span class="p">,</span>
+<span class="linenos" data-linenos="13 "></span>    <span class="nt">&quot;url&quot;</span><span class="p">:</span> <span class="s2">&quot;&quot;</span><span class="p">,</span>
+<span class="linenos" data-linenos="14 "></span>    <span class="nt">&quot;content_type&quot;</span><span class="p">:</span> <span class="s2">&quot;intro&quot;</span><span class="p">,</span>
+<span class="linenos" data-linenos="15 "></span>    <span class="nt">&quot;control_msg&quot;</span><span class="p">:</span> <span class="s2">&quot;&quot;</span><span class="p">,</span>
+<span class="linenos" data-linenos="16 "></span>    <span class="nt">&quot;control_type&quot;</span><span class="p">:</span> <span class="s2">&quot;select_opt&quot;</span><span class="p">,</span>
+<span class="linenos" data-linenos="17 "></span>    <span class="nt">&quot;control_param&quot;</span><span class="p">:</span> <span class="p">{</span>
+<span class="linenos" data-linenos="18 "></span>        <span class="nt">&quot;opt_list&quot;</span><span class="p">:</span> <span class="p">[</span>
+<span class="linenos" data-linenos="19 "></span>            <span class="p">{</span>
+<span class="linenos" data-linenos="20 "></span>                <span class="nt">&quot;text&quot;</span><span class="p">:</span> <span class="s2">&quot;我要学习新的一节课&quot;</span><span class="p">,</span>
+<span class="linenos" data-linenos="21 "></span>                <span class="nt">&quot;goto&quot;</span><span class="p">:</span> <span class="s2">&quot;1&quot;</span>
+<span class="linenos" data-linenos="22 "></span>            <span class="p">},</span>
+<span class="linenos" data-linenos="23 "></span>            <span class="p">{</span>
+<span class="linenos" data-linenos="24 "></span>                <span class="nt">&quot;text&quot;</span><span class="p">:</span> <span class="s2">&quot;我要继续学习上一节课未学完的内容&quot;</span><span class="p">,</span>
+<span class="linenos" data-linenos="25 "></span>                <span class="nt">&quot;goto&quot;</span><span class="p">:</span> <span class="s2">&quot;0&quot;</span>
+<span class="linenos" data-linenos="26 "></span>            <span class="p">}</span>
+<span class="linenos" data-linenos="27 "></span>        <span class="p">]</span>
+<span class="linenos" data-linenos="28 "></span>    <span class="p">}</span>
+<span class="linenos" data-linenos="29 "></span><span class="p">}</span>
+</code></pre></div>
+3.非首次学习, 上次学习已结束(<code>learn_time=1; finish_last_learn=1</code>)
+<div class="highlight"><pre><span></span><code><span class="linenos" data-linenos=" 1 "></span><span class="p">{</span>
+<span class="linenos" data-linenos=" 2 "></span>    <span class="nt">&quot;loc&quot;</span><span class="p">:</span> <span class="s2">&quot;0.1&quot;</span><span class="p">,</span>
+<span class="linenos" data-linenos=" 3 "></span>    <span class="nt">&quot;info_type&quot;</span><span class="p">:</span> <span class="s2">&quot;text&quot;</span><span class="p">,</span>
+<span class="linenos" data-linenos=" 4 "></span>    <span class="nt">&quot;type&quot;</span><span class="p">:</span> <span class="s2">&quot;text&quot;</span><span class="p">,</span>
+<span class="linenos" data-linenos=" 5 "></span>    <span class="nt">&quot;text&quot;</span><span class="p">:</span> <span class="s2">&quot;你已经完整的学习过上一节课，你可以选择完整学习本节课，或直接去本节课的案例演练：&lt;br/&gt;（1）完整学习本节课可以获得更好的学习效果，对工作产生帮助&lt;br/&gt;（2）也可以直接去本节课的案例演练，节约时间，但学习效果没那么好&quot;</span><span class="p">,</span>
+<span class="linenos" data-linenos=" 6 "></span>    <span class="nt">&quot;content_type&quot;</span><span class="p">:</span> <span class="s2">&quot;intro&quot;</span>
+<span class="linenos" data-linenos=" 7 "></span><span class="p">}</span><span class="err">,</span>
+<span class="linenos" data-linenos=" 8 "></span><span class="p">{</span>
+<span class="linenos" data-linenos=" 9 "></span>    <span class="nt">&quot;loc&quot;</span><span class="p">:</span> <span class="s2">&quot;0.2&quot;</span><span class="p">,</span>
+<span class="linenos" data-linenos="10 "></span>    <span class="nt">&quot;type&quot;</span><span class="p">:</span> <span class="s2">&quot;interaction&quot;</span><span class="p">,</span>
+<span class="linenos" data-linenos="11 "></span>    <span class="nt">&quot;info_type&quot;</span><span class="p">:</span> <span class="s2">&quot;text&quot;</span><span class="p">,</span>
+<span class="linenos" data-linenos="12 "></span>    <span class="nt">&quot;text&quot;</span><span class="p">:</span> <span class="s2">&quot;（阅读后在操作区点击继续）&quot;</span><span class="p">,</span>
+<span class="linenos" data-linenos="13 "></span>    <span class="nt">&quot;url&quot;</span><span class="p">:</span> <span class="s2">&quot;&quot;</span><span class="p">,</span>
+<span class="linenos" data-linenos="14 "></span>    <span class="nt">&quot;content_type&quot;</span><span class="p">:</span> <span class="s2">&quot;intro&quot;</span><span class="p">,</span>
+<span class="linenos" data-linenos="15 "></span>    <span class="nt">&quot;control_msg&quot;</span><span class="p">:</span> <span class="s2">&quot;&quot;</span><span class="p">,</span>
+<span class="linenos" data-linenos="16 "></span>    <span class="nt">&quot;control_type&quot;</span><span class="p">:</span> <span class="s2">&quot;select_opt&quot;</span><span class="p">,</span>
+<span class="linenos" data-linenos="17 "></span>    <span class="nt">&quot;control_param&quot;</span><span class="p">:</span> <span class="p">{</span>
+<span class="linenos" data-linenos="18 "></span>        <span class="nt">&quot;opt_list&quot;</span><span class="p">:</span> <span class="p">[</span>
+<span class="linenos" data-linenos="19 "></span>            <span class="p">{</span>
+<span class="linenos" data-linenos="20 "></span>                <span class="nt">&quot;text&quot;</span><span class="p">:</span> <span class="s2">&quot;我要完整地学习本节课&quot;</span><span class="p">,</span>
+<span class="linenos" data-linenos="21 "></span>                <span class="nt">&quot;goto&quot;</span><span class="p">:</span> <span class="s2">&quot;1&quot;</span>
+<span class="linenos" data-linenos="22 "></span>            <span class="p">},</span>
+<span class="linenos" data-linenos="23 "></span>            <span class="p">{</span>
+<span class="linenos" data-linenos="24 "></span>                <span class="nt">&quot;text&quot;</span><span class="p">:</span> <span class="s2">&quot;本课程没有演练，重新学习&quot;</span><span class="p">,</span>
+<span class="linenos" data-linenos="25 "></span>                <span class="nt">&quot;goto&quot;</span><span class="p">:</span> <span class="s2">&quot;1&quot;</span>
+<span class="linenos" data-linenos="26 "></span>            <span class="p">}</span>
+<span class="linenos" data-linenos="27 "></span>        <span class="p">]</span>
+<span class="linenos" data-linenos="28 "></span>    <span class="p">}</span>
+<span class="linenos" data-linenos="29 "></span><span class="p">}</span>
+</code></pre></div></p>
+</li>
+</ul>
+</li>
+<li>
+<p>课程知识点详情</p>
+</li>
+</ul>
+<div class="highlight"><pre><span></span><code><span class="linenos" data-linenos="1 "></span><span class="p">{</span>
+<span class="linenos" data-linenos="2 "></span>    <span class="nt">&quot;loc&quot;</span><span class="p">:</span> <span class="s2">&quot;1&quot;</span><span class="p">,</span>  <span class="err">//</span> <span class="err">学习进度</span>
+<span class="linenos" data-linenos="3 "></span>    <span class="nt">&quot;type&quot;</span><span class="p">:</span> <span class="s2">&quot;seperate_line&quot;</span><span class="p">,</span>  <span class="err">//</span> <span class="err">课程流类型</span>
+<span class="linenos" data-linenos="4 "></span>    <span class="nt">&quot;text&quot;</span><span class="p">:</span> <span class="s2">&quot;课程进度：2/2，预估还剩2分钟&quot;</span><span class="p">,</span>  <span class="err">//</span> <span class="err">当前课程进度及剩余时间</span>
+<span class="linenos" data-linenos="5 "></span>    <span class="nt">&quot;content_type&quot;</span><span class="p">:</span> <span class="s2">&quot;content&quot;</span>  <span class="err">//</span> <span class="err">内容类型</span>
+<span class="linenos" data-linenos="6 "></span><span class="p">}</span>
+</code></pre></div>
+<p>2.1.课程知识点子内容详情(无操作配置)</p>
+<div class="highlight"><pre><span></span><code><span class="linenos" data-linenos="1 "></span><span class="p">{</span>
+<span class="linenos" data-linenos="2 "></span>    <span class="nt">&quot;loc&quot;</span><span class="p">:</span> <span class="s2">&quot;1.1&quot;</span><span class="p">,</span>  <span class="err">//</span> <span class="err">学习进度</span>
+<span class="linenos" data-linenos="3 "></span>    <span class="nt">&quot;type&quot;</span><span class="p">:</span> <span class="s2">&quot;&quot;</span><span class="p">,</span>  <span class="err">//</span> <span class="err">课程流类型</span>
+<span class="linenos" data-linenos="4 "></span>    <span class="nt">&quot;info_type&quot;</span><span class="p">:</span> <span class="s2">&quot;&quot;</span><span class="p">,</span> <span class="err">//</span> <span class="err">知识点类型</span>
+<span class="linenos" data-linenos="5 "></span>    <span class="nt">&quot;text&quot;</span><span class="p">:</span> <span class="s2">&quot;xxx&quot;</span><span class="p">,</span>  <span class="err">//</span> <span class="err">知识点具体内容</span>
+<span class="linenos" data-linenos="6 "></span>    <span class="nt">&quot;content_type&quot;</span><span class="p">:</span> <span class="s2">&quot;content&quot;</span>  <span class="err">//</span> <span class="err">内容类型</span>
+<span class="linenos" data-linenos="7 "></span><span class="p">}</span>
+</code></pre></div>
+<p>2.2.课程知识点子内容详情(有操作配置)</p>
+<div class="highlight"><pre><span></span><code><span class="linenos" data-linenos=" 1 "></span><span class="p">{</span>
+<span class="linenos" data-linenos=" 2 "></span>                <span class="nt">&quot;loc&quot;</span><span class="p">:</span> <span class="s2">&quot;1.5&quot;</span><span class="p">,</span>
+<span class="linenos" data-linenos=" 3 "></span>                <span class="nt">&quot;type&quot;</span><span class="p">:</span> <span class="s2">&quot;interaction&quot;</span><span class="p">,</span> <span class="err">//</span> <span class="err">课程流类型</span>
+<span class="linenos" data-linenos=" 4 "></span>                <span class="nt">&quot;info_type&quot;</span><span class="p">:</span> <span class="s2">&quot;&quot;</span><span class="p">,</span> <span class="err">//</span> <span class="err">知识点类型</span>
+<span class="linenos" data-linenos=" 5 "></span>                <span class="nt">&quot;text&quot;</span><span class="p">:</span> <span class="s2">&quot;xxx&quot;</span><span class="p">,</span> <span class="err">//</span> <span class="err">知识点具体内容</span>
+<span class="linenos" data-linenos=" 6 "></span>                <span class="nt">&quot;url&quot;</span><span class="p">:</span> <span class="s2">&quot;&quot;</span><span class="p">,</span>
+<span class="linenos" data-linenos=" 7 "></span>                <span class="nt">&quot;content_type&quot;</span><span class="p">:</span> <span class="s2">&quot;content&quot;</span><span class="p">,</span> <span class="err">//</span> <span class="err">内容类型</span>
+<span class="linenos" data-linenos=" 8 "></span>                <span class="nt">&quot;control_msg&quot;</span><span class="p">:</span> <span class="s2">&quot;&quot;</span><span class="p">,</span>
+<span class="linenos" data-linenos=" 9 "></span>                <span class="nt">&quot;control_type&quot;</span><span class="p">:</span> <span class="s2">&quot;select_opt&quot;</span><span class="p">,</span>
+<span class="linenos" data-linenos="10 "></span>                <span class="nt">&quot;control_param&quot;</span><span class="p">:</span> <span class="p">{</span>
+<span class="linenos" data-linenos="11 "></span>                    <span class="nt">&quot;opt_list&quot;</span><span class="p">:</span> <span class="p">[</span>
+<span class="linenos" data-linenos="12 "></span>                        <span class="p">{</span>
+<span class="linenos" data-linenos="13 "></span>                            <span class="nt">&quot;text&quot;</span><span class="p">:</span> <span class="s2">&quot;&quot;</span><span class="p">,</span>
+<span class="linenos" data-linenos="14 "></span>                            <span class="nt">&quot;goto&quot;</span><span class="p">:</span> <span class="s2">&quot;&quot;</span><span class="p">,</span>
+<span class="linenos" data-linenos="15 "></span>                            <span class="nt">&quot;similarValue&quot;</span><span class="p">:</span> <span class="s2">&quot;&quot;</span><span class="p">,</span>
+<span class="linenos" data-linenos="16 "></span>                            <span class="nt">&quot;representativeValue&quot;</span><span class="p">:</span> <span class="s2">&quot;&quot;</span><span class="p">,</span>
+<span class="linenos" data-linenos="17 "></span>                            <span class="nt">&quot;record&quot;</span><span class="p">:</span> <span class="s2">&quot;&quot;</span>
+<span class="linenos" data-linenos="18 "></span>                        <span class="p">}</span>
+<span class="linenos" data-linenos="19 "></span>                    <span class="p">]</span>
+<span class="linenos" data-linenos="20 "></span>                <span class="p">}</span>
+<span class="linenos" data-linenos="21 "></span>            <span class="p">}</span>
+</code></pre></div>
+<h4 id="_2">转换关系</h4>
                 </article>
             </body>
         </html>
