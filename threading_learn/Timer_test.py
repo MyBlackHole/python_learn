@@ -15,19 +15,24 @@
 """
 
 __author__ = 'Black Hole'
-
-from urllib import request
 from threading import Timer
 
-url = "http://www.python.org"
 
+class H:
+    def __init__(self) -> None:
+        self.a = 'asa'
+        pass
 
-def handler(fh):
-    fh.close()
+    def run(self):
+        t = Timer(4.0, self.handler, [self.a])
+        t.start()
+        return t
 
+    def handler(self, fh):
+        print(fh)
+        self.run()
 
-fh = request.urlopen(url)
-t = Timer(20.0, handler, [fh])
-t.start()
-data = fh.read()
-t.cancel()
+print("end")
+h = H()
+h.run()
+# t.cancel()

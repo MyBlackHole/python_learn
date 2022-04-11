@@ -23,6 +23,9 @@ app = FastAPI()
 def read_item():
     return {"user": "black", "value": "hole"}
 
+@app.post("/ping")
+def post(data:dict):
+    return {"user": "black", "value": "hole"}
 
 
 if __name__ == "__main__":

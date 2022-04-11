@@ -165,8 +165,8 @@ if __name__ == "__main__":
     # Thread(target=func).start()
     import uvicorn
 
-    # uvicorn.run(app="app:app", host="0.0.0.0", port=8080, reload=True)
-    uvicorn.run(app="app:app", host="::", port=8080, reload=True)
+    uvicorn.run(app="app:app", host="0.0.0.0", port=8080, reload=True)
+    # uvicorn.run(app="app:app", host="::", port=8080, reload=True)
     # uvicorn.run(app, host="0.0.0.0", port=8010, ssl_keyfile='secret.key', ssl_certfile='secret.pem')
     # import os
     #
