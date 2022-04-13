@@ -1,8 +1,10 @@
 # coding=utf-8
-from matplotlib import pyplot as plt
 from matplotlib import font_manager
+from matplotlib import pyplot as plt
 
-my_font = font_manager.FontProperties(fname="/usr/share/fonts/opentype/noto/NotoSansCJK-Light.ttc")
+my_font = font_manager.FontProperties(
+    fname="/usr/share/fonts/opentype/noto/NotoSansCJK-Light.ttc"
+)
 
 y = [1, 0, 1, 1, 2, 4, 3, 2, 3, 4, 4, 5, 6, 5, 4, 3, 3, 1, 1, 1]
 x = range(11, 31)

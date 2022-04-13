@@ -14,9 +14,9 @@
 -------------------------------------------------
 """
 
-__author__ = 'Black Hole'
+__author__ = "Black Hole"
 
-from attr import attrs, attrib
+from attr import attrib, attrs
 
 
 class RoughClass(object):
@@ -25,7 +25,7 @@ class RoughClass(object):
         self.b = b
 
     def __repr__(self):
-        return f'RoughClass(a={self.a}, b={self.b})'
+        return f"RoughClass(a={self.a}, b={self.b})"
 
     def __eq__(self, other):
         if other.__class__ is self.__class__:

@@ -13,11 +13,11 @@
 -------------------------------------------------
 """
 
-__author__ = 'Black Hole'
+__author__ = "Black Hole"
 
 from configparser import ConfigParser
 
 cfg = ConfigParser()
-cfg.read('config.ini')
+cfg.read("config.ini")
 print(cfg.sections())
-print(cfg.get('installation', 'library'))
+print(cfg.get("installation", "library"))

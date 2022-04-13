@@ -13,11 +13,11 @@
 -------------------------------------------------
 """
 
-__author__ = 'Black Hole'
+__author__ = "Black Hole"
 
 from typing import List
 
-from attr import attrs, attrib
+from attr import attrib, attrs
 from cattr import structure, unstructure
 
 
@@ -40,10 +40,10 @@ class Line(object):
     points = attrib(type=List[Point])
 
 
-if __name__ == '__main__':
+if __name__ == "__main__":
     line = Line(color=Color(), points=[Point(i, i) for i in range(5)])
-    print('Object:', line)
+    print("Object:", line)
     json = unstructure(line)
-    print('JSON:', json)
+    print("JSON:", json)
     line = structure(json, Line)
-    print('Object:', line)
+    print("Object:", line)

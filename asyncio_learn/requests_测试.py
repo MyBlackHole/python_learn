@@ -12,7 +12,7 @@
 -------------------------------------------------
 """
 
-__author__ = 'Black Hole'
+__author__ = "Black Hole"
 
 import asyncio
 
@@ -40,7 +40,7 @@ tasks = []
 main_loop = asyncio.new_event_loop()
 asyncio.set_event_loop(main_loop)
 for i in range(10):
-    task = asyncio.ensure_future(func1(r'http://www.google.com/', i), loop=main_loop)
+    task = asyncio.ensure_future(func1(r"http://www.google.com/", i), loop=main_loop)
     tasks.append(task)
 main_loop.run_until_complete(asyncio.wait(tasks))
 main_loop.close()

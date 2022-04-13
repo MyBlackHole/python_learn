@@ -1,7 +1,7 @@
 import base64
-from Crypto.Cipher import AES
-
 import random
+
+from Crypto.Cipher import AES
 
 
 def pkcs7padding(text):
@@ -13,9 +13,9 @@ def pkcs7padding(text):
     """
     bs = AES.block_size  # 16
     length = len(text)
-    bytes_length = len(bytes(text, encoding='utf-8'))
+    bytes_length = len(bytes(text, encoding="utf-8"))
     # tips：utf-8编码时，英文占1个byte，而中文占3个byte
-    padding_size = length if(bytes_length == length) else bytes_length
+    padding_size = length if (bytes_length == length) else bytes_length
     padding = bs - padding_size % bs
     # tips：chr(padding)看与其它语言的约定，有的会使用'\0'
     padding_text = chr(padding) * padding
@@ -29,8 +29,8 @@ def pkcs7unpadding(text):
     :return:
     """
     length = len(text)
-    unpadding = ord(text[length-1])
-    return text[0:length-unpadding]
+    unpadding = ord(text[length - 1])
+    return text[0 : length - unpadding]
 
 
 def encrypt(key, content):
@@ -43,15 +43,15 @@ def encrypt(key, content):
     :param content: 加密内容
     :return:
     """
-    key_bytes = bytes(key, encoding='utf-8')
+    key_bytes = bytes(key, encoding="utf-8")
     iv = key_bytes
     cipher = AES.new(key_bytes, AES.MODE_CBC, iv)
     # 处理明文
     content_padding = pkcs7padding(content)
     # 加密
-    encrypt_bytes = cipher.encrypt(bytes(content_padding, encoding='utf-8'))
+    encrypt_bytes = cipher.encrypt(bytes(content_padding, encoding="utf-8"))
     # 重新编码
-    result = str(base64.b64encode(encrypt_bytes), encoding='utf-8')
+    result = str(base64.b64encode(encrypt_bytes), encoding="utf-8")
     return result
 
 
@@ -65,7 +65,7 @@ def decrypt(key, content):
     :param content:
     :return:
     """
-    key_bytes = bytes(key, encoding='utf-8')
+    key_bytes = bytes(key, encoding="utf-8")
     iv = key_bytes
     cipher = AES.new(key_bytes, AES.MODE_CBC, iv)
     # base64解码
@@ -73,7 +73,7 @@ def decrypt(key, content):
     # 解密
     decrypt_bytes = cipher.decrypt(encrypt_bytes)
     # 重新编码
-    result = str(decrypt_bytes, encoding='utf-8')
+    result = str(decrypt_bytes, encoding="utf-8")
     # 去除填充内容
     result = pkcs7unpadding(result)
     return result
@@ -85,9 +85,9 @@ def get_key(n):
     :return:
     """
     c_length = int(n)
-    source = 'ABCDEFGHJKMNPQRSTWXYZabcdefhijkmnprstwxyz2345678'
+    source = "ABCDEFGHJKMNPQRSTWXYZabcdefhijkmnprstwxyz2345678"
     length = len(source) - 1
-    result = ''
+    result = ""
     for i in range(c_length):
         result += source[random.randint(0, length)]
     return result
@@ -96,9 +96,9 @@ def get_key(n):
 # Test
 # 非16字节的情况
 aes_key = get_key(16)
-print('aes_key:' + aes_key)
+print("aes_key:" + aes_key)
 # 对英文加密
-source_en = 'Hello!'
+source_en = "Hello!"
 encrypt_en = encrypt(aes_key, source_en)
 print(encrypt_en)
 # 解密
@@ -106,7 +106,7 @@ decrypt_en = decrypt(aes_key, encrypt_en)
 print(decrypt_en)
 print(source_en == decrypt_en)
 # 中英文混合加密
-source_mixed = 'Hello, 韩- 梅 -梅'
+source_mixed = "Hello, 韩- 梅 -梅"
 encrypt_mixed = encrypt(aes_key, source_mixed)
 print(encrypt_mixed)
 decrypt_mixed = decrypt(aes_key, encrypt_mixed)
@@ -114,14 +114,14 @@ print(decrypt_mixed)
 print(decrypt_mixed == source_mixed)
 
 # 刚好16字节的情况
-en_16 = 'abcdefgj10124567'
+en_16 = "abcdefgj10124567"
 encrypt_en = encrypt(aes_key, en_16)
 print(encrypt_en)
 # 解密
 decrypt_en = decrypt(aes_key, encrypt_en)
 print(decrypt_en)
 print(en_16 == decrypt_en)
-mix_16 = 'abx张三丰12sa'
+mix_16 = "abx张三丰12sa"
 encrypt_mixed = encrypt(aes_key, mix_16)
 print(encrypt_mixed)
 decrypt_mixed = decrypt(aes_key, encrypt_mixed)

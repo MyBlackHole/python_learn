@@ -46,6 +46,9 @@ test = test['b73378d8750b11ec9e28e0d55eeff354']
 
 # 查询
 data = test.find({"sales_style_features.工作能力类型": "专业型"})
+# data.skip(1)
+# data.limit(1)
+data.sort([("teacher_id",1)])
 print(list(data))
 # data = test.find({"alexa": "1"}, {"_id": 0})
 # print(len(list(data)))

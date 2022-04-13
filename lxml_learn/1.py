@@ -13,11 +13,11 @@
 -------------------------------------------------
 """
 
-__author__ = 'Black Hole'
+__author__ = "Black Hole"
 
 from lxml import etree
 
-with open('dz.html', 'r', encoding='utf-8') as f:
+with open("dz.html", "r", encoding="utf-8") as f:
     text = f.read()
 
 print(text)

@@ -11,6 +11,6 @@ eve_2 = ElementTree.SubElement(eve_1, "age", attrib={"checked": "no"})
 tree = ElementTree.ElementTree(eve_1)
 
 # 写入文件
-tree.write('learn.xml', encoding='utf-8', short_empty_elements=False)
+tree.write("learn.xml", encoding="utf-8", short_empty_elements=False)
 
 print(tostring(tree.getroot()))

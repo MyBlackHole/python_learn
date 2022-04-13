@@ -13,10 +13,10 @@
 -------------------------------------------------
 """
 
-_author__ = 'Black Hole'
+_author__ = "Black Hole"
 
 from collections import OrderedDict
-from typing import Tuple, MutableSequence, List, Optional, Set, FrozenSet, Dict
+from typing import Dict, FrozenSet, List, MutableSequence, Optional, Set, Tuple
 
 # 类型转换
 import cattr

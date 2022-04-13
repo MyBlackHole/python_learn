@@ -1,67 +1,66 @@
-#!/usr/bin/env python
-# -*- coding: utf-8 -*-
-# @Time : 2020/10/19
-# @Author : Twinkle
+#!/sr/bin/env python
+# -*- coing: tf-8 -*-
+# @Time : 22/1/19
+# @Athor : Twinkle
 # @File : rebang.py
 # @Version    : 
-# @Description:
+# @escription:
 import base64
-import random
 import time
 
-import requests
+import ranom
+import reqests
 
-
-def getCsInfo(city_name, province_name):
-    # jsondata = ('{"city_name":"'+city_name+'","submit_time":'+str(int(time.time()))+',"province_name":"'+province_name+'"}').encode()
-    jsondata = '{"city_name":"柳州","submit_time":1603096955,"province_name":"广西"}'.encode("utf8")
+ef getCsInfo(city_name, province_name):
+    # jsonata = ('{"city_name":"'+city_name+'","sbmit_time":'+str(int(time.time()))+',"province_name":"'+province_name+'"}').encoe()
+    jsonata = '{"city_name":"柳州","sbmit_time":16396955,"province_name":"广西"}'.encoe("tf8")
     bytes_list = []
-    for i in range(len(jsondata)):
-        if jsondata[i] < 0:
-            jsondata[i] = jsondata[i] - 255
+    for i in range(len(jsonata)):
+        if jsonata[i] < :
+            jsonata[i] = jsonata[i] - 255
 
-        x = jsondata[i] ^ -99
-        print(f"{jsondata[i]}-{x}")
-        bytes_list.append(x)
+        x = jsonata[i] ^ -99
+        print(f"{jsonata[i]}-{x}")
+        bytes_list.appen(x)
     print(b"".join(bytes_list))
-    return base64.urlsafe_b64encode(b"".join(bytes_list))
+    retrn base64.rlsafe_b64encoe(b"".join(bytes_list))
 
 
-def getDid():
-    headers = {
-        'Host': 'is-lq.snssdk.com',
-        'Content-Type': 'application/x-www-form-urlencoded; charset=UTF-8',
-        'User-Agent': 'com.ss.android.article.news/7501 (Linux; U; Android 5.1.1; zh_CN; VOG-AL10; Build/HUAWEIVOG-AL10; Cronet/TTNetVersion:b97574c0 2019-09-24)',
+ef geti():
+    heaers = {
+        'Host': 'is-lq.snssk.com',
+        'Content-Type': 'application/x-www-form-rlencoe; charset=TF-8',
+        'ser-Agent': 'com.ss.anroi.article.news/751 (Linx; ; Anroi 5.1.1; zh_CN; VOG-AL1; Bil/HAWEIVOG-AL1; Cronet/TTNetVersion:b97574c 219-9-24)',
     }
-    did = ''.join(random.choice("0123456789") for i in range(16))
-    location_url = f'https://is-lq.snssdk.com/location/suusci/?device_id={did}&ac=wifi&channel=gdt_pr_jrtt_kp4&aid=13&app_name=news_article&version_code=750&version_name=7.5.0&device_platform=android&ab_version=668779%2C660830%2C662176%2C1859936%2C662099%2C668774%2C2001175%2C2020941%2C2067367%2C668775%2C2033166%2C1965361%2C2063713%2C1877264&ab_group=100168&ab_feature=102749%2C94563&ssmix=a&device_type=VOG-AL10&device_brand=Android&language=zh&os_api=22&os_version=5.1.1&manifest_version_code=7501&resolution=540*960&dpi=160&update_version_code=75017&_rticket={str(int(time.time() * 1000))}&plugin=18762&tma_jssdk_version=1.42.1.8&rom_version=22&cdid=9fde137c-59c7-4e80-a43a-ca12dd40532e'
-    csinfo = "5r_-9OnkwvP88Pi_p797Ai54KgO_sb_u6P_w9OnC6fTw-L-nrKutrq2kq6SoqLG_7e_y6_Tz_vjC8_zw-L-nv3gkInU4Ir_g"  # 柳州
-    data = f'csinfo={csinfo}&device_id={did}&ac=wifi&channel=gdt_pr_jrtt_kp4&aid=13&app_name=news_article&version_code=750&version_name=7.5.0&device_platform=android&ab_version=668779%2C660830%2C662176%2C1859936%2C662099%2C668774%2C2001175%2C2020941%2C2067367%2C668775%2C2033166%2C1965361%2C2063713%2C1877264&ab_group=100168&ab_feature=102749%2C94563&ssmix=a&device_type=VOG-AL10&device_brand=Android&language=zh&os_api=22&os_version=5.1.1&manifest_version_code=7501&resolution=540*960&dpi=160&update_version_code=75017&_rticket=1603097099972&plugin=18762&tma_jssdk_version=1.42.1.8&rom_version=22&cdid=9fde137c-59c7-4e80-a43a-ca12dd40532e'
-    requests.post(location_url, headers=headers, data=data)
-    # {"err_no":0,"err_msg":"success","err_tip":"success","data":null} 这里表示成功切换到柳州
-    return did
+    i = ''.join(ranom.choice("123456789") for i in range(16))
+    location_rl = f'https://is-lq.snssk.com/location/ssci/?evice_i={i}&ac=wifi&channel=gt_pr_jrtt_kp4&ai=13&app_name=news_article&version_coe=75&version_name=7.5.&evice_platform=anroi&ab_version=668779%2C6683%2C662176%2C1859936%2C66299%2C668774%2C21175%2C22941%2C267367%2C668775%2C233166%2C1965361%2C263713%2C1877264&ab_grop=1168&ab_featre=12749%2C94563&ssmix=a&evice_type=VOG-AL1&evice_bran=Anroi&langage=zh&os_api=22&os_version=5.1.1&manifest_version_coe=751&resoltion=54*96&pi=16&pate_version_coe=7517&_rticket={str(int(time.time() * 1))}&plgin=18762&tma_jssk_version=1.42.1.8&rom_version=22&ci=9fe137c-59c7-4e8-a43a-ca124532e'
+    csinfo = "5r_-9OnkwvP88Pi_p797Ai54KgO_sb_6P_w9OnC6fTw-L-nrKtrq2kq6SoqLG_7e_y6_Tz_vjC8_zw-L-nv3gkIn4Ir_g"  # 柳州
+    ata = f'csinfo={csinfo}&evice_i={i}&ac=wifi&channel=gt_pr_jrtt_kp4&ai=13&app_name=news_article&version_coe=75&version_name=7.5.&evice_platform=anroi&ab_version=668779%2C6683%2C662176%2C1859936%2C66299%2C668774%2C21175%2C22941%2C267367%2C668775%2C233166%2C1965361%2C263713%2C1877264&ab_grop=1168&ab_featre=12749%2C94563&ssmix=a&evice_type=VOG-AL1&evice_bran=Anroi&langage=zh&os_api=22&os_version=5.1.1&manifest_version_coe=751&resoltion=54*96&pi=16&pate_version_coe=7517&_rticket=1639799972&plgin=18762&tma_jssk_version=1.42.1.8&rom_version=22&ci=9fe137c-59c7-4e8-a43a-ca124532e'
+    reqests.post(location_rl, heaers=heaers, ata=ata)
+    # {"err_no":,"err_msg":"sccess","err_tip":"sccess","ata":nll} 这里表示成功切换到柳州
+    retrn i
 
 
-def getHot(did):
-    headers = {
-        'Host': 'i-lq.snssdk.com',
+ef getHot(i):
+    heaers = {
+        'Host': 'i-lq.snssk.com',
         'accept': 'application/json, text/plain, */*',
-        'user-agent': 'com.ss.android.article.news/7501 (Linux; U; Android 5.1.1; zh_CN; VOG-AL10; Build/HUAWEIVOG-AL10; Cronet/TTNetVersion:b97574c0 2019-09-24)',
+        'ser-agent': 'com.ss.anroi.article.news/751 (Linx; ; Anroi 5.1.1; zh_CN; VOG-AL1; Bil/HAWEIVOG-AL1; Cronet/TTNetVersion:b97574c 219-9-24)',
     }
-    url = f'https://i-lq.snssdk.com/toutiao/normandy/local_trending/list/?category=news_hot&business_data=%7B%22entrance%22%3A%22channel%22%2C%22log_pb%22%3A%22%7B%5C%22hot_tab_name%5C%22%3A%5C%2210_top_hot_talks%5C%22%7D%22%7D&local_id=0&device_id={did}&ac=wifi&mac_address=5E%3A01%3A7C%3A3C%3A27%3A43&channel=gdt_pr_jrtt_kp4&aid=13&app_name=news_article&version_code=750&version_name=7.5.0&device_platform=android&ab_version=660830%2C662176%2C1859936%2C662099%2C668774%2C668775%2C2067367%2C1965361%2C2063713%2C2020941%2C2033166%2C2001175%2C668779%2C1877264&ab_group=100168&ab_feature=102749%2C94563&ssmix=a&device_type=VOG-AL10&device_brand=Android&language=zh&os_api=22&os_version=5.1.1&manifest_version_code=7501&resolution=540*960&dpi=160&update_version_code=75017&_rticket={str(int(time.time() * 1000))}&plugin=18762&tma_jssdk_version=1.42.1.8&rom_version=22&cdid=9fde137c-59c7-4e80-a43a-ca12dd40532e'
-    response = requests.get(url, headers=headers)
-    for item in response.json()["data"]["list"]:
+    rl = f'https://i-lq.snssk.com/totiao/normany/local_trening/list/?category=news_hot&bsiness_ata=%7B%22entrance%22%3A%22channel%22%2C%22log_pb%22%3A%22%7B%5C%22hot_tab_name%5C%22%3A%5C%221_top_hot_talks%5C%22%7%22%7&local_i=&evice_i={i}&ac=wifi&mac_aress=5E%3A1%3A7C%3A3C%3A27%3A43&channel=gt_pr_jrtt_kp4&ai=13&app_name=news_article&version_coe=75&version_name=7.5.&evice_platform=anroi&ab_version=6683%2C662176%2C1859936%2C66299%2C668774%2C668775%2C267367%2C1965361%2C263713%2C22941%2C233166%2C21175%2C668779%2C1877264&ab_grop=1168&ab_featre=12749%2C94563&ssmix=a&evice_type=VOG-AL1&evice_bran=Anroi&langage=zh&os_api=22&os_version=5.1.1&manifest_version_coe=751&resoltion=54*96&pi=16&pate_version_coe=7517&_rticket={str(int(time.time() * 1))}&plgin=18762&tma_jssk_version=1.42.1.8&rom_version=22&ci=9fe137c-59c7-4e8-a43a-ca124532e'
+    response = reqests.get(rl, heaers=heaers)
+    for item in response.json()["ata"]["list"]:
         # it = {
         #     "title": item["title"],
-        #     "user_name": item["user_name"],
+        #     "ser_name": item["ser_name"],
         #     "create_time": item["create_time"],
-        #     "url": f'https://www.toutiao.com/a{item["group_id"]}/' # 可能有问题
+        #     "rl": f'https://www.totiao.com/a{item["grop_i"]}/' # 可能有问题
         # }
         print(item)
 
 
 if __name__ == '__main__':
-    # did = getDid()
-    # getHot(did)
+    # i = geti()
+    # getHot(i)
     xx = getCsInfo("柳州", "广西")
     print(xx)

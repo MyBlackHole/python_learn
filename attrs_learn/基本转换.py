@@ -13,10 +13,10 @@
 -------------------------------------------------
 """
 
-__author__ = 'Black Hole'
+__author__ = "Black Hole"
 
 # 基本转换
-from attr import attrs, attrib
+from attr import attrib, attrs
 
 
 @attrs
@@ -24,13 +24,13 @@ class Point(object):
     x = attrib(type=int, default=0)
     y = attrib(type=int, default=0)
     z = attrib(type=list, default=[])
-    i = attrib(type=str, default='')
+    i = attrib(type=str, default="")
 
     # def __init__(self, i):
     #     self.i = ''
 
 
-if __name__ == '__main__':
+if __name__ == "__main__":
     # point = Point(x=1, y=2, z=[1, 2])
     # print(asdict(point))
     # print(type(asdict(point)))
@@ -42,5 +42,5 @@ if __name__ == '__main__':
     # print(Point(x=1, y=1, z=[]) == Point(x=2, y=1, z=[]))
     # if Point(x=1, y=2, z=[]) in [Point(x=1, y=1, z=[])]:
     #     print('ok')
-    print(Point(x=1, y=1, z=[1], i='b') < Point(x=1, y=1, z=[1], i='c'))
+    print(Point(x=1, y=1, z=[1], i="b") < Point(x=1, y=1, z=[1], i="c"))
     # print(Point().x)
