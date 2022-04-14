@@ -16,9 +16,8 @@ Change Activity:
 
 from uiautomator import Device
 
-
 # 连接设备
-d = Device('cae5ef26')
+d = Device("cae5ef26")
 
 # # 打开屏幕
 # d.screen.on()
@@ -37,7 +36,7 @@ d.press.home()
 
 # 屏幕边缘下滑
 # d().swipe.down(steps=10)
-print(d.info['displayHeight'], d.info['displayWidth'])
+print(d.info["displayHeight"], d.info["displayWidth"])
 
 # # 屏幕左滑
 # d.swipe(800, 500, 50, 500, steps=10)
@@ -81,7 +80,7 @@ print(d.info['displayHeight'], d.info['displayWidth'])
 # d.long_click(x, y)
 
 
-# # 按下键码0×07（‘0’）与ALT （0X02） 
+# # 按下键码0×07（‘0’）与ALT （0X02）
 # d.press(0x07,0X02)
 
 
@@ -122,8 +121,7 @@ print(d.info['displayHeight'], d.info['displayWidth'])
 # .press("back", "home")
 
 
-d.watcher("AUTO_FC_WHEN_ANR").when(text="ANR").when(text="Wait") \
-                             .click(text="支付宝")
+d.watcher("AUTO_FC_WHEN_ANR").when(text="ANR").when(text="Wait").click(text="支付宝")
 
 
 # （监视器被触发为‘真’，反之则为‘假’）
@@ -153,14 +151,13 @@ d.watchers.remove()
 # d.watchers.run()
 
 
-
 ### 处理程序
 
 # # （返回True来中断处理程序回调函数的循环）
 # def fc_close(device):
 #   if device(text='Force Close').exists:
 #     device(text='Force Close').click()
-#   return True  
+#   return True
 
 # # （打开处理程序返回函数j
 # d.handlers.on(fc_close)
@@ -168,7 +165,7 @@ d.watchers.remove()
 # # （关闭处理程序返回函数）
 # d.handlers.off(fc_close)
 
-d(text='微信').click()
+d(text="微信").click()
 
 # # 获取当前窗口信息
 # print(d.info)

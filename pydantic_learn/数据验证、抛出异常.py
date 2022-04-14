@@ -12,12 +12,12 @@
 -------------------------------------------------
 """
 
-__author__ = 'Black Hole'
+__author__ = "Black Hole"
 
 from datetime import datetime
 from typing import List, Optional
 
-from pydantic import ValidationError, BaseModel
+from pydantic import BaseModel, ValidationError
 from pydantic.dataclasses import dataclass
 
 
@@ -25,11 +25,11 @@ from pydantic.dataclasses import dataclass
 @dataclass
 class User:
     id: int
-    name: str = 'John Doe'
+    name: str = "John Doe"
     signup_ts: datetime = None
 
 
-user = User(id='42', signup_ts='2032-06-21T12:00')
+user = User(id="42", signup_ts="2032-06-21T12:00")
 # -> User(id=42, name='John Doe', signup_ts=datetime.datetime(2032, 6, 21, 12, 0))
 print(user)
 
@@ -37,12 +37,12 @@ print(user)
 # 方式二
 class User(BaseModel):
     id: int
-    name = 'John Doe'
+    name = "John Doe"
     signup_ts: Optional[datetime] = None
     friends: List[int] = []
 
 
 try:
-    User(signup_ts='broken', friends=[1, 2, 'not number'])
+    User(signup_ts="broken", friends=[1, 2, "not number"])
 except ValidationError as e:
     print(e.json())

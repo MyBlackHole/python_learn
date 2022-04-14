@@ -12,7 +12,7 @@
 -------------------------------------------------
 """
 
-__author__ = 'Black Hole'
+__author__ = "Black Hole"
 
 from typing import Optional
 
@@ -23,7 +23,10 @@ app = FastAPI()
 
 @app.get("/users/{user_id}")
 async def read_user_item(
-        user_id: int, item_id: Optional[int] = 0, q: Optional[str] = None, short: bool = False
+    user_id: int,
+    item_id: Optional[int] = 0,
+    q: Optional[str] = None,
+    short: bool = False,
 ):
     item = {"item_id": item_id, "owner_id": user_id}
     if q:

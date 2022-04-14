@@ -12,6 +12,6 @@
 -------------------------------------------------
 """
 
-__author__ = 'Black Hole'
+__author__ = "Black Hole"
 
 import aioredis

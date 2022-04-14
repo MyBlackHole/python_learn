@@ -12,7 +12,7 @@
 -------------------------------------------------
 """
 
-__author__ = 'Black Hole'
+__author__ = "Black Hole"
 
 import asyncio
 
@@ -22,7 +22,9 @@ from loguru import logger
 
 # 定义异步函数
 async def fetch(url):
-    async with aiohttp.ClientSession(connector=aiohttp.TCPConnector(ssl=False)) as session:
+    async with aiohttp.ClientSession(
+        connector=aiohttp.TCPConnector(ssl=False)
+    ) as session:
         # async with session.get(url) as response:
         #     text = await response.read()
         #     logger.info(text)
@@ -35,23 +37,27 @@ async def fetch(url):
 async def request_url(url):
     resp_dict = {}
     try:
-        async with aiohttp.ClientSession(connector=aiohttp.TCPConnector(ssl=False)) as session:
+        async with aiohttp.ClientSession(
+            connector=aiohttp.TCPConnector(ssl=False)
+        ) as session:
             resp = await session.get(url)
             if resp.status == 200:
                 real_url = str(resp.real_url)
-                text = await resp.text(errors='ignore')
+                text = await resp.text(errors="ignore")
                 resp_dict = {
-                    'text': text,
-                    'status': resp.status,
-                    'real_url': real_url,
-                    'cookie': resp.cookies
+                    "text": text,
+                    "status": resp.status,
+                    "real_url": real_url,
+                    "cookie": resp.cookies,
                 }
             else:
-                logger.error(f'访问{url}失败,状态码{resp.status}')
+                logger.error(f"访问{url}失败,状态码{resp.status}")
 
         # logger.info(resp_dict)
     except Exception as e:
-        logger.error(f'访问{url.encode("utf-8", "ignore").decode("utf-8", "ignore")},原因：{e}')
+        logger.error(
+            f'访问{url.encode("utf-8", "ignore").decode("utf-8", "ignore")},原因：{e}'
+        )
     return resp_dict
 
 
@@ -71,7 +77,7 @@ def run(num: int, url: str):
     print(len(data_list))
 
 
-if __name__ == '__main__':
+if __name__ == "__main__":
     # url_test = 'http://dispatch.yunrunyuqing.com:38082/ScheduleDispatch/dispatch?type=3'
-    url_test = 'https://m.weibo.cn/api/container/getIndex?from[]=feed&from[]=feed&loc[]=nickname&loc[]=nickname&loc[]=nickname&is_all[]=1%3Ffrom%3Dfeed&is_all[]=1&is_all[]=1&jumpfrom=weibocom&type=uid&value=5615627418&containerid=1076035615627418&since_id=4580717352725030'
+    url_test = "https://m.weibo.cn/api/container/getIndex?from[]=feed&from[]=feed&loc[]=nickname&loc[]=nickname&loc[]=nickname&is_all[]=1%3Ffrom%3Dfeed&is_all[]=1&is_all[]=1&jumpfrom=weibocom&type=uid&value=5615627418&containerid=1076035615627418&since_id=4580717352725030"
     run(500, url=url_test)

@@ -12,16 +12,16 @@
 -------------------------------------------------
 """
 
-__author__ = 'Black Hole'
+__author__ = "Black Hole"
 
-from tkinter import Frame, Label, Button
+from tkinter import Button, Frame, Label
 
 
 class Application(Frame):
     def __init__(self, master=None):
         Frame.__init__(self, master)
-        self.quit_button = Button(self, text='Quit', command=self.quit)
-        self.hello_label = Label(self, text='Hello, world!')
+        self.quit_button = Button(self, text="Quit", command=self.quit)
+        self.hello_label = Label(self, text="Hello, world!")
         self.pack()
         self.createWidgets()
 
@@ -30,9 +30,9 @@ class Application(Frame):
         self.quit_button.pack()
 
 
-if __name__ == '__main__':
+if __name__ == "__main__":
     app = Application()
     # 设置窗口标题:
-    app.master.title('Hello World')
+    app.master.title("Hello World")
     # 主消息循环:
     app.mainloop()

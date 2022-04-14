@@ -152,4 +152,3 @@ from typing import Union
 data = Union[list, str, None]
 
 i: data = None
-

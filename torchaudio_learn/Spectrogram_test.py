@@ -1,5 +1,5 @@
-import torchaudio
 import matplotlib.pyplot as plt
+import torchaudio
 
 filename = "201.wav"
 waveform, sample_rate = torchaudio.load(filename)
@@ -12,5 +12,5 @@ specgram = torchaudio.transforms.Spectrogram()(waveform)
 print("Shape of spectrogram: {}".format(specgram.size()))
 
 plt.figure()
-plt.imshow(specgram.log2()[0,:,:].numpy(), cmap='gray')
+plt.imshow(specgram.log2()[0, :, :].numpy(), cmap="gray")
 plt.show()

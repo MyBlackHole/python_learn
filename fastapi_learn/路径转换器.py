@@ -12,7 +12,7 @@
 -------------------------------------------------
 """
 
-__author__ = 'Black Hole'
+__author__ = "Black Hole"
 
 from fastapi import FastAPI
 
@@ -26,4 +26,5 @@ async def read_file(file_path: str):
 
 if __name__ == "__main__":
     import uvicorn
+
     uvicorn.run(app)

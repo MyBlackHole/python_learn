@@ -12,7 +12,7 @@
 -------------------------------------------------
 """
 
-__author__ = 'Black Hole'
+__author__ = "Black Hole"
 
 from pydantic import HttpUrl
 from pydantic.dataclasses import dataclass
@@ -28,6 +28,6 @@ class Navbar:
     button: NavbarButton
 
 
-navbar = Navbar(button=('https://example.com',))
+navbar = Navbar(button=("https://example.com",))
 print(navbar)
 # > Navbar(button=NavbarButton(href='https://example.com'))

@@ -13,7 +13,7 @@
 -------------------------------------------------
 """
 
-__author__ = 'Black Hole'
+__author__ = "Black Hole"
 
 # encoding=utf-8
 import sys
@@ -28,7 +28,7 @@ def run_timing(func: Callable):
         start_time = time.time()
         data = func(*args, **kwargs)
         end_start = time.time()
-        logger.info(f' 方法：{func.__name__} 运行时间：{end_start - start_time} ')
+        logger.info(f" 方法：{func.__name__} 运行时间：{end_start - start_time} ")
         return data
 
     return run

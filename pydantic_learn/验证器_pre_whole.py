@@ -12,20 +12,20 @@
 -------------------------------------------------
 """
 
-__author__ = 'Black Hole'
+__author__ = "Black Hole"
 
 # pre和whole验证
 import json
 from typing import List
 
-from pydantic import BaseModel, validator, ValidationError
+from pydantic import BaseModel, ValidationError, validator
 
 
 class DemoModel(BaseModel):
     numbers: List[int] = []
     people: List[str] = []
 
-    @validator('people', 'numbers', pre=True, whole=True)
+    @validator("people", "numbers", pre=True, whole=True)
     def json_decode(cls, v):
         if isinstance(v, str):
             try:
@@ -34,23 +34,23 @@ class DemoModel(BaseModel):
                 pass
         return v
 
-    @validator('numbers')
+    @validator("numbers")
     def check_numbers_low(cls, v):
         if v > 4:
-            raise ValueError(f'number too large {v} > 4')
+            raise ValueError(f"number too large {v} > 4")
         return v
 
-    @validator('numbers', whole=True)
+    @validator("numbers", whole=True)
     def check_sum_numbers_low(cls, v):
         if sum(v) > 8:
-            raise ValueError(f'sum of numbers greater than 8')
+            raise ValueError(f"sum of numbers greater than 8")
         return v
 
 
 if __name__ == "__main__":
-    print(DemoModel(numbers='[1, 2, 1, 3]'))
+    print(DemoModel(numbers="[1, 2, 1, 3]"))
     try:
-        DemoModel(numbers='[1, 2, 5]')
+        DemoModel(numbers="[1, 2, 5]")
     except ValidationError as e:
         print(e)
 

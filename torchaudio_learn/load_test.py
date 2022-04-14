@@ -1,5 +1,5 @@
-import torchaudio
 import matplotlib.pyplot as plt
+import torchaudio
 
 filename = "201.wav"
 waveform, sample_rate = torchaudio.load(filename)

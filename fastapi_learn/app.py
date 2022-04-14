@@ -12,12 +12,13 @@
 -------------------------------------------------
 """
 
-__author__ = 'Black Hole'
+__author__ = "Black Hole"
 from typing import Optional
 
 from fastapi import FastAPI, Response
-from pydantic import BaseModel
 from fastapi.middleware.cors import CORSMiddleware
+from pydantic import BaseModel
+
 # from fastapi.params import Query
 
 app = FastAPI()
@@ -30,14 +31,16 @@ app.add_middleware(
     allow_headers=["*"],
 )
 
+
 class Item(BaseModel):
-  username: str
-  password: str
+    username: str
+    password: str
     # description: Optional[str] = None
     # price: float
     # tax: Optional[float] = None
     # json1: dict
     # text: Json
+
 
 # access-control-allow-credentials: true
 # access-control-allow-headers: content-type
@@ -65,8 +68,8 @@ class Item(BaseModel):
 
 @app.post("/api/user/login")
 def read_item(item: Item, response: Response):
-    response.headers["access-control-allow-origin"]= "*"
-    return { "code": 200, "msg": None, "data": { "Access-Token":"token_admin_token"}}
+    response.headers["access-control-allow-origin"] = "*"
+    return {"code": 200, "msg": None, "data": {"Access-Token": "token_admin_token"}}
 
 
 # @app.options("/api/user/logout")
@@ -80,22 +83,26 @@ def read_item(item: Item, response: Response):
 #     r  = Response(headers=headers)
 #     return r
 
+
 @app.delete("/api/user/logout")
 def logout(response: Response):
-    response.headers["access-control-allow-credentials"]= "true"
-    response.headers["access-control-allow-origin"]= "*"
+    response.headers["access-control-allow-credentials"] = "true"
+    response.headers["access-control-allow-origin"] = "*"
     # Failed to load resource: net::ERR_FAILED
     return {"code": 200, "msg": None, "data": {"source"}}
+
 
 @app.get("/api/user/getUser")
 def getUser():
     # Failed to load resource: net::ERR_FAILED
     return {"code": 200, "msg": None, "data": {"username": "admin"}}
 
+
 @app.get("/api/user/getRoute")
 def getRoute():
     # Failed to load resource: net::ERR_FAILED
     return {"code": 200, "msg": None, "data": {"username": "admin"}}
+
 
 @app.get(
     "/api/getProductList",
@@ -104,26 +111,28 @@ def getRoute():
 def logout():
     data_list = [
         {
-          "name": "string",
-          "product_id": "string",
-          "data": {
+            "name": "string",
+            "product_id": "string",
+            "data": {
                 "a": "a",
                 "b": "b",
                 "c": "c",
                 "d": "d",
-            }
+            },
         },
         {
-          "name": "string",
-          "product_id": "string",
-          "data": {
+            "name": "string",
+            "product_id": "string",
+            "data": {
                 "a": "a",
                 "b": "b",
                 "c": "c",
-            }
-        }
+            },
+        },
     ]
     return {"code": 200, "msg": None, "data": data_list}
+
+
 # @app.post("/post")
 # def post_item(item: Item, item1: Item = Query(default=Item(**{}))):
 #     print(item)
@@ -135,12 +144,12 @@ def logout():
 #     result = {"item_id": item_id, **item.dict()}
 #     if q:
 #         result.update({"q": q})
-    # return result
+# return result
 
 
 @app.get("/ok")
 def get(a: str):
-    return {1:a}
+    return {1: a}
 
 
 # @app.post("/ok")

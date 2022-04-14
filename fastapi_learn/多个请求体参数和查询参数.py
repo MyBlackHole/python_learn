@@ -12,7 +12,7 @@
 -------------------------------------------------
 """
 
-__author__ = 'Black Hole'
+__author__ = "Black Hole"
 
 from typing import Optional
 
@@ -36,12 +36,12 @@ class User(BaseModel):
 
 @app.put("/items/{item_id}")
 async def update_item(
-        *,
-        item_id: int,
-        item: Item,
-        user: User,
-        importance: int = Body(..., gt=0),
-        q: Optional[str] = None
+    *,
+    item_id: int,
+    item: Item,
+    user: User,
+    importance: int = Body(..., gt=0),
+    q: Optional[str] = None
 ):
     results = {"item_id": item_id, "item": item, "user": user, "importance": importance}
     if q:

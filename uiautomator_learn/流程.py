@@ -16,11 +16,12 @@ Change Activity:
 
 
 import time
+
 from uiautomator import Device, device
 
 # 连接设备
 # d = Device('cae5ef26')
-d = Device('710KPMZ0361243')
+d = Device("710KPMZ0361243")
 
 print(d.info)
 
@@ -37,37 +38,38 @@ print(d.info)
 # # 清空
 # d.clear_text()
 # d(text='请填写微信号/QQ号/邮箱').click()
-# d.send_keys("你好123abcEFG") 
+# d.send_keys("你好123abcEFG")
 
 # 搜索符号
-d(className="android.widget.ImageView", resourceId="com.tencent.mm:id/he6").wait.exists(timeout=4000)
+d(className="android.widget.ImageView", resourceId="com.tencent.mm:id/he6").wait.exists(
+    timeout=4000
+)
 d(className="android.widget.ImageView", resourceId="com.tencent.mm:id/he6").click()
 
 # time.sleep(3)
-d(text='公众号').wait.exists(timeout=4000)
-status = d(text='公众号').click()
+d(text="公众号").wait.exists(timeout=4000)
+status = d(text="公众号").click()
 # 微信公众号
 if status:
 
-# time.sleep(3)
+    # time.sleep(3)
 
-# d(text='搜索公众号').set_text('视频')
+    # d(text='搜索公众号').set_text('视频')
 
     time.sleep(3)
     d(index=2, resourceId="com.tencent.mm:id/bxz").wait.exists(timeout=4000)
-    d(index=2, resourceId="com.tencent.mm:id/bxz").set_text('视频')
-# d(text='搜索').set_text('视频')
+    d(index=2, resourceId="com.tencent.mm:id/bxz").set_text("视频")
+    # d(text='搜索').set_text('视频')
 
+    # d(text='搜索').click()
 
-# d(text='搜索').click()
+    # # d(className="android.widget.Button", resourceId="com.tencent.mm:id/hi4").click()
 
-# # d(className="android.widget.Button", resourceId="com.tencent.mm:id/hi4").click()
+    # # 输入检索文字
+    # d(text='搜索公众号').set_text('视频')
 
-# # 输入检索文字
-# d(text='搜索公众号').set_text('视频')
-
-# d.set_fastinput_ime(False) # 切换成正常的输入法
-# d.send_action("search") # 模拟输入法的搜索（很实用）
-    d.press('enter')
+    # d.set_fastinput_ime(False) # 切换成正常的输入法
+    # d.send_action("search") # 模拟输入法的搜索（很实用）
+    d.press("enter")
 
 # time.sleep(3)

@@ -12,7 +12,7 @@
 -------------------------------------------------
 """
 
-__author__ = 'Black Hole'
+__author__ = "Black Hole"
 
 from enum import Enum, IntEnum
 
@@ -20,8 +20,8 @@ from pydantic import BaseModel
 
 
 class FruitEnum(str, Enum):
-    pear = 'pear'
-    banana = 'banana'
+    pear = "pear"
+    banana = "banana"
 
 
 class ToolEnum(IntEnum):
@@ -38,7 +38,7 @@ class CookingModel(BaseModel):
 print(CookingModel())
 
 # > CookingModel fruit=<FruitEnum.banana: 'banana'> tool=<ToolEnum.wrench: 2>
-print(CookingModel(tool=2, fruit='banana'))
+print(CookingModel(tool=2, fruit="banana"))
 
 # will raise a validation error
-print(CookingModel(fruit='other'))
+print(CookingModel(fruit="other"))
