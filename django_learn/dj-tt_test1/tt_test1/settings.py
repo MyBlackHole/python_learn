@@ -19,7 +19,7 @@ BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 # See https://docs.djangoproject.com/en/2.1/howto/deployment/checklist/
 
 # SECURITY WARNING: keep the secret key used in production secret!
-SECRET_KEY = 'dtaem5%9svx^tfj(vbk=q!9l)^!r&5x3h5wm8vd9vg(c#g!mk5'
+SECRET_KEY = "dtaem5%9svx^tfj(vbk=q!9l)^!r&5x3h5wm8vd9vg(c#g!mk5"
 
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
@@ -29,99 +29,99 @@ ALLOWED_HOSTS = []
 # Application definition
 
 INSTALLED_APPS = [
-    'django.contrib.admin',
-    'django.contrib.auth',
-    'django.contrib.contenttypes',
-    'django.contrib.sessions',
-    'django.contrib.messages',
-    'django.contrib.staticfiles',
-    'tinymce',
-    'haystack',
-    'apps.goods',
-    'apps.cart',
-    'apps.order',
-    'apps.user',
-    'django_celery_results',
+    "django.contrib.admin",
+    "django.contrib.auth",
+    "django.contrib.contenttypes",
+    "django.contrib.sessions",
+    "django.contrib.messages",
+    "django.contrib.staticfiles",
+    "tinymce",
+    "haystack",
+    "apps.goods",
+    "apps.cart",
+    "apps.order",
+    "apps.user",
+    "django_celery_results",
 ]
 
 MIDDLEWARE = [
-    'django.middleware.security.SecurityMiddleware',
-    'django.contrib.sessions.middleware.SessionMiddleware',
-    'django.middleware.common.CommonMiddleware',
-    'django.middleware.csrf.CsrfViewMiddleware',
-    'django.contrib.auth.middleware.AuthenticationMiddleware',
-    'django.contrib.messages.middleware.MessageMiddleware',
-    'django.middleware.clickjacking.XFrameOptionsMiddleware',
+    "django.middleware.security.SecurityMiddleware",
+    "django.contrib.sessions.middleware.SessionMiddleware",
+    "django.middleware.common.CommonMiddleware",
+    "django.middleware.csrf.CsrfViewMiddleware",
+    "django.contrib.auth.middleware.AuthenticationMiddleware",
+    "django.contrib.messages.middleware.MessageMiddleware",
+    "django.middleware.clickjacking.XFrameOptionsMiddleware",
 ]
 
-ROOT_URLCONF = 'tt_test1.urls'
+ROOT_URLCONF = "tt_test1.urls"
 
 TEMPLATES = [
     {
-        'BACKEND': 'django.template.backends.django.DjangoTemplates',
-        'DIRS': [os.path.join(BASE_DIR, 'templates')],
-        'APP_DIRS': True,
-        'OPTIONS': {
-            'context_processors': [
-                'django.template.context_processors.debug',
-                'django.template.context_processors.request',
-                'django.contrib.auth.context_processors.auth',
-                'django.contrib.messages.context_processors.messages',
+        "BACKEND": "django.template.backends.django.DjangoTemplates",
+        "DIRS": [os.path.join(BASE_DIR, "templates")],
+        "APP_DIRS": True,
+        "OPTIONS": {
+            "context_processors": [
+                "django.template.context_processors.debug",
+                "django.template.context_processors.request",
+                "django.contrib.auth.context_processors.auth",
+                "django.contrib.messages.context_processors.messages",
             ],
         },
     },
 ]
 
-WSGI_APPLICATION = 'tt_test1.wsgi.application'
+WSGI_APPLICATION = "tt_test1.wsgi.application"
 
 # Database
 # https://docs.djangoproject.com/en/2.1/ref/settings/#databases
 
 DATABASES = {
-    'default': {
-        'ENGINE': 'django.db.backends.mysql',
-        'NAME': 'ttsxian',
-        'USER': 'root',
-        'PASSWORD': 'root',
-        'HOST': 'localhost',
-        'PORT': 3306,
+    "default": {
+        "ENGINE": "django.db.backends.mysql",
+        "NAME": "ttsxian",
+        "USER": "root",
+        "PASSWORD": "root",
+        "HOST": "localhost",
+        "PORT": 3306,
     }
 }
 
 # django认证系统使用的模型类
-AUTH_USER_MODEL = 'user.User'
+AUTH_USER_MODEL = "user.User"
 
 # Password validation
 # https://docs.djangoproject.com/en/2.1/ref/settings/#auth-password-validators
 
 AUTH_PASSWORD_VALIDATORS = [
     {
-        'NAME': 'django.contrib.auth.password_validation.UserAttributeSimilarityValidator',
+        "NAME": "django.contrib.auth.password_validation.UserAttributeSimilarityValidator",
     },
     {
-        'NAME': 'django.contrib.auth.password_validation.MinimumLengthValidator',
+        "NAME": "django.contrib.auth.password_validation.MinimumLengthValidator",
     },
     {
-        'NAME': 'django.contrib.auth.password_validation.CommonPasswordValidator',
+        "NAME": "django.contrib.auth.password_validation.CommonPasswordValidator",
     },
     {
-        'NAME': 'django.contrib.auth.password_validation.NumericPasswordValidator',
+        "NAME": "django.contrib.auth.password_validation.NumericPasswordValidator",
     },
 ]
 
 # 编辑窗口配置
 TINYMCE_DEFAULT_CONFIG = {
-    'theme': 'advanced',
-    'width': 600,
-    'height': 400,
+    "theme": "advanced",
+    "width": 600,
+    "height": 400,
 }
 
 # Internationalization
 # https://docs.djangoproject.com/en/2.1/topics/i18n/
 
-LANGUAGE_CODE = 'zh-hans'
+LANGUAGE_CODE = "zh-hans"
 
-TIME_ZONE = 'Asia/Shanghai'
+TIME_ZONE = "Asia/Shanghai"
 
 USE_I18N = True
 
@@ -132,18 +132,18 @@ USE_TZ = True
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/2.1/howto/static-files/
 
-STATIC_URL = '/static/'
-STATICFILES_DIRS = [os.path.join(BASE_DIR, 'static')]
+STATIC_URL = "/static/"
+STATICFILES_DIRS = [os.path.join(BASE_DIR, "static")]
 
-EMAIL_BACKEND = 'django.core.mail.backends.smtp.EmailBackend'
-EMAIL_HOST = 'smtp.qq.com'
+EMAIL_BACKEND = "django.core.mail.backends.smtp.EmailBackend"
+EMAIL_HOST = "smtp.qq.com"
 EMAIL_PORT = 465
 # 发送邮件的邮箱
-EMAIL_HOST_USER = '1358244533@qq.com'
+EMAIL_HOST_USER = "1358244533@qq.com"
 # 在邮箱中设置的客户端授权密码
-EMAIL_HOST_PASSWORD = 'tnribcmqybdagjhb'
+EMAIL_HOST_PASSWORD = "tnribcmqybdagjhb"
 # 收件人看到的发件人
-EMAIL_FROM = '<1358244533@qq.com>'
+EMAIL_FROM = "<1358244533@qq.com>"
 EMAIL_USE_SSL = True
 
 # 方案二
@@ -159,40 +159,40 @@ CACHES = {
             #             "CONNECTION_POOL_CLASS_KWARGS": {
             #                 "max_connections": 2,
             #             }
-        }
+        },
     }
 }
 
-SESSION_ENGINE = 'django.contrib.sessions.backends.cache'
-SESSION_CACHE_ALIAS = 'default'
+SESSION_ENGINE = "django.contrib.sessions.backends.cache"
+SESSION_CACHE_ALIAS = "default"
 # SESSION_COOKIE_AGE = 30 * 60
 
 # 给celery全局配置代理数据库
 # BROKER_URL = 'redis://127.0.0.1:6379/8'
 
 # 配置登陆url地址
-LOGIN_URL = '/user/login'
+LOGIN_URL = "/user/login"
 
 # 配置Django文件存储类
-DEFAULT_FILE_STORAGE = 'utils.fdfs.storage.FDFSStorage'
+DEFAULT_FILE_STORAGE = "utils.fdfs.storage.FDFSStorage"
 
-FDFS_CLIENT_CONF = './utils/fdfs/client.conf'
+FDFS_CLIENT_CONF = "./utils/fdfs/client.conf"
 
-FDFS_URL = 'http://127.0.0.1:8888/'
+FDFS_URL = "http://127.0.0.1:8888/"
 
 # 全文检索框架的配置
 HAYSTACK_CONNECTIONS = {
-    'default': {
+    "default": {
         # 使用whoosh引擎
         # 'ENGINE': 'haystack.backends.whoosh_backend.WhooshEngine',
-        'ENGINE': 'haystack.backends.whoosh_ch_backend.WhooshEngine',
+        "ENGINE": "haystack.backends.whoosh_ch_backend.WhooshEngine",
         # 索引文件路径
-        'PATH': os.path.join(BASE_DIR, 'whoosh_index'),
+        "PATH": os.path.join(BASE_DIR, "whoosh_index"),
     }
 }
 
 # 当添加、修改、删除数据时，自动生成索引
-HAYSTACK_SIGNAL_PROCESSOR = 'haystack.signals.RealtimeSignalProcessor'
+HAYSTACK_SIGNAL_PROCESSOR = "haystack.signals.RealtimeSignalProcessor"
 
 # 指定搜索结果每页显示的条数
 HAYSTACK_SEARCH_RESULTS_PER_PAGE = 1

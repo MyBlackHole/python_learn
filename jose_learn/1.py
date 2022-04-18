@@ -1,7 +1,6 @@
 from jose import jwt
 
-
-token = jwt.encode({'key': "value"}, 'secret', algorithm='HS256')
+token = jwt.encode({"key": "value"}, "secret", algorithm="HS256")
 print(token)
 
-print(jwt.decode(token, 'secret', algorithms=['HS256']))
+print(jwt.decode(token, "secret", algorithms=["HS256"]))

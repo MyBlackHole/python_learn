@@ -12,7 +12,7 @@
 -------------------------------------------------
 """
 
-__author__ = 'Black Hole'
+__author__ = "Black Hole"
 
 from fastapi import FastAPI
 
@@ -23,8 +23,9 @@ app = FastAPI()
 def read_item():
     return {"user": "black", "value": "hole"}
 
+
 @app.post("/ping")
-def post(data:dict):
+def post(data: dict):
     return {"user": "black", "value": "hole"}
 
 

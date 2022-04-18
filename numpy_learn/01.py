@@ -1,9 +1,16 @@
 # coding=utf-8
-import numpy as np
 import random
 
+import numpy as np
+
 # 使用numpy生成数组,得到ndarray的类型
-t1 = np.array([1, 2, 3, ])
+t1 = np.array(
+    [
+        1,
+        2,
+        3,
+    ]
+)
 print(t1)
 print(type(t1))
 

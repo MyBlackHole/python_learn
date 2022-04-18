@@ -12,18 +12,16 @@ print("search:", mtc.group())
 mtc = re.findall("weibo.com/(\d+)", url)
 print("findall:", mtc)
 
-print('ok')
+print("ok")
 
-url = 'https://app.thepaper.cn/clthttps://file.thepaper.cn/clt/img/defHeadNew.png'
+url = "https://app.thepaper.cn/clthttps://file.thepaper.cn/clt/img/defHeadNew.png"
 
-print(re.search(r'.*(https://.*?)$', url).group(1))
+print(re.search(r".*(https://.*?)$", url).group(1))
 
 p = re.findall(r"abc.*|.*dbc.*", "abcdbcsdjk")
 print(p)
 
-print('*' * 10)
-text = '"source": "<a href=\"https://weibo.com/\" rel=\"nofollow\">明星资讯 · 视频社区</a>"'
+print("*" * 10)
+text = '"source": "<a href="https://weibo.com/" rel="nofollow">明星资讯 · 视频社区</a>"'
 p_list = "".join(re.findall(r"<.*>(.*)</a>", text))
 print(p_list)
-
-

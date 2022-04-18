@@ -12,11 +12,10 @@
 -------------------------------------------------
 """
 
-__author__ = 'Black Hole'
+__author__ = "Black Hole"
 
 # from importlib import _bootstrap
 import importlib
-
 
 # aa = _bootstrap._find_spec('a', None)
 # print(aa.loader.get_data(aa.loader.path))
@@ -39,11 +38,11 @@ import importlib
 # b = importlib.import_module('test')
 # print(b.importlib_test())
 #
-test_b = importlib.import_module('test', 'import_test')
+test_b = importlib.import_module("test", "import_test")
 print(test_b.importlib_test())
 
-test_b = importlib.import_module('import_test.test')
+test_b = importlib.import_module("import_test.test")
 print(test_b.importlib_test())
 
-test_b = importlib.import_module('import_test.test.importlib_test')
+test_b = importlib.import_module("import_test.test.importlib_test")
 print(test_b())

@@ -1,7 +1,7 @@
 # coding=utf-8
 # 911数据中不同月份不同类型的电话的次数的变化情况
-import pandas as pd
 import numpy as np
+import pandas as pd
 from matplotlib import pyplot as plt
 
 # 把时间字符串转为时间类型设置为索引

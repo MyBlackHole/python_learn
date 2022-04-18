@@ -13,14 +13,15 @@
 -------------------------------------------------
 """
 
-__author__ = 'Black Hole'
+__author__ = "Black Hole"
 
-import requests
-import subprocess
 import os
+import subprocess
 import time
 
-resp = requests.get(url='http://www.baidu.com')
+import requests
+
+resp = requests.get(url="http://www.baidu.com")
 resp.cookies
 # print(os.getpid())
 # f = os.popen(f"netstat  -ano | findstr.exe '{os.getpid()}'")

@@ -12,7 +12,7 @@
 -------------------------------------------------
 """
 
-__author__ = 'Black Hole'
+__author__ = "Black Hole"
 
 import arrow
 import redis
@@ -26,7 +26,7 @@ start_time = arrow.now().timestamp
 # resp = redis_conn.sadd('test',  bytes(list(range(4, 100))))
 
 # 获取多有成员
-resp = redis_conn.smembers('test')
+resp = redis_conn.smembers("test")
 remove_list = []
 for item in resp:
     try:
@@ -36,7 +36,7 @@ for item in resp:
 
 if remove_list:
     # 移除多个元素
-    resp = redis_conn.srem('test', *remove_list)
+    resp = redis_conn.srem("test", *remove_list)
     print(resp)
 end_time = arrow.now().timestamp
 print(end_time - start_time)

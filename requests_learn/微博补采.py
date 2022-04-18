@@ -8,4 +8,3 @@ import requests
 #
 # resp = requests.get(url="https://api.weibo.com/2/statuses/show.json?source=82966982&id=4513545649626390", cookies=cookies)
 # print(resp.json())
-

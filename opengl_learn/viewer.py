@@ -1,30 +1,35 @@
-from OpenGL.GL import glCallList, glClear, glClearColor, glColorMaterial, glCullFace, glDepthFunc, glDisable, glEnable, \
-    glFlush, glGetFloatv, glLightfv, glLoadIdentity, glMatrixMode, glMultMatrixf, glPopMatrix, \
-    glPushMatrix, glTranslated, glViewport, \
-    GL_AMBIENT_AND_DIFFUSE, GL_BACK, GL_CULL_FACE, GL_COLOR_BUFFER_BIT, GL_COLOR_MATERIAL, \
-    GL_DEPTH_BUFFER_BIT, GL_DEPTH_TEST, GL_FRONT_AND_BACK, GL_LESS, GL_LIGHT0, GL_LIGHTING, \
-    GL_MODELVIEW, GL_MODELVIEW_MATRIX, GL_POSITION, GL_PROJECTION, GL_SPOT_DIRECTION
-from OpenGL.constants import GLfloat_3, GLfloat_4
-from OpenGL.GLU import gluPerspective, gluUnProject
-from OpenGL.GLUT import glutCreateWindow, glutDisplayFunc, glutGet, glutInit, glutInitDisplayMode, \
-    glutInitWindowSize, glutMainLoop, \
-    GLUT_SINGLE, GLUT_RGB, GLUT_WINDOW_HEIGHT, GLUT_WINDOW_WIDTH, glutCloseFunc
-import numpy
-from numpy.linalg import norm, inv
 import random
-from OpenGL.GL import glBegin, glColor3f, glEnd, glEndList, glLineWidth, glNewList, glNormal3f, glVertex3f, \
-    GL_COMPILE, GL_LINES, GL_QUADS
-from OpenGL.GLU import gluDeleteQuadric, gluNewQuadric, gluSphere
 
 import color
+import numpy
+from node import Cube, SnowFigure, Sphere
+from numpy.linalg import inv, norm
+from OpenGL.constants import GLfloat_3, GLfloat_4
+from OpenGL.GL import (GL_AMBIENT_AND_DIFFUSE, GL_BACK, GL_COLOR_BUFFER_BIT,
+                       GL_COLOR_MATERIAL, GL_COMPILE, GL_CULL_FACE,
+                       GL_DEPTH_BUFFER_BIT, GL_DEPTH_TEST, GL_FRONT_AND_BACK,
+                       GL_LESS, GL_LIGHT0, GL_LIGHTING, GL_LINES, GL_MODELVIEW,
+                       GL_MODELVIEW_MATRIX, GL_POSITION, GL_PROJECTION,
+                       GL_QUADS, GL_SPOT_DIRECTION, glBegin, glCallList,
+                       glClear, glClearColor, glColor3f, glColorMaterial,
+                       glCullFace, glDepthFunc, glDisable, glEnable, glEnd,
+                       glEndList, glFlush, glGetFloatv, glLightfv, glLineWidth,
+                       glLoadIdentity, glMatrixMode, glMultMatrixf, glNewList,
+                       glNormal3f, glPopMatrix, glPushMatrix, glTranslated,
+                       glVertex3f, glViewport)
+from OpenGL.GLU import (gluDeleteQuadric, gluNewQuadric, gluPerspective,
+                        gluSphere, gluUnProject)
+from OpenGL.GLUT import (GLUT_RGB, GLUT_SINGLE, GLUT_WINDOW_HEIGHT,
+                         GLUT_WINDOW_WIDTH, glutCloseFunc, glutCreateWindow,
+                         glutDisplayFunc, glutGet, glutInit,
+                         glutInitDisplayMode, glutInitWindowSize, glutMainLoop)
+from primitive import G_OBJ_PLANE, init_primitives
 from scene import Scene
-from primitive import init_primitives, G_OBJ_PLANE
-from node import Sphere, Cube, SnowFigure
 
 
 class Viewer(object):
     def __init__(self):
-        """ Initialize the viewer. """
+        """Initialize the viewer."""
         # 初始化接口，创建窗口并注册渲染函数
         self.init_interface()
         # 初始化opengl的配置
@@ -36,7 +41,7 @@ class Viewer(object):
         init_primitives()
 
     def init_interface(self):
-        """ 初始化窗口并注册渲染函数 """
+        """初始化窗口并注册渲染函数"""
         glutInit()
         glutInitWindowSize(640, 480)
         glutCreateWindow(b"3D Modeller")
@@ -45,7 +50,7 @@ class Viewer(object):
         glutDisplayFunc(self.render)
 
     def init_opengl(self):
-        """ 初始化opengl的配置 """
+        """初始化opengl的配置"""
         # 模型视图矩阵
         self.inverseModelView = numpy.identity(4)
         # 模型视图矩阵的逆矩阵
@@ -125,7 +130,7 @@ class Viewer(object):
         glFlush()
 
     def init_view(self):
-        """ 初始化投影矩阵 """
+        """初始化投影矩阵"""
         xSize, ySize = glutGet(GLUT_WINDOW_WIDTH), glutGet(GLUT_WINDOW_HEIGHT)
         # 得到屏幕宽高比
         aspect_ratio = float(xSize) / float(ySize)

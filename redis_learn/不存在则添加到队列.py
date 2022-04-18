@@ -12,12 +12,13 @@
 -------------------------------------------------
 """
 
-__author__ = 'Black Hole'
+__author__ = "Black Hole"
 
-import redis
 import json
 
-REDIS_HOST = 'localhost'
+import redis
+
+REDIS_HOST = "localhost"
 REDIS_POST = 6379
 REDIS_DB = 0
 
@@ -36,6 +37,6 @@ redis_conn = redis.Redis(connection_pool=redis_pool)
 # print('status', status)
 
 # set_status = redis_conn.lpush('task', 'aaa')
-get_status = redis_conn.rpop('fast_task')
+get_status = redis_conn.rpop("fast_task")
 
-print('add_status', json.loads(get_status))
+print("add_status", json.loads(get_status))

@@ -13,11 +13,12 @@
 -------------------------------------------------
 """
 
-__author__ = 'Black Hole'
+__author__ = "Black Hole"
 
 import time
-from watchdog.observers import Observer
+
 from watchdog.events import FileSystemEventHandler
+from watchdog.observers import Observer
 
 
 class MyHandler(FileSystemEventHandler):
@@ -29,7 +30,7 @@ class MyHandler(FileSystemEventHandler):
 if __name__ == "__main__":
     event_handler = MyHandler()
     observer = Observer()
-    observer.schedule(event_handler, path='.', recursive=False)
+    observer.schedule(event_handler, path=".", recursive=False)
     observer.start()
     try:
         while True:

@@ -1,8 +1,10 @@
-from loguru_learn.log import logger
+from typing import TypeVar
+
 import requests
 from requests.models import Response
 from retrying import retry
-from typing import TypeVar
+
+from loguru_learn.log import logger
 
 
 @logger.catch
@@ -14,4 +16,4 @@ def get(url: str) -> Response:
 
 # logger.exception("123")
 
-get('www.baidu.com')
+get("www.baidu.com")

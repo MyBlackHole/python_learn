@@ -1,9 +1,17 @@
 import logging
 
+fmt = "%(asctime)s - %(thread)d - %(process)d - %(funcName)s - %(module)s - %(lineno)d - %(levelname)s - [%(message)s]"
 
-fmt = '%(asctime)s - %(thread)d - %(process)d - %(funcName)s - %(module)s - %(lineno)d - %(levelname)s - [%(message)s]'
 
-def new_logger(name, log_path='info.log', level=logging.DEBUG, handler_level=logging.DEBUG, console_level=logging.DEBUG, handler_fmt=fmt, console_fmt=fmt):
+def new_logger(
+    name,
+    log_path="info.log",
+    level=logging.DEBUG,
+    handler_level=logging.DEBUG,
+    console_level=logging.DEBUG,
+    handler_fmt=fmt,
+    console_fmt=fmt,
+):
     logger = logging.getLogger(name=name)
     logger.setLevel(level=level)
 
@@ -21,5 +29,5 @@ def new_logger(name, log_path='info.log', level=logging.DEBUG, handler_level=log
 
 
 logger = new_logger(__name__)
-logger.debug('ok')
-logger.info('ok')
+logger.debug("ok")
+logger.info("ok")

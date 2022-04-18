@@ -7,7 +7,9 @@ file_path = "./PM2.5/BeijingPM20100101_20151231.csv"
 df = pd.read_csv(file_path)
 
 # 把分开的时间字符串通过periodIndex的方法转化为pandas的时间类型
-period = pd.PeriodIndex(year=df["year"], month=df["month"], day=df["day"], hour=df["hour"], freq="H")
+period = pd.PeriodIndex(
+    year=df["year"], month=df["month"], day=df["day"], hour=df["hour"], freq="H"
+)
 df["datetime"] = period
 # print(df.head(10))
 

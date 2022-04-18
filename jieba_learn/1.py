@@ -12,7 +12,7 @@
 -------------------------------------------------
 """
 
-__author__ = 'Black Hole'
+__author__ = "Black Hole"
 
 import jieba.analyse
 import paddle
@@ -30,4 +30,3 @@ print(list(jieba.cut_for_search(text)))
 
 print(jieba.analyse.extract_tags(text, topK=10, allowPOS=()))
 print(jieba.analyse.textrank(text, topK=10))
-

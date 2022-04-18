@@ -13,19 +13,21 @@
 -------------------------------------------------
 """
 
-__author__ = 'Black Hole'
+__author__ = "Black Hole"
 
 from pymongo import MongoClient
 
 # 服务链接
-mongodb_link = MongoClient(host="192.168.5.233", port=27017, username="root", password="3edc#EDC")
+mongodb_link = MongoClient(
+    host="192.168.5.233", port=27017, username="root", password="3edc#EDC"
+)
 
 # # 所有数据库
 # for i, item in enumerate(mongodb_link.list_databases()):
 #     print(f'{i}: {item}')
 
 # 集合选择
-test = mongodb_link['teacher_info']
+test = mongodb_link["teacher_info"]
 
 # test.authenticate("root", "root")
 # # 所有表
@@ -33,7 +35,7 @@ test = mongodb_link['teacher_info']
 
 
 # 文档选择
-test = test['b73378d8750b11ec9e28e0d55eeff354']
+test = test["b73378d8750b11ec9e28e0d55eeff354"]
 
 # # 插入数据
 # mydict = {"_id": "1", "a": 4}
@@ -45,11 +47,26 @@ test = test['b73378d8750b11ec9e28e0d55eeff354']
 # print(x.inserted_id)
 
 # 查询
-data = test.find({"sales_style_features.工作能力类型": "专业型"})
+# data = test.find()
+data = test.aggregate(
+    [
+        {"$match": {"sales_id": 0}},
+        {"$sort": {"teacher_id": 1}},
+        {
+            "$facet": {
+                "total": [{"$count": "total"}],
+                "data": [{"$skip": 0}, {"$limit": 2}],
+            }
+        },
+    ]
+)
+
 # data.skip(1)
 # data.limit(1)
-data.sort([("teacher_id",1)])
-print(list(data))
+# data.sort([("teacher_id", 1)])
+print(list(data)[0])
+total = list(data)[0]["total"][0].get("total", 0)
+print(total, type(total))
 # data = test.find({"alexa": "1"}, {"_id": 0})
 # print(len(list(data)))
 # for item in data:

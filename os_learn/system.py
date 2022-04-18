@@ -1,8 +1,8 @@
 import os
 from multiprocessing import Process
-from fastapi import FastAPI
-import uvicorn
 
+import uvicorn
+from fastapi import FastAPI
 
 cmd = "/home/black/Firmcode/PythonProjects/ZFDM/gitee/deployment-warehouse/Code/ser_service/configs/opensmile-linux/bin/SMILExtract -C /home/black/Firmcode/PythonProjects/ZFDM/gitee/deployment-warehouse/Code/ser_service/configs/is09-13/IS10_paraling.conf -I /home/black/Firmcode/PythonProjects/ZFDM/gitee/deployment-warehouse/Code/ser_service/tmp/upload_audio/aa5eb541-7a47-41ad-915b-0308ae0251e5.wav -O /home/black/Firmcode/PythonProjects/ZFDM/gitee/deployment-warehouse/Code/ser_service/tmp/features/single_feature_163807626173.csv"
 

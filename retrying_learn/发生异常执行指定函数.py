@@ -1,5 +1,5 @@
 import requests
-from retrying import retry, RetryError
+from retrying import RetryError, retry
 
 
 def retry_if_io_error(exception):
@@ -13,7 +13,7 @@ def retry_if_io_error(exception):
 def might_io_error():
     print("Retry forever with no wait if an IOError occurs, raise any other errors")
     i = 1 / 0
-    assert 1 > 2, '异常'
+    assert 1 > 2, "异常"
 
 
 class A:
@@ -21,10 +21,12 @@ class A:
 
     @retry(wrap_exception=True, stop_max_attempt_number=count)
     def only_raise_retry_error_when_not_io_error(self):
-        print("Retry forever with no wait if an IOError occurs, raise any other errors wrapped in RetryError")
+        print(
+            "Retry forever with no wait if an IOError occurs, raise any other errors wrapped in RetryError"
+        )
         # requests.get(url='sdjf')
         # i = 1 / 0
-        assert 1 > 2, '异常信息'
+        assert 1 > 2, "异常信息"
 
     # only_raise_retry_error_when_not_io_error()
 
@@ -35,10 +37,12 @@ def retry_if_result_none(result):
     return result is None
 
 
-@retry(wrap_exception=True, retry_on_result=retry_if_result_none, stop_max_attempt_number=5)
+@retry(
+    wrap_exception=True, retry_on_result=retry_if_result_none, stop_max_attempt_number=5
+)
 def might_io_error1():
     print("Retry forever with no wait if an IOError occurs, raise any other errors")
-    assert 1 > 2, 'lll'
+    assert 1 > 2, "lll"
     # return 1
 
 

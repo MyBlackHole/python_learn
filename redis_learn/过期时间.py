@@ -12,12 +12,12 @@
 -------------------------------------------------
 """
 
-__author__ = 'Black Hole'
+__author__ = "Black Hole"
 
 import arrow
 import redis
 
 r = redis.Redis(decode_responses=True)
 # key: wb123456, value: 时间戳, 过期时间:10
-print(r.set('wb123456', arrow.now().timestamp, 10))
-print(r.get('wb123456'))
+print(r.set("wb123456", arrow.now().timestamp, 10))
+print(r.get("wb123456"))

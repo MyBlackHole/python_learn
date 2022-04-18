@@ -1,8 +1,8 @@
 import redis
 
-GROUPNAME = 'tf::'
+GROUPNAME = "tf::"
 # REDIS_HOST = '127.0.0.1'
-REDIS_HOST = 'localhost'
+REDIS_HOST = "localhost"
 REDIS_POST = 6379
 REDIS_DB = 8
 
@@ -14,6 +14,7 @@ def new_redis_conn(redis_pool):
     redis_conn = redis.Redis(connection_pool=redis_pool)
     return redis_conn
 
+
 redis_conn = new_redis_conn(redis_pool)
 # resp = redis_conn.ttl('djfjj')
 # print(resp)
@@ -21,7 +22,7 @@ redis_conn = new_redis_conn(redis_pool)
 
 # data = redis_conn.rpop('a')
 # print(data)
-print('ok')
+print("ok")
 # 查询key = 'a', 没有返回None
 # data = redis_conn.get('a')
 # print(data)

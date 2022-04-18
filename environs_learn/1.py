@@ -14,14 +14,14 @@
 -------------------------------------------------
 """
 
-__author__ = 'Black Hole'
+__author__ = "Black Hole"
 
 from environs import Env
 
 env = Env()
-VAR1 = env.int('VAR1', 1)
-VAR2 = env.float('VAR2', 5.5)
-VAR3 = env.list('VAR3')
+VAR1 = env.int("VAR1", 1)
+VAR2 = env.float("VAR2", 5.5)
+VAR3 = env.list("VAR3")
 print(VAR1)
 print(VAR2)
 print(VAR3)

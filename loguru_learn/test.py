@@ -1,7 +1,8 @@
 # from log import logger
 from loguru import logger
+
 logger.info("")
-logger.warning('1')
+logger.warning("1")
 
 
 # @logger.catch
@@ -14,7 +15,6 @@ logger.warning('1')
 #
 # t()
 try:
-    i = 1/0
+    i = 1 / 0
 except Exception as e:
     logger.exception(e)
-

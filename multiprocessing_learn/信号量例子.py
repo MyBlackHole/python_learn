@@ -12,7 +12,7 @@
 -------------------------------------------------
 """
 
-__author__ = 'Black Hole'
+__author__ = "Black Hole"
 
 from multiprocessing import Process, Semaphore
 from random import uniform
@@ -28,7 +28,7 @@ def func(_sem, _i):
     _sem.release()
 
 
-if __name__ == '__main__':
+if __name__ == "__main__":
     sem = Semaphore(5)  # 初始化一把锁，配5把钥匙
     for i in range(10):  # 启动10个子进程，最多只能5个人同在小黑屋中
         p = Process(target=func, args=(sem, i))

@@ -12,7 +12,7 @@
 -------------------------------------------------
 """
 
-__author__ = 'Black Hole'
+__author__ = "Black Hole"
 import uuid
 
 print(str(uuid.uuid3(uuid.NAMESPACE_URL, "Hello World!")).replace("-", ""))

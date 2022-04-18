@@ -13,22 +13,22 @@
 -------------------------------------------------
 """
 
-__author__ = 'Black Hole'
+__author__ = "Black Hole"
 
 import json
 
 import redis
 
-REDIS_HOST = 'localhost'
+REDIS_HOST = "localhost"
 REDIS_PORT = 6379
 REDIS_DB = 11
 
 pool = redis.ConnectionPool(host=REDIS_HOST, port=REDIS_PORT, db=REDIS_DB)
 _redis = redis.Redis(connection_pool=pool)
 
-DATA_GROUP_NAME = 'sch:'
+DATA_GROUP_NAME = "sch:"
 
-keys = _redis.keys(DATA_GROUP_NAME + '*')
+keys = _redis.keys(DATA_GROUP_NAME + "*")
 result = []
 
 for key in keys:

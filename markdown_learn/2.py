@@ -1,57 +1,62 @@
+import os
+
 from markdown import markdown
 from pymdownx import superfences
-import os
+
 os.system("pip install markdown --user")
 os.system("pip install python-markdown-math --user")
 os.system("pip install markdown_checklist --user")
 
 # 扩展配置
 __extensions = [
-    'toc',  # 目录，[toc]
-    'extra',  # 缩写词、属性列表、释义列表、围栏式代码块、脚注、在HTML的Markdown、表格
+    "toc",  # 目录，[toc]
+    "extra",  # 缩写词、属性列表、释义列表、围栏式代码块、脚注、在HTML的Markdown、表格
 ]
 __third_party_extensions = [
-    'mdx_math',  # KaTeX数学公式，$E=mc^2$和$$E=mc^2$$
-    'markdown_checklist.extension',  # checklist，- [ ]和- [x]
-    'pymdownx.magiclink',  # 自动转超链接，
-    'pymdownx.caret',  # 上标下标，
-    'pymdownx.superfences',  # 多种块功能允许嵌套，各种图表
-    'pymdownx.betterem',  # 改善强调的处理(粗体和斜体)
-    'pymdownx.mark',  # 亮色突出文本
-    'pymdownx.highlight',  # 高亮显示代码
-    'pymdownx.tasklist',  # 任务列表
-    'pymdownx.tilde',  # 删除线
+    "mdx_math",  # KaTeX数学公式，$E=mc^2$和$$E=mc^2$$
+    "markdown_checklist.extension",  # checklist，- [ ]和- [x]
+    "pymdownx.magiclink",  # 自动转超链接，
+    "pymdownx.caret",  # 上标下标，
+    "pymdownx.superfences",  # 多种块功能允许嵌套，各种图表
+    "pymdownx.betterem",  # 改善强调的处理(粗体和斜体)
+    "pymdownx.mark",  # 亮色突出文本
+    "pymdownx.highlight",  # 高亮显示代码
+    "pymdownx.tasklist",  # 任务列表
+    "pymdownx.tilde",  # 删除线
 ]
 __extensions.extend(__third_party_extensions)
 __extension_configs = {
-    'mdx_math': {
-        'enable_dollar_delimiter': True  # 允许单个$
-    },
-    'pymdownx.superfences': {
+    "mdx_math": {"enable_dollar_delimiter": True},  # 允许单个$
+    "pymdownx.superfences": {
         "custom_fences": [
             {
-                'name': 'mermaid',  # 开启流程图等图
-                'class': 'mermaid',
-                'format': superfences.fence_div_format
+                "name": "mermaid",  # 开启流程图等图
+                "class": "mermaid",
+                "format": superfences.fence_div_format,
             }
         ]
     },
-    'pymdownx.highlight': {
-        'linenums': True,  # 显示行号
-        'linenums_style': 'pymdownx-inline'  # 代码和行号分开
+    "pymdownx.highlight": {
+        "linenums": True,  # 显示行号
+        "linenums_style": "pymdownx-inline",  # 代码和行号分开
     },
-    'pymdownx.tasklist': {
-        'clickable_checkbox': True,  # 任务列表可点击
-    }
+    "pymdownx.tasklist": {
+        "clickable_checkbox": True,  # 任务列表可点击
+    },
 }
-    
-def md_to_html(md_text):
-    return markdown(md_text, output_format='html', extensions=__extensions, extension_configs=__extension_configs)  # MarkDown转HTML
 
+
+def md_to_html(md_text):
+    return markdown(
+        md_text,
+        output_format="html",
+        extensions=__extensions,
+        extension_configs=__extension_configs,
+    )  # MarkDown转HTML
 
 
 # 本测试与上述代码在同个文件中
-if __name__ == '__main__':
+if __name__ == "__main__":
     md = """
 
 FFmpeg README

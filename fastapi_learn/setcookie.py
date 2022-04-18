@@ -1,7 +1,9 @@
 from fastapi import FastAPI
-from fastapi.responses import JSONResponse
 from fastapi.requests import Request
+from fastapi.responses import JSONResponse
+
 app = FastAPI()
+
 
 @app.get("/cookie/")
 def Login(request: Request):
@@ -9,6 +11,7 @@ def Login(request: Request):
     response = JSONResponse(content=content)
     response.set_cookie(key="username", value="zlkt")
     return response
+
 
 if __name__ == "__main__":
     import uvicorn

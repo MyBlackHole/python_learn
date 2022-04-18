@@ -1,5 +1,6 @@
-import requests
 import time
+
+import requests
 from retrying import retry
 
 headers = {
@@ -25,5 +26,5 @@ def parse_url(url):
 
 
 if __name__ == "__main__":
-    url = 'www.baidu.com'
+    url = "www.baidu.com"
     print(parse_url(url))

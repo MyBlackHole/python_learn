@@ -1,9 +1,11 @@
 # coding=utf-8
 import pandas as pd
-from matplotlib import pyplot as plt
 from matplotlib import font_manager
+from matplotlib import pyplot as plt
 
-my_font = font_manager.FontProperties(fname="/usr/share/fonts/opentype/noto/NotoSansCJK-Light.ttc")
+my_font = font_manager.FontProperties(
+    fname="/usr/share/fonts/opentype/noto/NotoSansCJK-Light.ttc"
+)
 
 file_path = "./starbucks_store_worldwide.csv"
 

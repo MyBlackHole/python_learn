@@ -15,7 +15,7 @@ def fill_ndarray(t1):
     return t1
 
 
-if __name__ == '__main__':
+if __name__ == "__main__":
     t1 = np.arange(24).reshape((4, 6)).astype("float")
     t1[1, 2:] = np.nan
     print(t1)

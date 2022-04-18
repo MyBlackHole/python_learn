@@ -1,11 +1,11 @@
 import random
-from OpenGL.GL import glCallList, glColor3f, glMaterialfv, glMultMatrixf, glPopMatrix, glPushMatrix, \
-    GL_EMISSION, GL_FRONT
-import numpy
 
+import color
+import numpy
+from OpenGL.GL import (GL_EMISSION, GL_FRONT, glCallList, glColor3f,
+                       glMaterialfv, glMultMatrixf, glPopMatrix, glPushMatrix)
 from primitive import G_OBJ_CUBE, G_OBJ_SPHERE
 from transformation import scaling, translation
-import color
 
 
 class Node(object):
@@ -18,7 +18,7 @@ class Node(object):
         self.scaling_matrix = numpy.identity(4)
 
     def render(self):
-        """ 渲染节点 """
+        """渲染节点"""
         glPushMatrix()
         # 实现平移
         glMultMatrixf(numpy.transpose(self.translation_matrix))
@@ -33,10 +33,13 @@ class Node(object):
 
     def render_self(self):
         raise NotImplementedError(
-            "The Abstract Node Class doesn't define 'render_self'")
+            "The Abstract Node Class doesn't define 'render_self'"
+        )
 
     def translate(self, x, y, z):
-        self.translation_matrix = numpy.dot(self.translation_matrix, translation([x, y, z]))
+        self.translation_matrix = numpy.dot(
+            self.translation_matrix, translation([x, y, z])
+        )
 
     def scale(self, s):
         self.scaling_matrix = numpy.dot(self.scaling_matrix, scaling([s, s, s]))
@@ -52,7 +55,7 @@ class Primitive(Node):
 
 
 class Sphere(Primitive):
-    """ 球形图元 """
+    """球形图元"""
 
     def __init__(self):
         super(Sphere, self).__init__()
@@ -60,7 +63,7 @@ class Sphere(Primitive):
 
 
 class Cube(Primitive):
-    """ 立方体图元 """
+    """立方体图元"""
 
     def __init__(self):
         super(Cube, self).__init__()

@@ -1,13 +1,16 @@
 import time
-from werkzeug.exceptions import HTTPException
-from werkzeug.wrappers import Response, Request
-from werkzeug.routing import Map, Rule
+
 from werkzeug import run_simple
- 
+from werkzeug.exceptions import HTTPException
+from werkzeug.routing import Map, Rule
+from werkzeug.wrappers import Request, Response
+
+
 class MyMiddleWare(object):
     """
     wsgi中间件
     """
+
     def __init__(self, application):
         self.application = application
         print("创建middleware")
@@ -15,14 +18,16 @@ class MyMiddleWare(object):
     def __call__(self, environ, start_response):
         b = time.time()
         result = self.application(environ, start_response)
-        duration = (time.time() - b)/1000
+        duration = (time.time() - b) / 1000
         print("duration: %f" % duration)
         return result
+
 
 class MyApp(object):
     def __init__(self):
         self.url_map = None
         print("创建app")
+
     def url_adapter(self):
         pass
 
@@ -38,7 +43,7 @@ class MyApp(object):
             endpoint, values = adapter.match()
             print(endpoint, values, "oo")
             # 通过 endpoint + _handler 找到对应的函数
-            return getattr(self, endpoint + '_handler')(request, **values)
+            return getattr(self, endpoint + "_handler")(request, **values)
         except HTTPException as e:
             print(repr(e))
             return Response("hello world")
@@ -51,16 +56,16 @@ class MyApp(object):
     def __call__(self, environ, start_response):
         return self.wsgi_app(environ, start_response)
 
+
 def create_app():
     app = MyApp()
     # 加入中间件
     app.wsgi_app = MyMiddleWare(app.wsgi_app)
     # 添加路由,endpoint指向的是一个函数，通过路由地址绑定到该endpoint上
-    app.url_map = Map(
-        [Rule('/', endpoint="new_url")]
-    )
+    app.url_map = Map([Rule("/", endpoint="new_url")])
     return app
-    
-if __name__ == '__main__':
+
+
+if __name__ == "__main__":
     app = create_app()
-    run_simple('127.0.0.1', 5000, app)
+    run_simple("127.0.0.1", 5000, app)

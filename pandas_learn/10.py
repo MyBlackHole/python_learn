@@ -1,7 +1,7 @@
 # coding=utf-8
+import numpy as np
 import pandas as pd
 from matplotlib import pyplot as plt
-import numpy as np
 
 file_path = "./IMDB-Movie-Data.csv"
 

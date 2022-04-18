@@ -13,12 +13,12 @@
 -------------------------------------------------
 """
 
-__author__ = 'Black Hole'
+__author__ = "Black Hole"
 
 from faker import Faker
 
 # 地址信息生成
-fake = Faker('zh_CN')
+fake = Faker("zh_CN")
 print(fake.name())
 print(fake.address())
 print(fake.city())

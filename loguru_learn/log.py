@@ -17,39 +17,62 @@ def info_only(record):
     return record["level"].name == "INFO"
 
 
-logger.add(log_path / "info_log.log", backtrace=backtrace, filter=info_only, rotation=rotation, encoding="utf-8",
-           enqueue=True,
-           retention="14 days")
+logger.add(
+    log_path / "info_log.log",
+    backtrace=backtrace,
+    filter=info_only,
+    rotation=rotation,
+    encoding="utf-8",
+    enqueue=True,
+    retention="14 days",
+)
 
 
 def warning_only(record):
     return record["level"].name == "WARNING"
 
 
-logger.add(log_path / "warning_log.log", backtrace=backtrace, filter=warning_only, rotation=rotation,
-           encoding="utf-8",
-           enqueue=True,
-           retention="14 days")
+logger.add(
+    log_path / "warning_log.log",
+    backtrace=backtrace,
+    filter=warning_only,
+    rotation=rotation,
+    encoding="utf-8",
+    enqueue=True,
+    retention="14 days",
+)
 
 
 def debug_only(record):
     return record["level"].name == "DEBUG"
 
 
-logger.add(log_path / "debug_log.log", backtrace=backtrace, filter=debug_only, rotation=rotation, encoding="utf-8",
-           enqueue=True,
-           retention="14 days")
+logger.add(
+    log_path / "debug_log.log",
+    backtrace=backtrace,
+    filter=debug_only,
+    rotation=rotation,
+    encoding="utf-8",
+    enqueue=True,
+    retention="14 days",
+)
 
 
 def error_only(record):
     print(record)
-    print(record['time'])
+    print(record["time"])
     return record["level"].name == "ERROR"
 
 
-logger.add(log_path / "error_log.log", backtrace=backtrace, filter=error_only, rotation=rotation, encoding="utf-8",
-           enqueue=True,
-           retention="14 days")
+logger.add(
+    log_path / "error_log.log",
+    backtrace=backtrace,
+    filter=error_only,
+    rotation=rotation,
+    encoding="utf-8",
+    enqueue=True,
+    retention="14 days",
+)
 
 params = {
     "host": "smtp.qq.com",
@@ -57,9 +80,9 @@ params = {
     "username": "1358244533@qq.com",
     "from": "1358244533@qq.com",
     "password": "wettvkqaipkdfgdi",
-    "to": ['1358244533@qq.com'],
+    "to": ["1358244533@qq.com"],
     "subject": "邮件标题",
-    "ssl": True
+    "ssl": True,
 }
 
 # # 测试用
@@ -69,7 +92,7 @@ params = {
 handler = NotificationHandler("email", defaults=params)
 logger.add(handler, filter=error_only)
 
-if __name__ == '__main__':
+if __name__ == "__main__":
     # for i in range(10):
     #     Process(target=wlog, args=(i,)).start()
 

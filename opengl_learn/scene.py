@@ -7,10 +7,10 @@ class Scene(object):
         self.node_list = list()
 
     def add_node(self, node):
-        """ 在场景中加入一个新节点 """
+        """在场景中加入一个新节点"""
         self.node_list.append(node)
 
     def render(self):
-        """ 遍历场景下所有节点并渲染 """
+        """遍历场景下所有节点并渲染"""
         for node in self.node_list:
             node.render()

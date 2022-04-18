@@ -13,16 +13,16 @@
 -------------------------------------------------
 """
 
-__author__ = 'Black Hole'
+__author__ = "Black Hole"
 
-from retrying import retry, RetryError
+from retrying import RetryError, retry
 
 
 # 包裹其他异常
 @retry(wrap_exception=True, stop_max_attempt_number=5)
 def might_io_error1():
     print("Retry forever with no wait if an IOError occurs, raise any other errors")
-    assert 1 > 2, 'lll'
+    assert 1 > 2, "lll"
     # return 1
 
 
@@ -30,7 +30,7 @@ def might_io_error1():
 @retry(stop_max_attempt_number=5)
 def might_io_error1():
     print("Retry forever with no wait if an IOError occurs, raise any other errors")
-    raise RetryError('lll')
+    raise RetryError("lll")
     # assert 1 > 2, 'lll'
     # return 1
 

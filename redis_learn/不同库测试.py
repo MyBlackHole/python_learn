@@ -12,7 +12,7 @@
 -------------------------------------------------
 """
 
-__author__ = 'Black Hole'
+__author__ = "Black Hole"
 
 import json
 
@@ -25,12 +25,12 @@ wb_redis_conn = Redis(connection_pool=wb_pool)
 
 
 def get_task(redis_conn: Redis) -> int:
-    resp = redis_conn.rpop('task')
+    resp = redis_conn.rpop("task")
     if not resp:
         return 0
     return json.loads(resp)
 
 
-if __name__ == '__main__':
+if __name__ == "__main__":
     while True:
         print(get_task(wb_redis_conn))

@@ -1,8 +1,9 @@
 import os
-from minio import Minio
-from minio.error import S3Error
 from datetime import timedelta
+
+from minio import Minio
 from minio.deleteobjects import DeleteObject
+from minio.error import S3Error
 
 
 class Bucket(object):
@@ -25,7 +26,7 @@ class Bucket(object):
         """
         return self.client.bucket_exists(bucket_name=bucket_name)
 
-    def create_bucket(self, bucket_name:str, is_policy:bool=True):
+    def create_bucket(self, bucket_name: str, is_policy: bool = True):
         """
         创建桶 + 赋予策略
         :param bucket_name: 桶名
@@ -35,7 +36,7 @@ class Bucket(object):
         if self.exists_bucket(bucket_name=bucket_name):
             return False
         else:
-            self.client.make_bucket(bucket_name = bucket_name)
+            self.client.make_bucket(bucket_name=bucket_name)
         if is_policy:
             policy = self.policy % (bucket_name, bucket_name)
             self.client.set_bucket_policy(bucket_name=bucket_name, policy=policy)
@@ -75,10 +76,18 @@ class Bucket(object):
         :return:
         """
         try:
-            files_list = self.client.list_objects(bucket_name=bucket_name, prefix=prefix, recursive=True)
+            files_list = self.client.list_objects(
+                bucket_name=bucket_name, prefix=prefix, recursive=True
+            )
             for obj in files_list:
-                print(obj.bucket_name, obj.object_name.encode('utf-8'), obj.last_modified,
-                      obj.etag, obj.size, obj.content_type)
+                print(
+                    obj.bucket_name,
+                    obj.object_name.encode("utf-8"),
+                    obj.last_modified,
+                    obj.etag,
+                    obj.size,
+                    obj.content_type,
+                )
         except S3Error as e:
             print("[error]:", e)
 
@@ -95,7 +104,7 @@ class Bucket(object):
             return None
         return policy
 
-    def download_file(self, bucket_name, file, file_path, stream=1024*32):
+    def download_file(self, bucket_name, file, file_path, stream=1024 * 32):
         """
         从bucket 下载文件 + 写入指定文件
         :return:
@@ -128,7 +137,7 @@ class Bucket(object):
         """
         self.client.copy_object(bucket_name, file, file_path)
 
-    def upload_file(self,bucket_name, file, file_path, content_type):
+    def upload_file(self, bucket_name, file, file_path, content_type):
         """
         上传文件 + 写入
         :param bucket_name: 桶名
@@ -140,7 +149,13 @@ class Bucket(object):
         try:
             with open(file_path, "rb") as file_data:
                 file_stat = os.stat(file_path)
-                self.client.put_object(bucket_name, file, file_data, file_stat.st_size, content_type=content_type)
+                self.client.put_object(
+                    bucket_name,
+                    file,
+                    file_data,
+                    file_stat.st_size,
+                    content_type=content_type,
+                )
         except S3Error as e:
             print("[error]:", e)
 
@@ -197,11 +212,18 @@ class Bucket(object):
         生成一个http GET操作 签证URL
         :return:
         """
-        return self.client.presigned_get_object(bucket_name, file, expires=timedelta(days=days))
+        return self.client.presigned_get_object(
+            bucket_name, file, expires=timedelta(days=days)
+        )
 
 
-if __name__ == '__main__':
+if __name__ == "__main__":
 
-    client = Minio(service="10.0.0.70:9000", access_key="minioadmin", secret_key="minioadmin", secure=False)
+    client = Minio(
+        service="10.0.0.70:9000",
+        access_key="minioadmin",
+        secret_key="minioadmin",
+        secure=False,
+    )
 
     minio_obj = Bucket(client=client)

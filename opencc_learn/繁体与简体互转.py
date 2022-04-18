@@ -13,7 +13,7 @@
 -------------------------------------------------
 """
 
-__author__ = 'Black Hole'
+__author__ = "Black Hole"
 
 from opencc import OpenCC
 
@@ -52,14 +52,21 @@ s5 = """炫迈|康师傅茉莉清茶|spa7ce|韩国艺匠ArtizStudio|香奈儿|�
 宝马|奔驰|丰田|BMW|川崎|比亚迪|稚优泉|DIOR|保时捷|colorkey|Kawasaki|梅赛德斯-AMG|纪梵希|vivo X50|herbal essences|科颜氏|
 louis vuitton|OLAY|欧莱雅|飞利浦|MAC|魅可|YSL|兰蔻|阿玛尼|迪奥"""
 
-filter_str = [i.strip() for i in s1.split('|') + s2.split('|') + s3.split('|') + s4.split('|') + s5.split('|')]
+filter_str = [
+    i.strip()
+    for i in s1.split("|")
+    + s2.split("|")
+    + s3.split("|")
+    + s4.split("|")
+    + s5.split("|")
+]
 # print(filter_str)
 
 # 简体转繁体
-ts = OpenCC('t2s')
+ts = OpenCC("t2s")
 print(ts.convert("罗志祥"))
 
 # 繁体转简体
-st = OpenCC('s2t')
+st = OpenCC("s2t")
 print(st.convert("罗志祥"))
 print(st.convert(s1))

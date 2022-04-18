@@ -15,14 +15,14 @@ Change Activity:
 """
 
 
-from pydantic import BaseModel
 from typing import Optional
-from fastapi.exceptions import HTTPException
-from fastapi.exceptions import RequestValidationError
-from fastapi.responses import PlainTextResponse
-from fastapi import FastAPI
-from fastapi.exception_handlers import request_validation_exception_handler, http_exception_handler
 
+from fastapi import FastAPI
+from fastapi.exception_handlers import (http_exception_handler,
+                                        request_validation_exception_handler)
+from fastapi.exceptions import HTTPException, RequestValidationError
+from fastapi.responses import PlainTextResponse
+from pydantic import BaseModel
 
 app = FastAPI()
 

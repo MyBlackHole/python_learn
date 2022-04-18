@@ -1,6 +1,6 @@
-from notifiers.logging import NotificationHandler
 import notifiers
 from loguru import logger
+from notifiers.logging import NotificationHandler
 
 params = {
     "host": "smtp.qq.com",
@@ -8,7 +8,7 @@ params = {
     "username": "1358244533@qq.com",
     "from": "1358244533@qq.com",
     "password": "wettvkqaipkdfgdi",
-    "to": ['myisblackhole@163.com'],
+    "to": ["myisblackhole@163.com"],
     "subject": "邮件标题",
     "ssl": True
     # "tls": True

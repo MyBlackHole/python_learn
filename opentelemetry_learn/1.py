@@ -6,9 +6,7 @@ from opentelemetry.sdk.trace import TracerProvider
 from opentelemetry.sdk.trace.export import BatchSpanProcessor
 
 trace.set_tracer_provider(
-    TracerProvider(
-        resource=Resource.create({SERVICE_NAME: "my-helloworld-service"})
-    )
+    TracerProvider(resource=Resource.create({SERVICE_NAME: "my-helloworld-service"}))
 )
 
 jaeger_exporter = JaegerExporter(
@@ -16,9 +14,7 @@ jaeger_exporter = JaegerExporter(
     agent_port=6831,
 )
 
-trace.get_tracer_provider().add_span_processor(
-    BatchSpanProcessor(jaeger_exporter)
-)
+trace.get_tracer_provider().add_span_processor(BatchSpanProcessor(jaeger_exporter))
 
 tracer = trace.get_tracer(__name__)
 

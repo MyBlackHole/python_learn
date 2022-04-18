@@ -2,14 +2,15 @@
 # encoding: utf-8
 
 import os
+
+from werkzeug.middleware.shared_data import SharedDataMiddleware
 from werkzeug.serving import run_simple
 from werkzeug.wrappers import Request, Response
-from werkzeug.middleware.shared_data import SharedDataMiddleware
 
 
 class Shortly(object):
     def dispatch_request(self, request):
-        return Response('Hello Werkzeug!')
+        return Response("Hello Werkzeug!")
 
     def wsgi_app(self, environ, start_response):
         request = Request(environ)
@@ -23,15 +24,13 @@ class Shortly(object):
 def create_app(with_static=True):
     app = Shortly()
     if with_static:
-        app.wsgi_app = SharedDataMiddleware(app.wsgi_app, {
-            '/static': os.path.join(os.path.dirname(__file__), 'static')
-        })
+        app.wsgi_app = SharedDataMiddleware(
+            app.wsgi_app, {"/static": os.path.join(os.path.dirname(__file__), "static")}
+        )
     return app
 
- 
 
-if __name__ == '__main__':
-    print(os.path.join(os.path.dirname(__file__), 'static'))
+if __name__ == "__main__":
+    print(os.path.join(os.path.dirname(__file__), "static"))
     app = create_app()
-    run_simple('127.0.0.1', 6666, app, use_debugger=True, use_reloader=True)
-
+    run_simple("127.0.0.1", 6666, app, use_debugger=True, use_reloader=True)

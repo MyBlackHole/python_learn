@@ -12,12 +12,12 @@
 -------------------------------------------------
 """
 
-__author__ = 'Black Hole'
+__author__ = "Black Hole"
 
 import redis
 
 conn = redis.Redis()
 
 with conn.pipeline() as p:
-    p.set('black', 'hole').keys()
+    p.set("black", "hole").keys()
     p.execute()

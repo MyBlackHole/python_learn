@@ -12,10 +12,9 @@
 -------------------------------------------------
 """
 
-__author__ = 'Black Hole'
+__author__ = "Black Hole"
 
 import time
-
 from multiprocessing import Process
 
 """
@@ -36,5 +35,5 @@ def func1():
     p1.join()
 
 
-if __name__ == '__main__':
+if __name__ == "__main__":
     func1()

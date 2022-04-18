@@ -7,6 +7,7 @@ from rich import print as rprint
 rprint("[italic red]Hello[/italic red] World!", locals())
 
 from rich.console import Console
+
 console = Console()
 
 console.print([1, 2, 3])

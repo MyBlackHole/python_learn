@@ -15,8 +15,9 @@ Change Activity:
 """
 
 from requests_html import HTMLSession
+
 session = HTMLSession()
-resp = session.get(url='https://twitter.com/cnn')
+resp = session.get(url="https://twitter.com/cnn")
 
 resp.html.render()
 

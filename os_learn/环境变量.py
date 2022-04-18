@@ -12,11 +12,10 @@
 -------------------------------------------------
 """
 
-__author__ = 'Black Hole'
+__author__ = "Black Hole"
 
 import os
 
 print(os.environ)
 print(os.environ.get("USER"))
 print(os.environ.get("HOSTNAME"))
-

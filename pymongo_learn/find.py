@@ -1,13 +1,15 @@
 from pymongo import MongoClient
 
 # 服务链接
-mongodb_link = MongoClient(host="127.0.0.1", port=27017, username="root", password="3edc#EDC")
+mongodb_link = MongoClient(
+    host="127.0.0.1", port=27017, username="root", password="3edc#EDC"
+)
 
 # 集合选择
-algorithm = mongodb_link['algorithm']
+algorithm = mongodb_link["algorithm"]
 
 # 文档选择
-teacher_text = algorithm['teacher_text']
+teacher_text = algorithm["teacher_text"]
 
 data = {
     "sales_features": {
@@ -16,7 +18,7 @@ data = {
     "scenes_features": {
         "行业": "服装销售",
     },
-    "_id": "41c872b09b6311ec860ee0d55eeff354"
+    "_id": "41c872b09b6311ec860ee0d55eeff354",
 }
 
 find_map = {
@@ -34,7 +36,7 @@ find_map = {
 
 # def dict_parse():
 #     end = []
-#     node_list = [] 
+#     node_list = []
 #     node_list_bat = []
 #     for node in node_list:
 #         child_list = node["child"]
@@ -45,12 +47,9 @@ find_map = {
 #             node_list_bat.append(child)
 #         node_list = node_list_bat.copy()
 #         node_list_bat = []
-            
-        
-        
-    
 
-def data_map(_and:list, key:str, data:dict, find_map:dict):
+
+def data_map(_and: list, key: str, data: dict, find_map: dict):
     for key1 in data:
         value = data[key1]
         key_type = type(value)
@@ -64,16 +63,15 @@ def data_map(_and:list, key:str, data:dict, find_map:dict):
             continue
         elif key_type != dict:
             continue
-      
-        data_map(_and, key = f"{key}{key1}.", data=value, find_map=find_map)
+
+        data_map(_and, key=f"{key}{key1}.", data=value, find_map=find_map)
 
 
-def find(link, data:dict, find_map:dict):
+def find(link, data: dict, find_map: dict):
     _and = []
     data_map(_and, "", data, find_map)
     print(_and)
-    return link.find({"$and":_and})
-
+    return link.find({"$and": _and})
 
 
 if __name__ == "__main__":
@@ -83,6 +81,3 @@ if __name__ == "__main__":
 
     # sales_features = root["sales_features"]
     # print(id(sales_features))
-
-
-
