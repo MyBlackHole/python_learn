@@ -20,15 +20,22 @@ import time
 
 
 def put(event: threading.Event, interval: int):
-	while not event.wait(interval):
-		logger.info("event.wait")
+    while not event.wait(interval):
+        logger.info("event.wait")
+    print("end_put")
 
 
+# 事件
 e = threading.Event()
+
 t = threading.Thread(target=put, args=(e, 2))
 t.start()
 
+# 触发时间
+e.set()
+
 # e.wait(10)
 time.sleep(10)
-e.set()
+
+
 print("end")

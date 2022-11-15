@@ -57,7 +57,7 @@ class PoJie(object):
             # 获取所有的wifi
             n, data = self.bies()
             time.sleep(1)
-            if n is not 0:
+            if n != 0:
                 # 如果数量不为0，返回前10个信号最好的
                 return data[0:1]
 
