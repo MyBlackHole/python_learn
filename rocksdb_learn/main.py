@@ -1,5 +1,6 @@
-import rocksdb
 import asyncio
+
+import rocksdb
 from rocksdb.rocksdb_ext import Response
 
 

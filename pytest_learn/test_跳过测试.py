@@ -4,6 +4,6 @@
 import pytest
 
 
-@pytest.mark.skip(reason='跳过此函数')
+@pytest.mark.skip(reason="跳过此函数")
 def test_connect():
     pass

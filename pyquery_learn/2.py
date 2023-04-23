@@ -1,6 +1,6 @@
 from pyquery import PyQuery
 
-with open('1.html', 'r') as f:
+with open("1.html", "r") as f:
     contents = f.read()
 
 doc = PyQuery(contents)

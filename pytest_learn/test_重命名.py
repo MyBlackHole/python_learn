@@ -4,7 +4,7 @@
 import pytest
 
 
-@pytest.fixture(name='age')
+@pytest.fixture(name="age")
 def calculate_average_age():
     return 28
 

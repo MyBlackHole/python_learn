@@ -1,5 +1,5 @@
-#!/usr/bin/env python 
-# -*- coding: utf-8 -*- 
+#!/usr/bin/env python
+# -*- coding: utf-8 -*-
 
 """ 
 ------------------------------------------------- 
@@ -14,4 +14,4 @@
 ------------------------------------------------- 
 """
 
-__author__ = 'Black Hole'
+__author__ = "Black Hole"

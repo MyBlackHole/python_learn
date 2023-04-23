@@ -4,22 +4,22 @@
 import pytest
 
 
-@pytest.fixture(scope='function')
+@pytest.fixture(scope="function")
 def func_scope():
     pass
 
 
-@pytest.fixture(scope='module')
+@pytest.fixture(scope="module")
 def mod_scope():
     pass
 
 
-@pytest.fixture(scope='session')
+@pytest.fixture(scope="session")
 def sess_scope():
     pass
 
 
-@pytest.fixture(scope='class')
+@pytest.fixture(scope="class")
 def class_scope():
     pass
 

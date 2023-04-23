@@ -39,15 +39,13 @@ __author__ = "Black Hole"
 
 
 # 压缩
+import os
 import zipfile
 
 z_file = zipfile.ZipFile("text.zip", "w")
 z_file.write("baidu_news_163.py")
 z_file.write("__init__.py")
 z_file.close()
-
-import os
-import zipfile
 
 source_dir = "/project/source"  # pwd查看绝对路径替换
 zipname = "/project/target/compress_complete.zip"  # pwd查看绝对路径替换

