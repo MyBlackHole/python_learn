@@ -1,9 +1,9 @@
 import minio
 
 minio_conf = {
-    "endpoint": "172.17.0.2:9000",
-    "access_key": "minioadmin",
-    "secret_key": "minioadmin",
+    "endpoint": "127.0.0.1:9000",
+    "access_key": "admin1234",
+    "secret_key": "admin1234",
     "secure": False,
 }
 
