@@ -23,27 +23,35 @@ def iteration_is_none(item):
 
 
 DEFAULT_DATABASE = {
-    'host': "127.0.0.1",
-    'user': "black",
-    'password': "1358",
-    'database': "test",
-    'port': 3306
+    "host": "127.0.0.1",
+    "user": "black",
+    "password": "1358",
+    "database": "test",
+    "port": 3306,
 }
 
 
 def mysql_decorator(func):
     def connection(*args, **kwargs):
-        database_info = kwargs.get('database_info', DEFAULT_DATABASE)
-        database_info = DEFAULT_DATABASE if iteration_is_none(database_info) else database_info
-        assert all(key in database_info.keys() for key in ['host', 'user', 'password', 'database', 'port']), \
-            "数据库信息缺少必要key  'host','user','password','database','port'"
-        conn = pymysql.connect(**database_info, cursorclass=pymysql.cursors.DictCursor, read_timeout=30,
-                               write_timeout=30)
+        database_info = kwargs.get("database_info", DEFAULT_DATABASE)
+        database_info = (
+            DEFAULT_DATABASE if iteration_is_none(database_info) else database_info
+        )
+        assert all(
+            key in database_info.keys()
+            for key in ["host", "user", "password", "database", "port"]
+        ), "数据库信息缺少必要key  'host','user','password','database','port'"
+        conn = pymysql.connect(
+            **database_info,
+            cursorclass=pymysql.cursors.DictCursor,
+            read_timeout=30,
+            write_timeout=30
+        )
         cursor = conn.cursor()
 
         def wrapper(*args, **kwargs):
-            kwargs['conn'] = conn
-            kwargs['cursor'] = cursor
+            kwargs["conn"] = conn
+            kwargs["cursor"] = cursor
             return func(*args, **kwargs)
 
         results = wrapper(*args, **kwargs)
@@ -76,12 +84,19 @@ class MySQLManage(object):
         return results
 
     def execute(self, sql, conn=None, cursor=None, database_info=None):
-        return self._execute_db("execute", sql, conn=conn,
-                                cursor=cursor, database_info=database_info)
+        return self._execute_db(
+            "execute", sql, conn=conn, cursor=cursor, database_info=database_info
+        )
 
     def executemany(self, sql, data, conn=None, cursor=None, database_info=None):
-        return self._execute_db("executemany", sql, data, conn=conn,
-                                cursor=cursor, database_info=database_info)
+        return self._execute_db(
+            "executemany",
+            sql,
+            data,
+            conn=conn,
+            cursor=cursor,
+            database_info=database_info,
+        )
 
     @mysql_decorator
     @retry(stop_max_attempt_number=3, stop_max_delay=1000)

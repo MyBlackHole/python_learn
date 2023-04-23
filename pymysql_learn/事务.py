@@ -13,16 +13,16 @@
 -------------------------------------------------
 """
 
-__author__ = 'Black Hole'
+__author__ = "Black Hole"
 
 # import pymysql
 
 data_info = {
-    'host': "127.0.0.1",
-    'user': "BlackHole",
-    'password': "1358244533",
-    'database': "test",
-    'port': 3306
+    "host": "127.0.0.1",
+    "user": "BlackHole",
+    "password": "1358244533",
+    "database": "test",
+    "port": 3306,
 }
 
 # connect = pymysql.connect(**data_info)
@@ -64,11 +64,13 @@ def get_task():
     sql_select = "select id from weibo where Sex=1 limit 1;"
     sql_update = "update weibo set Sex = 0 where ID={id};"
 
-    return select_sql(sql_select, sql_update, 'id')
+    return select_sql(sql_select, sql_update, "id")
 
 
 @mysql_decorate
-def select_sql(sql_select: str, sql_update: str, sid: str, conn=None, cursor=None) -> list:
+def select_sql(
+    sql_select: str, sql_update: str, sid: str, conn=None, cursor=None
+) -> list:
     """
     扫描数据库获取任务
     """
@@ -79,7 +81,7 @@ def select_sql(sql_select: str, sql_update: str, sid: str, conn=None, cursor=Non
         for raw in results:
             s_id = raw.get(sid)
             if not s_id:
-                raise Exception(f' {sid} 不存在 ')
+                raise Exception(f" {sid} 不存在 ")
             # 更新任务状态
             sql_update = sql_update.format(id=s_id)
 
@@ -91,7 +93,7 @@ def select_sql(sql_select: str, sql_update: str, sid: str, conn=None, cursor=Non
         print(e)
 
 
-if __name__ == '__main__':
+if __name__ == "__main__":
     import threading
 
     li = []
