@@ -1,10 +1,10 @@
 from datetime import datetime, timedelta
 
 from airflow import DAG
-from airflow.utils import dates
-from airflow.utils.helpers import chain
 from airflow.operators.bash import BashOperator
 from airflow.operators.python import PythonOperator
+from airflow.utils import dates
+from airflow.utils.helpers import chain
 
 
 def default_options():
@@ -22,7 +22,10 @@ def test1(dag):
     t = "pwd"
     # operator 支持多种类型， 这里使用 BashOperator
     task = BashOperator(
-        task_id="test1", bash_command=t, dag=dag  # task_id  # 指定要执行的命令  # 指定归属的dag
+        # task_id  # 指定要执行的命令  # 指定归属的dag
+        task_id="test1",
+        bash_command=t,
+        dag=dag,
     )
     return task
 
@@ -41,7 +44,7 @@ def test2(dag):
 
 
 def test3(dag):
-    t = "date"
+    t = "top"
     task = BashOperator(task_id="test3", bash_command=t, dag=dag)
     return task
 
