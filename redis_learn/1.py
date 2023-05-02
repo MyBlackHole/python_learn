@@ -7,7 +7,12 @@ REDIS_POST = 6379
 REDIS_DB = 8
 
 # 创建连接池
-redis_pool = redis.ConnectionPool(host=REDIS_HOST, port=REDIS_POST, db=REDIS_DB)
+redis_pool = redis.ConnectionPool(
+    host=REDIS_HOST,
+    port=REDIS_POST,
+    db=REDIS_DB,
+)
+
 
 # 创建连接(并使用连接池)
 def new_redis_conn(redis_pool):
@@ -40,7 +45,10 @@ print("ok")
 # status = redis_conn.set('a', 123, ex=-1)
 # print(status)
 
-# status = redis_conn.zadd('a', {'celery-taskset-meta-7d2ccaa4-fac6-4a6c-a3a7-a5696db57dd0': 1629198396})
+# status = redis_conn.zadd(
+#     "a",
+#     {"celery-taskset-meta-7d2ccaa4-fac6-4a6c-a3a7-a5696db57dd0": 1629198396},
+# )
 # print(status)
 
 r = redis_conn.zrevrangebyscore("text1", 1629498396, 0)

@@ -23,7 +23,11 @@ REDIS_HOST = "localhost"
 REDIS_PORT = 6379
 REDIS_DB = 11
 
-pool = redis.ConnectionPool(host=REDIS_HOST, port=REDIS_PORT, db=REDIS_DB)
+pool = redis.ConnectionPool(
+    host=REDIS_HOST,
+    port=REDIS_PORT,
+    db=REDIS_DB,
+)
 _redis = redis.Redis(connection_pool=pool)
 
 DATA_GROUP_NAME = "sch:"

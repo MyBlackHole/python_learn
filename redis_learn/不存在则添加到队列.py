@@ -23,7 +23,11 @@ REDIS_POST = 6379
 REDIS_DB = 0
 
 # 创建连接池
-redis_pool = redis.ConnectionPool(host=REDIS_HOST, port=REDIS_POST, db=REDIS_DB)
+redis_pool = redis.ConnectionPool(
+    host=REDIS_HOST,
+    port=REDIS_POST,
+    db=REDIS_DB,
+)
 
 # 创建连接(并使用连接池)
 redis_conn = redis.Redis(connection_pool=redis_pool)

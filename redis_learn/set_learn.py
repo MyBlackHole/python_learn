@@ -18,7 +18,10 @@ import arrow
 import redis
 
 # pool = redis.ConnectionPool(host='127.0.0.1', port=6379)
-redis_info = {"host": "127.0.0.1", "port": 6379}
+redis_info = {
+    "host": "127.0.0.1",
+    "port": 6379,
+}
 redis_conn = redis.Redis(**redis_info)
 
 start_time = arrow.now().timestamp

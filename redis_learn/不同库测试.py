@@ -19,7 +19,11 @@ import json
 import redis
 from redis import Redis
 
-wb_redis_info = {"host": "127.0.0.1", "port": 6379, "db": 3}
+wb_redis_info = {
+    "host": "127.0.0.1",
+    "port": 6379,
+    "db": 3,
+}
 wb_pool = redis.ConnectionPool(**wb_redis_info)
 wb_redis_conn = Redis(connection_pool=wb_pool)
 
