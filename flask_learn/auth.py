@@ -134,7 +134,7 @@ if __name__ == "__main__":
         host="0.0.0.0",
         port=8000,
         ssl_context=(
-            r"/home/black/PycharmProjects/python_learn/flask_learn/secret.pem",
-            "/home/black/PycharmProjects/python_learn/flask_learn/secret.key",
+            r"./secret.pem",
+            r"./secret.key",
         ),
     )

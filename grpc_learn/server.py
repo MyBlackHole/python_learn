@@ -1,9 +1,10 @@
 import time
-import grpc
 from concurrent import futures
 
 # 刚刚生产的两个文件
-import compute_pb2, compute_pb2_grpc
+import compute_pb2
+import compute_pb2_grpc
+import grpc
 
 
 class ComputeServicer(compute_pb2_grpc.ComputeServicer):
@@ -15,7 +16,6 @@ class ComputeServicer(compute_pb2_grpc.ComputeServicer):
         return compute_pb2.HelloReply(result="BlackHole")
 
 
-
 def main():
     # 多线程服务器
     server = grpc.server(futures.ThreadPoolExecutor(max_workers=10))
@@ -24,7 +24,7 @@ def main():
     # 注册本地服务,方法ComputeServicer只有这个是变的
     compute_pb2_grpc.add_ComputeServicer_to_server(servicer, server)
     # 监听端口
-    server.add_insecure_port('127.0.0.1:19999')
+    server.add_insecure_port("127.0.0.1:19999")
     # 开始接收请求进行服务
     server.start()
     # 使用 ctrl+c 可以退出服务
@@ -36,6 +36,5 @@ def main():
         server.stop(0)
 
 
-if __name__ == '__main__':
+if __name__ == "__main__":
     main()
-

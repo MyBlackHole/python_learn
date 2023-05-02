@@ -13,7 +13,7 @@
 -------------------------------------------------
 """
 
-__author__ = 'Black Hole'
+__author__ = "Black Hole"
 
 import gc
 import time
@@ -22,7 +22,7 @@ from threading import Thread
 
 class A(object):
     def __new__(cls, *args, **kwargs):
-        if not hasattr(cls, 'a'):
+        if not hasattr(cls, "a"):
             cls.a = super().__new__(cls, *args, **kwargs)
         return cls.a
 

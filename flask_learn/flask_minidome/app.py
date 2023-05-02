@@ -15,8 +15,11 @@ from models import EmpInfo, User
 class Query(MethodView):
     def get(self):
         text = request.args.get("text")
-        text = "%" + text + "%"
-        # emplist = EmpInfo.query.filter(User.name.like(text)).paginate(page=2, per_page=4)
+        text = f"%{text}%"
+        # emplist = EmpInfo.query.filter(User.name.like(text)).paginate(
+        #     page=2,
+        #     per_page=4,
+        # )
         emplist = EmpInfo.query.filter(EmpInfo.name.like(text))
 
         user_dict = {}
@@ -95,7 +98,10 @@ class Login(MethodView):
     def post(self):
         username = request.form["username"]
         password = request.form["password"]
-        users = User.query.filter(User.username == username, User.pwd == password).all()
+        users = User.query.filter(
+            User.username == username,
+            User.pwd == password,
+        ).all()
         for i in users:
             if i.username:
                 session["username"] = request.form["username"]
@@ -149,7 +155,12 @@ class AddEmp(LoginRequiredMixin, MethodView):
         db.session.add(empinfo)
         db.session.commit()
         pag = db.session.query(EmpInfo).paginate(page=page, per_page=4)
-        image.save(os.path.join(app.config["UPLOAD_FOLDER"], filename.hexdigest()))
+        image.save(
+            os.path.join(
+                app.config["UPLOAD_FOLDER"],
+                filename.hexdigest(),
+            )
+        )
         return redirect(url_for("emplist", id=1, page=pag.pages))
 
 

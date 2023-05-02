@@ -16,8 +16,8 @@ Change Activity:
 
 # from __future__ import with_statement # Required in 2.5
 import signal
-from contextlib import contextmanager
 import time
+from contextlib import contextmanager
 from threading import Thread
 
 
@@ -29,6 +29,7 @@ class TimeoutException(Exception):
 def time_limit(seconds, func):
     def signal_handler(signum, frame):
         raise TimeoutException("Timed out!")
+
     signal.signal(signal.SIGALRM, signal_handler)
     signal.alarm(seconds)
     try:

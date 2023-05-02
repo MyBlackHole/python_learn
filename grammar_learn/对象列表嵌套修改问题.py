@@ -12,7 +12,7 @@
 -------------------------------------------------
 """
 
-__author__ = 'Black Hole'
+__author__ = "Black Hole"
 
 
 class A(object):
@@ -20,7 +20,7 @@ class A(object):
         self.text = 0
 
 
-if __name__ == '__main__':
+if __name__ == "__main__":
     a1 = A()
     a2 = A()
     # for a in [a1, a2]:

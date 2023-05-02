@@ -13,10 +13,11 @@
 -------------------------------------------------
 """
 
-__author__ = 'Black Hole'
+__author__ = "Black Hole"
 
 import ftplib
 from pathlib import Path
+
 # '183.131.241.10:21;dc;hfqYMevpaEZGborovbgzS5Jf'
 # ftp_info = {
 #     'ip': '127.0.0.1',
@@ -25,30 +26,29 @@ from pathlib import Path
 #     'pwd': '123456'
 # }
 ftp_info = {
-    'ip': '183.131.241.9',
-    'port': 21,
-    'user': 'dc',
-    'pwd': 'hfqYMevpaEZGborovbgzS5Jf'
+    "ip": "183.131.241.9",
+    "port": 21,
+    "user": "dc",
+    "pwd": "hfqYMevpaEZGborovbgzS5Jf",
 }
 
 
 if __name__ == "__main__":
     # l = Path('lingshi').iterdir()
 
-
     ftp = ftplib.FTP()
     ftp.set_pasv(False)
-    ftp.connect(ftp_info['ip'], ftp_info['port'])
-    ftp.login(ftp_info['user'], ftp_info['pwd'])
+    ftp.connect(ftp_info["ip"], ftp_info["port"])
+    ftp.login(ftp_info["user"], ftp_info["pwd"])
     # print(ftp.nlst())
     # print(ftp.nlst('/urun_company/weiboxmlnew/20200617'))
-    print(ftp.cwd('/urun_company/weiboxmlnew/20200618'))
+    print(ftp.cwd("/urun_company/weiboxmlnew/20200618"))
     # print(ftp.cwd('/bright_network/weiboxmlnew/'))
     # print(ftp.cwd('/bright_network/weiboxmlnew/20200618'))
     # print(ftp.nlst('/bright_network/weiboxmlnew'))
     # print(ftp.nlst())
     # l = ftp.nlst('/bright_network/weiboxmlnew')
-    l = ftp.nlst('/urun_company/weiboxmlnew/20200618/')
+    l = ftp.nlst("/urun_company/weiboxmlnew/20200618/")
     print(l)
     # l = ftp.nlst()
 
@@ -80,5 +80,5 @@ if __name__ == "__main__":
     #         ftp.storbinary("STOR " + item.name, f)
 
     # print(ftp.nlst('/bright_network/weiboxmlnew/'))
-    print(ftp.nlst('/urun_company/weiboxmlnew/20200618/'))
+    print(ftp.nlst("/urun_company/weiboxmlnew/20200618/"))
     ftp.close()

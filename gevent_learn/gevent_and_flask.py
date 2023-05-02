@@ -13,7 +13,7 @@
 -------------------------------------------------
 """
 
-__author__ = 'Black Hole'
+__author__ = "Black Hole"
 
 # coding: utf-8
 # code by https://cpp.la, 2020-04-20
@@ -23,24 +23,28 @@ from gevent import monkey
 
 monkey.patch_all()
 
-from gevent.pywsgi import WSGIServer
 import datetime
 import os
-from multiprocessing import cpu_count, Process
+from multiprocessing import Process, cpu_count
+
 from flask import Flask, jsonify
+from gevent.pywsgi import WSGIServer
 
 app = Flask(__name__)
 
 
-@app.route("/cppla", methods=['GET'])
+@app.route("/cppla", methods=["GET"])
 def function_benchmark():
-    return jsonify(
-        {
-            "status": "ok",
-            "time": datetime.datetime.now().strftime('%Y-%m-%d %H:%M'),
-            "pid": os.getpid()
-        }
-    ), 200
+    return (
+        jsonify(
+            {
+                "status": "ok",
+                "time": datetime.datetime.now().strftime("%Y-%m-%d %H:%M"),
+                "pid": os.getpid(),
+            }
+        ),
+        200,
+    )
 
 
 def server_forever(server):
@@ -50,9 +54,9 @@ def server_forever(server):
 
 def run(multi_process):
     if not multi_process:
-        WSGIServer(('0.0.0.0', 8080), app).serve_forever()
+        WSGIServer(("0.0.0.0", 8080), app).serve_forever()
     else:
-        mulserver = WSGIServer(('0.0.0.0', 8080), app)
+        mulserver = WSGIServer(("0.0.0.0", 8080), app)
         mulserver.start()
 
         for i in range(cpu_count()):

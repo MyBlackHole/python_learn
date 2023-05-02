@@ -13,10 +13,11 @@
 -------------------------------------------------
 """
 
-__author__ = 'Black Hole'
+__author__ = "Black Hole"
+
+import time
 
 from greenlet import greenlet
-import time
 
 
 def test1(gr, g):
@@ -34,7 +35,7 @@ def test2(gr, g):
         time.sleep(0.5)
 
 
-if __name__ == '__main__':
+if __name__ == "__main__":
     # 创建一个协程1
     gr1 = greenlet(test1)
     # 创建一个协程2

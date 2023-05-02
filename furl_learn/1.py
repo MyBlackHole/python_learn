@@ -13,11 +13,11 @@
 -------------------------------------------------
 """
 
-__author__ = 'Black Hole'
+__author__ = "Black Hole"
 
 from furl import furl
 
-u = furl('http://www.dggdjt.com/node/128.htmx?a=1')
+u = furl("http://www.dggdjt.com/node/128.htmx?a=1")
 print(type(u))
 # 主机
 print(u.host)
@@ -37,7 +37,7 @@ print(u.asdict())
 print(id(u))
 print(id(u.copy()))
 #
-print(u.load('https://www.baidu.com'))
-print(u.add({'a': 1}).url)
-print(u.set({'a': 2}).url)
-print(u.remove({'a': 2}).url)
+print(u.load("https://www.baidu.com"))
+print(u.add({"a": 1}).url)
+print(u.set({"a": 2}).url)
+print(u.remove({"a": 2}).url)

@@ -1,5 +1,6 @@
-import gevent
 import time
+
+import gevent
 from gevent import monkey
 
 monkey.patch_all()
@@ -33,4 +34,4 @@ print("----4---")
 g1.join()
 g2.join()
 g3.join()
-print('----5----')
+print("----5----")

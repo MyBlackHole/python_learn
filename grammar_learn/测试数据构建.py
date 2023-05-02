@@ -13,7 +13,7 @@
 -------------------------------------------------
 """
 
-__author__ = 'Black Hole'
+__author__ = "Black Hole"
 
 import json
 
@@ -25,13 +25,13 @@ def bale(param, task):
             # "task_name": task.task_name,
             # "status_code": task.status_code
             "task_name": "广州",
-            "status_code": 200
-        }
+            "status_code": 200,
+        },
     }
     return json.dumps(data)
 
 
-with open('#401004219#13#1#0#3#5e90accc958c11eaa2bfa3bf13546b53.txt', 'r') as f:
+with open("#401004219#13#1#0#3#5e90accc958c11eaa2bfa3bf13546b53.txt", "r") as f:
     text = bale(f.read(), 1)
 
 print(text)

@@ -1,5 +1,6 @@
-from greenlet import greenlet
 import time
+
+from greenlet import greenlet
 
 
 def test1():

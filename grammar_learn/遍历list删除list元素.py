@@ -13,12 +13,17 @@
 -------------------------------------------------
 """
 
-__author__ = 'Black Hole'
+__author__ = "Black Hole"
 
-l = ['1', '2', '3', '4']
-keys = ['1', '4']
-for i in l:
+arr = [
+    "1",
+    "2",
+    "3",
+    "4",
+]
+keys = ["1", "4"]
+for i in arr:
     for key in keys:
         if key in i:
-            l.remove(i)
-print(l)
+            arr.remove(i)
+print(arr)

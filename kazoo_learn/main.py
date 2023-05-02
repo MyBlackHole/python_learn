@@ -1,10 +1,10 @@
 # coding=utf-8
-from kazoo.client import KazooClient
 import time
+
+from kazoo.client import KazooClient
 
 zk = KazooClient(hosts="172.17.0.2:2181")
 zk.start()
-
 
 # @zk.DataWatch("/")
 # def my_func(data, stat, event):

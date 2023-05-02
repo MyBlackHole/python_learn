@@ -13,14 +13,14 @@
 -------------------------------------------------
 """
 
-__author__ = 'Black Hole'
+__author__ = "Black Hole"
 
 import json
 
-with open("#401004219#13#1#0#3#5e90accc958c11eaa2bfa3bf13546b53.txt", 'r') as f:
+with open("#401004219#13#1#0#3#5e90accc958c11eaa2bfa3bf13546b53.txt", "r") as f:
     baos_str = f.read()
 
 baos = json.loads(baos_str)
 for bao in baos:
-    body = json.loads(bao['body'])
+    body = json.loads(bao["body"])
     print(body)

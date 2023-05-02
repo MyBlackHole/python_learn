@@ -12,14 +12,14 @@
 -------------------------------------------------
 """
 
-__author__ = 'Black Hole'
+__author__ = "Black Hole"
 
 import json
 
 from gne import GeneralNewsExtractor
 
 extractor = GeneralNewsExtractor()
-with open('gne_learn/1.html', 'r', encoding='utf-8') as f:
+with open("gne_learn/1.html", "r", encoding="utf-8") as f:
     html = f.read()
     result = extractor.extract(html)
     # result = extractor.extract(html, with_body_html=True)

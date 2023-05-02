@@ -13,9 +13,9 @@
 -------------------------------------------------
 """
 
-__author__ = 'Black Hole'
+__author__ = "Black Hole"
 
 hs = list(range(101))
 for k in range(0, len(hs), 100):
-    blog_ids = hs[k:k + 100]
+    blog_ids = hs[k : k + 100]
     print(blog_ids)

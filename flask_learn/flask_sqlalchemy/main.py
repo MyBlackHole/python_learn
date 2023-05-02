@@ -1,7 +1,8 @@
+import time
+
 from flask import Flask, request
 from flask_sqlalchemy import SQLAlchemy
 from flask_sqlalchemy.session import _app_ctx_id
-import time
 
 app = Flask(__name__)
 # app.config["SQLALCHEMY_DATABASE_URI"] = "sqlite:///example.sqlite"
@@ -22,7 +23,7 @@ def sleep():
     print(id(db.session))
     print(id(db.session))
     print(_app_ctx_id())
-    db.session.add(User(username=request.args.get('username')))
+    db.session.add(User(username=request.args.get("username")))
     time.sleep(20)
     db.session.commit()
     return "ok"
@@ -36,7 +37,7 @@ def get():
     print(_app_ctx_id())
     print(_app_ctx_id())
     print(_app_ctx_id())
-    db.session.add(User(username=request.args.get('username')))
+    db.session.add(User(username=request.args.get("username")))
     db.session.commit()
     return "ok"
 

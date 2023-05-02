@@ -12,9 +12,10 @@
 -------------------------------------------------
 """
 
-__author__ = 'Black Hole'
+__author__ = "Black Hole"
 
 import glob
+
 """
 ['1.py', '__init__.py']
 """

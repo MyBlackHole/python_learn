@@ -13,7 +13,7 @@
 -------------------------------------------------
 """
 
-__author__ = 'Black Hole'
+__author__ = "Black Hole"
 
 # from faker import Faker
 
@@ -72,19 +72,34 @@ s7 = """羅志祥|肖戰|王俊凱|金瑉錫|張藝興|李鐘碩|華晨宇|李�
 蘇芮琪|蕭亞軒|寧桓宇|劉雯|陸毅|黃旭熙|包貝爾|郭采潔
 """
 
-filter_str = list(set([i.strip() for i in
-                       s1.split('|') + s2.split('|') + s3.split('|') + s4.split('|') + s5.split('|') + s6.split(
-                           '|') + s7.split('|')]))
+filter_str = list(
+    set(
+        [
+            i.strip()
+            for i in s1.split("|")
+            + s2.split("|")
+            + s3.split("|")
+            + s4.split("|")
+            + s5.split("|")
+            + s6.split("|")
+            + s7.split("|")
+        ]
+    )
+)
 
 # print(filter_str)
 # print(len(filter_str))
 
 # 地址信息生成
 
-# fake = Faker('zh_CN')
+# fake = Faker("zh_CN")
 # start_time = Arrow.now()
 # for _ in range(100):
-#     txt = fake.paragraph(nb_sentences=3, variable_nb_sentences=True, ext_word_list=None)
+#     txt = fake.paragraph(
+#         nb_sentences=3,
+#         variable_nb_sentences=True,
+#         ext_word_list=None,
+#     )
 #     for i in filter_str:
 #         if i in txt:
 #             print(txt)
