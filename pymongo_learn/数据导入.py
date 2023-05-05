@@ -12,12 +12,12 @@
 -------------------------------------------------
 """
 
-__author__ = 'Black Hole'
+__author__ = "Black Hole"
 
 import subprocess
 from pathlib import Path
 
-name = 'gz_opinion'
+name = "gz_opinion"
 
 path = Path(r"C:\Users\BlackHole\Downloads\dump\gz_opinion")
 

@@ -5,8 +5,9 @@
 # FileDescribe :
 
 
-import json
 import datetime
+import json
+
 from pymongo import MongoClient
 
 
@@ -53,16 +54,18 @@ class GetTask:
         task_info_dict["link"] = link
         task_info_dict["title"] = title
         task_info_dict["usergroups"] = []
-        temp_dict1 = {'red': []}
-        temp_dict2 = {'blue': []}
+        temp_dict1 = {"red": []}
+        temp_dict2 = {"blue": []}
         for join_war_num in join_war_nums:
             team = join_war_num.get("team")
             if team == "1":
-                temp_dict1['red'].append(
-                    str(json.loads(join_war_num["majia_info"])["uniqueid"]))
+                temp_dict1["red"].append(
+                    str(json.loads(join_war_num["majia_info"])["uniqueid"])
+                )
             elif team == "2":
                 temp_dict2["blue"].append(
-                    str(json.loads(join_war_num["majia_info"])["uniqueid"]))
+                    str(json.loads(join_war_num["majia_info"])["uniqueid"])
+                )
         task_info_dict["usergroups"].append(temp_dict1)
         task_info_dict["usergroups"].append(temp_dict2)
         ruler_list = ruler["ruleItems"]
@@ -73,7 +76,7 @@ class GetTask:
             "reply": {},
             "forward": {},
             "like": {},
-            "fault": []
+            "fault": [],
         }
 
         for per_ruler in ruler_list:
@@ -85,15 +88,15 @@ class GetTask:
                     temp_dict4["min"] = per_ruler["gradientMin"]
                     temp_dict4["max"] = per_ruler["gradientMax"]
                     temp_dict4["grade"] = per_ruler["score"]
-                    if not temp_merge_data['hotlike']:
-                        temp_dict3["type"] = '2'
+                    if not temp_merge_data["hotlike"]:
+                        temp_dict3["type"] = "2"
                         temp_dict3["span"] = []
                         temp_dict3["span"].append(temp_dict4)
-                        temp_merge_data['hotlike'] = temp_dict3
+                        temp_merge_data["hotlike"] = temp_dict3
                     else:
-                        temp_merge_data['hotlike']['span'].append(temp_dict4)
+                        temp_merge_data["hotlike"]["span"].append(temp_dict4)
                 else:
-                    temp_dict3["type"] = '1'
+                    temp_dict3["type"] = "1"
                     temp_dict3["score"] = per_ruler["score"]
                     ruler_dict["hotlike"] = temp_dict3
                     task_info_dict["ruler"].append(ruler_dict)
@@ -102,15 +105,15 @@ class GetTask:
                     temp_dict4["min"] = per_ruler["gradientMin"]
                     temp_dict4["max"] = per_ruler["gradientMax"]
                     temp_dict4["grade"] = per_ruler["score"]
-                    if not temp_merge_data['reply']:
-                        temp_dict3["type"] = '2'
+                    if not temp_merge_data["reply"]:
+                        temp_dict3["type"] = "2"
                         temp_dict3["span"] = []
                         temp_dict3["span"].append(temp_dict4)
-                        temp_merge_data['reply'] = temp_dict3
+                        temp_merge_data["reply"] = temp_dict3
                     else:
-                        temp_merge_data['reply']['span'].append(temp_dict4)
+                        temp_merge_data["reply"]["span"].append(temp_dict4)
                 else:
-                    temp_dict3["type"] = '1'
+                    temp_dict3["type"] = "1"
                     temp_dict3["score"] = per_ruler["score"]
                     ruler_dict["reply"] = temp_dict3
                 task_info_dict["ruler"].append(ruler_dict)
@@ -119,15 +122,15 @@ class GetTask:
                     temp_dict4["min"] = per_ruler["gradientMin"]
                     temp_dict4["max"] = per_ruler["gradientMax"]
                     temp_dict4["grade"] = per_ruler["score"]
-                    if not temp_merge_data['forward']:
-                        temp_dict3["type"] = '2'
+                    if not temp_merge_data["forward"]:
+                        temp_dict3["type"] = "2"
                         temp_dict3["span"] = []
                         temp_dict3["span"].append(temp_dict4)
-                        temp_merge_data['forward'] = temp_dict3
+                        temp_merge_data["forward"] = temp_dict3
                     else:
-                        temp_merge_data['forward']['span'].append(temp_dict4)
+                        temp_merge_data["forward"]["span"].append(temp_dict4)
                 else:
-                    temp_dict3["type"] = '1'
+                    temp_dict3["type"] = "1"
                     temp_dict3["score"] = per_ruler["score"]
                     ruler_dict["forward"] = temp_dict3
                 task_info_dict["ruler"].append(ruler_dict)
@@ -136,15 +139,15 @@ class GetTask:
                     temp_dict4["min"] = per_ruler["gradientMin"]
                     temp_dict4["max"] = per_ruler["gradientMax"]
                     temp_dict4["grade"] = per_ruler["score"]
-                    if not temp_merge_data['like']:
-                        temp_dict3["type"] = '2'
+                    if not temp_merge_data["like"]:
+                        temp_dict3["type"] = "2"
                         temp_dict3["span"] = []
                         temp_dict3["span"].append(temp_dict4)
-                        temp_merge_data['like'] = temp_dict3
+                        temp_merge_data["like"] = temp_dict3
                     else:
-                        temp_merge_data['like']['span'].append(temp_dict4)
+                        temp_merge_data["like"]["span"].append(temp_dict4)
                 else:
-                    temp_dict3["type"] = '1'
+                    temp_dict3["type"] = "1"
                     temp_dict3["score"] = per_ruler["score"]
                     ruler_dict["like"] = temp_dict3
                 task_info_dict["ruler"].append(ruler_dict)
@@ -153,21 +156,21 @@ class GetTask:
                     temp_dict4["min"] = per_ruler["gradientMin"]
                     temp_dict4["max"] = per_ruler["gradientMax"]
                     temp_dict4["grade"] = abs(per_ruler["score"])
-                    if not temp_merge_data['fault']:
-                        temp_dict3["type"] = '2'
+                    if not temp_merge_data["fault"]:
+                        temp_dict3["type"] = "2"
                         temp_dict3["span"] = []
                         temp_dict3["span"].append(temp_dict4)
-                        temp_dict3["fault_type"] = str(per_ruler['content'])
-                        temp_merge_data['fault'] = [temp_dict3]
+                        temp_dict3["fault_type"] = str(per_ruler["content"])
+                        temp_merge_data["fault"] = [temp_dict3]
                     else:
-                        for each in temp_merge_data['fault']:
-                            if each['type'] == '2':
-                                each['span'].append(temp_dict4)
+                        for each in temp_merge_data["fault"]:
+                            if each["type"] == "2":
+                                each["span"].append(temp_dict4)
                 else:
-                    temp_dict3["type"] = '1'
+                    temp_dict3["type"] = "1"
                     temp_dict3["score"] = abs(per_ruler["score"])
-                    temp_dict3["fault_type"] = str(per_ruler['content'])
-                    temp_merge_data['fault'].append(temp_dict3)
+                    temp_dict3["fault_type"] = str(per_ruler["content"])
+                    temp_merge_data["fault"].append(temp_dict3)
                 if ruler_dict:
                     task_info_dict["ruler"].append(ruler_dict)
         task_info_dict["execute_time"] = execute_time
@@ -178,17 +181,22 @@ class GetTask:
         return task_info_dict
 
     def query_task(self):
-        now_time = datetime.datetime.now().replace(hour=0, minute=0, second=0).strftime(
-            "%Y-%m-%d %H:%M:%S")
+        now_time = (
+            datetime.datetime.now()
+            .replace(hour=0, minute=0, second=0)
+            .strftime("%Y-%m-%d %H:%M:%S")
+        )
         table_obj = self.db.hzwp_task
-        res = table_obj.find({"create_date": {"$gt": now_time}}).sort([("create_date", -1)])
+        res = table_obj.find({"create_date": {"$gt": now_time}}).sort(
+            [("create_date", -1)]
+        )
         task_list = list(res)
         task_info_list = []
         if task_list:
             for task_info in task_list:
                 id = task_info["_id"]
-                link = task_info.get("taskLink", '')
-                title = task_info.get("taskTitle", '')
+                link = task_info.get("taskLink", "")
+                title = task_info.get("taskTitle", "")
                 ruler = task_info.get("ruleInfo")
                 try:
                     ruler = json.loads(ruler)
@@ -197,30 +205,44 @@ class GetTask:
                 if ruler:
                     try:
                         # 抽取当前时间到开始时间的时间段
-                        beginDate = task_info.get("beginDate", '')  # 任务发布时间
-                        beginDate = datetime.datetime.strptime(beginDate, "%Y-%m-%d %H:%M:%S")
+                        beginDate = task_info.get("beginDate", "")  # 任务发布时间
+                        beginDate = datetime.datetime.strptime(
+                            beginDate, "%Y-%m-%d %H:%M:%S"
+                        )
                         current_time = datetime.datetime.today()  # 当前时间
                         # 抽取时长
                         signinMinute = task_info["signinMinute"]  # 签到时长
                         readyMinute = task_info["readyMinute"]  # 准备时长
                         battleMinute = task_info["battleMinute"]  # 比赛时长
                         # 设置区间，开启时间到当前时间的时长落到哪个区间
-                        sign_max_time = beginDate + datetime.timedelta(minutes=signinMinute)
-                        ready_max_time = sign_max_time + datetime.timedelta(minutes=readyMinute)
-                        ongoing_max_time = ready_max_time + datetime.timedelta(minutes=battleMinute)
+                        sign_max_time = beginDate + datetime.timedelta(
+                            minutes=signinMinute
+                        )
+                        ready_max_time = sign_max_time + datetime.timedelta(
+                            minutes=readyMinute
+                        )
+                        ongoing_max_time = ready_max_time + datetime.timedelta(
+                            minutes=battleMinute
+                        )
                         # 准备中:
                         if current_time.__gt__(
-                                ready_max_time - datetime.timedelta(seconds=40)) and current_time.__le__(
-                            ongoing_max_time):
-                            task_info = self.get_task_info(id, link, title, ruler, str(ready_max_time),
-                                                           str(ongoing_max_time))
+                            ready_max_time - datetime.timedelta(seconds=40)
+                        ) and current_time.__le__(ongoing_max_time):
+                            task_info = self.get_task_info(
+                                id,
+                                link,
+                                title,
+                                ruler,
+                                str(ready_max_time),
+                                str(ongoing_max_time),
+                            )
                             task_info_list.append(task_info)
                     except Exception:
                         pass
         return task_info_list
 
 
-if __name__ == '__main__':
+if __name__ == "__main__":
     res = GetTask().query_task()
     if res:
         for i in res:

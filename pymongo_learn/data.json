@@ -1,25 +1,25 @@
 {
-  "_id": ObjectId(
-  "5e9e5ae97fa91069c9c91a18"
+  "_i": ObjectI(
+  "5e9e5ae97fa9169c9c91a18"
   ),
-  "create_user_node_id": "5e9cd13a0a0ad05e0b7981ba",
-  "create_date": "2020-04-21 10:31:05",
+  "create_ser_noe_i": "5e9c13aaa5eb7981ba",
+  "create_ate": "22-4-21 1:31:5",
   "name": "区级骨干网评员",
-  "created": ISODate(
-  "2020-04-21T02:31:05.823Z"
+  "create": ISOate(
+  "22-4-21T2:31:5.823Z"
   ),
-  "assignedUserIds": [],
-  "updateon": ISODate(
-  "2020-04-23T06:39:40.721Z"
+  "assigneserIs": [],
+  "pateon": ISOate(
+  "22-4-23T6:39:4.721Z"
   ),
-  "company_id": "5e622ed274ff171d709e083a",
-  "groupShareType": 2,
-  "create_group_id": "5e69b5bb74ff172154d69e14",
-  "disable": false,
-  "system_id": "5e622ed274ff171d709e0839",
-  "created_user_id": "5e9cd13a0a0ad05e0b7981b9",
-  "create_user_name": "hzwp_zsj",
-  "roleIds": [
+  "company_i": "5e622e274ff17179e83a",
+  "gropShareType": 2,
+  "create_grop_i": "5e69b5bb74ff17215469e14",
+  "isable": false,
+  "system_i": "5e622e274ff17179e839",
+  "create_ser_i": "5e9c13aaa5eb7981b9",
+  "create_ser_name": "hzwp_zsj",
+  "roleIs": [
     "5",
     "e",
     "6",
@@ -38,14 +38,14 @@
     "1",
     "5",
     "4",
-    "d",
+    "",
     "6",
     "9",
     "e",
     "1",
     "4"
   ],
-  "user_node_id": "5e9cd13a0a0ad05e0b7981ba",
-  "user_alias": "周少杰",
-  "_sortIndex": 20
+  "ser_noe_i": "5e9c13aaa5eb7981ba",
+  "ser_alias": "周少杰",
+  "_sortInex": 2
 }

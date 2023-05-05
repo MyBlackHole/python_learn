@@ -17,6 +17,7 @@ __author__ = "Black Hole"
 
 from pymongo import MongoClient
 
+
 def delete_all_collection(delete_collection_name, mongodb_link):
     database_name_list = list(mongodb_link.list_databases())
     for database_name in database_name_list:
@@ -25,6 +26,7 @@ def delete_all_collection(delete_collection_name, mongodb_link):
             if collection_name == delete_collection_name:
                 mongodb_link[database_name][collection_name].drop()
                 print(f"删除[{database_name}]数据库的[{collection_name}]成功!!!")
+
 
 if __name__ == "__main__":
     delete_collection_name = input()
