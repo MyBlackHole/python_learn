@@ -1,5 +1,4 @@
-from threading import Timer
-from threading import Lock
+from threading import Lock, Timer
 
 
 class DelayManage(object):
@@ -20,10 +19,8 @@ class DelayManage(object):
     def add(self, key, interval, function, args=None, kwargs=None):
         self.local.acquire()
         self.timer_dict[key] = Timer(
-            interval=interval,
-            function=function,
-            args=args,
-            kwargs=kwargs)
+            interval=interval, function=function, args=args, kwargs=kwargs
+        )
         self.local.release()
         return key
 

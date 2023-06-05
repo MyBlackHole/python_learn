@@ -1,7 +1,7 @@
 import socket
 import threading
-from threading import ThreadError
 from concurrent.futures import ThreadPoolExecutor
+from threading import ThreadError
 
 
 def recv_msg(udp_socket):
@@ -13,19 +13,32 @@ def recv_msg(udp_socket):
         print(recv_data)
 
 
-def send_msg(udp_socket, dest_ip, dest_port):
+def send_msg(
+    udp_socket,
+    dest_ip,
+    dest_port,
+):
     """发送数据"""
     # 发送数据
     while True:
         send_data = input("输入要发送的数据:")
-        udp_socket.sendto(send_data.encode("utf-8"), (dest_ip, dest_port))
+        udp_socket.sendto(
+            send_data.encode("utf-8"),
+            (
+                dest_ip,
+                dest_port,
+            ),
+        )
 
 
 def main():
     """完成udp聊天器的整体控制"""
 
     # 1. 创建套接字
-    udp_socket = socket.socket(socket.AF_INET, socket.SOCK_DGRAM)
+    udp_socket = socket.socket(
+        socket.AF_INET,
+        socket.SOCK_DGRAM,
+    )
 
     # 2. 绑定本地信息
     udp_socket.bind(("", 7890))
@@ -35,8 +48,18 @@ def main():
     dest_port = int(input("请输入对方的port:"))
 
     # 4. 创建2个线程，去执行相应的功能
-    t_recv = threading.Thread(target=recv_msg, args=(udp_socket,))
-    t_send = threading.Thread(target=send_msg, args=(udp_socket, dest_ip, dest_port))
+    t_recv = threading.Thread(
+        target=recv_msg,
+        args=(udp_socket,),
+    )
+    t_send = threading.Thread(
+        target=send_msg,
+        args=(
+            udp_socket,
+            dest_ip,
+            dest_port,
+        ),
+    )
 
     t_recv.start()
     t_send.start()

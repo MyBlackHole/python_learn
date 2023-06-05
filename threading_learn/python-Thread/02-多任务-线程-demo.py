@@ -15,9 +15,10 @@ def dance():
         print("----正在跳舞----")
         time.sleep(1)
 
-def stop_threading(t_list: list[threading.Thread]):
-    for t in t_list:
-        t.
+
+# def stop_threading(t_list: list[threading.Thread]):
+#     for t in t_list:
+#         t.
 
 
 def main():

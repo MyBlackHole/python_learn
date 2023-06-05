@@ -1,24 +1,40 @@
-from threading import Thread
 import time
+from threading import Thread
 
 aa = list(range(10))
+
 
 class DemandUser(object):
     demand_user = None
     run_status = 1
 
-    def __new__(cls, *args, **kwargs):
+    def __new__(
+        cls,
+        *args,
+        **kwargs,
+    ):
         if not cls.demand_user:
-            cls.demand_user = super(DemandUser, cls).__new__(cls, *args, **kwargs)
+            cls.demand_user = super(
+                DemandUser,
+                cls,
+            ).__new__(
+                cls,
+                *args,
+                **kwargs,
+            )
         return cls.demand_user
 
     def __init__(self):
-        self.GET_CRAWLER_COMMENT_USER_URL = 'http://119.3.208.208:8010/Comment/SelectBlogger'
+        self.GET_CRAWLER_COMMENT_USER_URL = (
+            "http://119.3.208.208:8010/Comment/SelectBlogger"
+        )
         self.crawler_demand_user = []
         if self.run_status:
             self.run_status = 0
-            Thread(target=self.timing_update_user).start()
-    
+            Thread(
+                target=self.timing_update_user,
+            ).start()
+
     def timing_update_user(self):
         time.sleep(30)
 
@@ -46,10 +62,9 @@ def run():
     # t1.setDaemon(True)
     t1.start()
     # t2.start()
-    print('__main__')
+    print("__main__")
     # 注释这行将不会输出task1
     t1.join()
-
 
 
 if __name__ == "__main__":

@@ -1,10 +1,12 @@
 from threading import Timer
 
+
 class RepeatingTimer(Timer):
     def run(self):
         while not self.finished.is_set():
             self.function(*self.args, **self.kwargs)
             self.finished.wait(self.interval)
+
 
 class UseTimer:
     def __init__(self, interval, function_name, *args, **kwargs):
@@ -21,9 +23,11 @@ class UseTimer:
     def timer_cancle(self):
         self.timer.cancel()
 
-#自测代码
-if __name__ == '__main__':
+
+# 自测代码
+if __name__ == "__main__":
     from time import sleep
+
     def hello(name, string):
         print(f"hello : {name} ,nice to : {string}")
 

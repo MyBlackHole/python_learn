@@ -12,11 +12,17 @@ app = Celery(
 )
 
 max_timeout_in_seconds = float("inf")
-# max_timeout_in_seconds = 30
-app.conf.broker_transport_options = {"visibility_timeout": max_timeout_in_seconds}
+# max_timeout_in_seconds = 10
+app.conf.broker_transport_options = {
+    "visibility_timeout": max_timeout_in_seconds,
+}
 
 
 @app.task(acks_late=True)
 def waiter(sleep_time):
+    queues_dict = app.control.inspect().active_queues()
+    print(queues_dict)
+    print("start waiter")
     sleep(sleep_time)
+    print("end waiter")
     return "task finished"

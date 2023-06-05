@@ -12,11 +12,12 @@
 -------------------------------------------------
 """
 
-__author__ = 'Black Hole'
+__author__ = "Black Hole"
 
 import time
 import sys
-sys.path.append('..')
+
+sys.path.append("..")
 
 from loguru_learn.log import logger
 

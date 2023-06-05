@@ -26,8 +26,8 @@ def print_node_all_childs(zk_client: KazooClient, child_path: str):
 
 if __name__ == "__main__":
     status = True
-    start_path = "/teledb"
-    zk = KazooClient(hosts="192.168.90.204:10001")
+    start_path = "/udal_cluster"
+    zk = KazooClient(hosts="192.168.90.207:2181")
     zk.start()
 
     # start_path = "/udal_cluster"

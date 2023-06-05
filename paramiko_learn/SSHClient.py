@@ -3,16 +3,20 @@
 
 __author__ = "Black Hole"
 
-from time import sleep
-import paramiko
 import os
+from time import sleep
+
+import paramiko
 
 
 def ssh_func():
     # 连接 ssh
     ssh = paramiko.SSHClient()
     ssh.set_missing_host_key_policy(paramiko.AutoAddPolicy())
-    ssh.connect(hostname="192.168.78.212", username="root", password="Atf2022")
+    ssh.connect(hostname="127.0.0.1", username="black", password="1358")
+    stdin, stdout, stderr = ssh.exec_command("ls")
+    # ssh.keep_this = ssh
+    print(stdout.readlines())
     sleep(100)
     stdin, stdout, stderr = ssh.exec_command("ls")
     print(stdout.readlines())

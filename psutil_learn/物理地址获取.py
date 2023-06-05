@@ -13,12 +13,12 @@
 -------------------------------------------------
 """
 
-__author__ = 'Black Hole'
+__author__ = "Black Hole"
 
 import psutil
 import re
 
-str_s = ['以太网', '本地链接']
+str_s = ["以太网", "本地链接"]
 snicaddrs = psutil.net_if_addrs()
 for key in snicaddrs.keys():
     for s in str_s:
@@ -29,7 +29,17 @@ for key in snicaddrs.keys():
                     print(snicaddr.address)
 
 # print(snicaddrs)
-# print(re.findall(r"address='([0-9A-F]{2}-[0-9A-F]{2}-[0-9A-F]{2}-[0-9A-F]{2}-[0-9A-F]{2}-[0-9A-F]{2})'", str(snicaddrs)))
-print(re.search(r"address='([0-9A-F]{2}-[0-9A-F]{2}-[0-9A-F]{2}-[0-9A-F]{2}-[0-9A-F]{2}-[0-9A-F]{2})'", str(snicaddrs)))
+# print(
+#     re.findall(
+#         r"address='([0-9A-F]{2}-[0-9A-F]{2}-[0-9A-F]{2}-[0-9A-F]{2}-[0-9A-F]{2}-[0-9A-F]{2})'",
+#         str(snicaddrs),
+#     )
+# )
+print(
+    re.search(
+        r"address='([0-9A-F]{2}-[0-9A-F]{2}-[0-9A-F]{2}-[0-9A-F]{2}-[0-9A-F]{2}-[0-9A-F]{2})'",
+        str(snicaddrs),
+    )
+)
 # print(re.findall(r"(?P<di>[0-9A-F]{2})-(?P)", str(snicaddrs)))
 # print(re.findall(r"([0-9A-F]{2})-\1", str(snicaddrs)))

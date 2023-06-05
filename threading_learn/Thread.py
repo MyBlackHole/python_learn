@@ -1,8 +1,9 @@
-from threading import Thread
 import time
+from threading import Thread
 
 i = 0
 i_bat = 0
+
 
 def func():
     global i
