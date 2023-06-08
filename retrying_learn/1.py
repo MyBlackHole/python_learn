@@ -1,5 +1,3 @@
-import time
-
 import requests
 from retrying import retry
 

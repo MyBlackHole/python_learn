@@ -1,20 +1,6 @@
 #!/usr/bin/env python
 # -*- coding: utf-8 -*-
 
-"""
--------------------------------------------------
-File Name:   限制方法运行时间
-Description:
-Author:      Black Hole
-date:        2021/08/18 15:16:45:
-
--------------------------------------------------
-Change Activity:
-			 2021/08/18 15:16:45:
--------------------------------------------------
-"""
-
-# from __future__ import with_statement # Required in 2.5
 import signal
 import time
 from contextlib import contextmanager

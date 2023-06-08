@@ -12,7 +12,7 @@
 -------------------------------------------------
 """
 
-__author__ = 'Black Hole'
+__author__ = "Black Hole"
 
 from .entity.score_entity import MainForce
 
@@ -25,7 +25,11 @@ def count_all(task_id, count_list, request_time, ruler):
     team_dict = {}
 
     for each_person in count_list:
-        res = count_source(data=each_person, request_time=request_time, ruler=ruler)
+        res = count_source(
+            data=each_person,
+            request_time=request_time,
+            ruler=ruler,
+        )
         team = res.get("team")
         # TODO 分组存储数据，计算分数
         team_list = team_dict.get(team)
@@ -40,7 +44,7 @@ def count_all(task_id, count_list, request_time, ruler):
 
 
 def count_leader(user_info, score_sum, people_num):
-    """ 主力选手加分，给上 is_leader 标志 """
+    """主力选手加分，给上 is_leader 标志"""
     score = user_info.get("score")
     uid = user_info.get("uid")
     if uid not in MainForce().main_force:
@@ -59,33 +63,57 @@ def count_leader(user_info, score_sum, people_num):
 
 def structure(task_id, team_dict, over=1):
     total_score_list = []
-    for k, v in team_dict.items():
+    for _, v in team_dict.items():
         score_list = [i.get("score") for i in v]
         score_sum = sum(score_list)
         people_num = len(v)
         # 计算主力选手
-        res_list = list(map(count_leader, v, [score_sum] * people_num, [people_num] * people_num))
+        res_list = list(
+            map(
+                count_leader,
+                v,
+                [score_sum] * people_num,
+                [people_num] * people_num,
+            )
+        )
         for each in res_list:
             task_id = task_id
-            troop = each.get('team')
-            unique_id = each.get('uid')
-            timestamp = each.get('timestamp')
-            reply = each.get('reply')
-            comment = each.get('comment')
-            forward = each.get('forward')
-            like_comment = each.get('like_Comment')
-            like_count = each.get('like_count')
-            hot_like_count = each.get('hotlike_count')
-            main_force = each.get('is_leader', 0)
-            total_score = each.get('score')
-            fault = each.get('fault_count')
-            likegt50 = each.get('likegt50')
-            firstlike = each.get('firstlike')
-            firstcomment = each.get('firstcomment')
-            firstforward = each.get('firstforward')
-            value = (task_id, unique_id, troop, timestamp, like_comment, reply, comment,
-                     forward, like_count, hot_like_count, main_force, total_score, fault, likegt50, firstlike,
-                     firstcomment, firstforward, over)
+            troop = each.get("team")
+            unique_id = each.get("uid")
+            timestamp = each.get("timestamp")
+            reply = each.get("reply")
+            comment = each.get("comment")
+            forward = each.get("forward")
+            like_comment = each.get("like_Comment")
+            like_count = each.get("like_count")
+            hot_like_count = each.get("hotlike_count")
+            main_force = each.get("is_leader", 0)
+            total_score = each.get("score")
+            fault = each.get("fault_count")
+            likegt50 = each.get("likegt50")
+            firstlike = each.get("firstlike")
+            firstcomment = each.get("firstcomment")
+            firstforward = each.get("firstforward")
+            value = (
+                task_id,
+                unique_id,
+                troop,
+                timestamp,
+                like_comment,
+                reply,
+                comment,
+                forward,
+                like_count,
+                hot_like_count,
+                main_force,
+                total_score,
+                fault,
+                likegt50,
+                firstlike,
+                firstcomment,
+                firstforward,
+                over,
+            )
             total_score_list.append(value)
     return total_score_list
 
@@ -101,14 +129,27 @@ def count_source(data, request_time, ruler):
         "reply": data.get("comment_count") + data.get("reply"),
         "forward": data.get("forward_count"),
         "like_Comment": data.get("likeComment") + data.get("like_count"),
-        "fault": (data.get("forward_count"), data.get("comment_count"), data.get("like_count"))
+        "fault": (
+            data.get("forward_count"),
+            data.get("comment_count"),
+            data.get("like_count"),
+        ),
     }
     # TODO 根据规则计算的得分
     # 返回 错误数 和 个人分数
-    error_count, res = RulerScore.check_type(ruler=ruler, count_data=count_data)
+    error_count, res = RulerScore.check_type(
+        ruler=ruler,
+        count_data=count_data,
+    )
 
-    res = res + data.get("medal_first_comment") * 10 + data.get("medal_first_forward") * 10 + data.get(
-        "medal_first_like") * 10 + data.get("hotlike_count") * 10 + data.get("firsthotlike_count") * 20
+    res = (
+        res
+        + data.get("medal_first_comment") * 10
+        + data.get("medal_first_forward") * 10
+        + data.get("medal_first_like") * 10
+        + data.get("hotlike_count") * 10
+        + data.get("firsthotlike_count") * 20
+    )
 
     medal_data_info = {
         "team": team,
@@ -116,7 +157,7 @@ def count_source(data, request_time, ruler):
         "timestamp": request_time,
         "score": res,
         "hotlike_count": data.get("hotlike_count"),
-        "firsthotlike_count": data.get('firsthotlike_count'),
+        "firsthotlike_count": data.get("firsthotlike_count"),
         "hotlike": data.get("hotlike_count"),
         "reply": data.get("reply"),
         "comment": data.get("comment_count"),
@@ -124,37 +165,61 @@ def count_source(data, request_time, ruler):
         "like_Comment": data.get("likeComment"),
         "like_count": data.get("like_count"),
         "fault_count": error_count,
-        "likegt50": data.get('firsthotlike_count'),
-        "firstlike": data.get('medal_first_like'),
-        "firstcomment": data.get('medal_first_comment'),
-        "firstforward": data.get('medal_first_forward')
-
+        "likegt50": data.get("firsthotlike_count"),
+        "firstlike": data.get("medal_first_like"),
+        "firstcomment": data.get("medal_first_comment"),
+        "firstforward": data.get("medal_first_forward"),
     }
     return medal_data_info
 
 
 class RulerScore:
-
     @staticmethod
     def check_type(ruler, count_data):
         fault_res, error_count = 0, 0
         hot_like_res, reply_res, forward_res, like_res = 0, 0, 0, 0
         # 获得每个相应规则的数量
-        hot_like_data, reply_data, forward_data, like_data, fault_data = RulerScore.per_count(count_data=count_data)
+        (
+            hot_like_data,
+            reply_data,
+            forward_data,
+            like_data,
+            fault_data,
+        ) = RulerScore.per_count(count_data=count_data)
         # 获得每个相应的规则
-        hot_like_rule, reply_rule, forward_rule, like_rule, fault_rule = RulerScore.per_ruler(ruler=ruler)
+        (
+            hot_like_rule,
+            reply_rule,
+            forward_rule,
+            like_rule,
+            fault_rule,
+        ) = RulerScore.per_ruler(ruler=ruler)
         if hot_like_data:
             # 返回 错误数 和 分数
-            error_hot_like, hot_like_res = RulerScore.count_method(hot_like_data, hot_like_rule)
+            _, hot_like_res = RulerScore.count_method(
+                hot_like_data,
+                hot_like_rule,
+            )
         if reply_data:
-            error_reply, reply_res = RulerScore.count_method(reply_data, reply_rule)
+            _, reply_res = RulerScore.count_method(
+                reply_data,
+                reply_rule,
+            )
         if forward_data:
-            error_forward, forward_res = RulerScore.count_method(forward_data, forward_rule)
+            _, forward_res = RulerScore.count_method(
+                forward_data,
+                forward_rule,
+            )
         if like_data:
-            error_like, like_res = RulerScore.count_method(like_data, like_rule)
+            _, like_res = RulerScore.count_method(
+                like_data,
+                like_rule,
+            )
         if fault_data:
             for each_ruler in fault_rule:
-                per_error_count, per_fault_res = RulerScore.count_method(fault_data, each_ruler)
+                per_error_count, per_fault_res = RulerScore.count_method(
+                    fault_data, each_ruler
+                )
                 fault_res += per_fault_res
                 error_count += per_error_count
         result = hot_like_res + reply_res + forward_res + like_res - fault_res
@@ -168,9 +233,13 @@ class RulerScore:
         score = rule_info.get("score")
         fault_type = rule_info.get("fault_type")
         if type_ == "1":
-            error_count, res = RulerScore.fix_score(fault_type=fault_type, data=data, score=score)
+            error_count, res = RulerScore.fix_score(
+                fault_type=fault_type, data=data, score=score
+            )
         else:
-            error_count, res = RulerScore.span_score(fault_type=fault_type, data=data, span=span)
+            error_count, res = RulerScore.span_score(
+                fault_type=fault_type, data=data, span=span
+            )
         return error_count, res
 
     @staticmethod
@@ -223,18 +292,31 @@ class RulerScore:
         else:
             count = data
         for _dict in span:
-            if count >= _dict['min']:
-                calculate_count = _dict['max'] if count >= _dict['max'] else count
-                res += _dict['grade'] * (calculate_count - _dict['min'] + 1)
+            if count >= _dict["min"]:
+                if count >= _dict["max"]:
+                    calculate_count = _dict["max"]
+                else:
+                    calculate_count = count
+                res += _dict["grade"] * (calculate_count - _dict["min"] + 1)
         return error_count, res
 
+
 # def add_medal(task_id, timestamp, unique_id, medal, value):
-#     sql = 'INSERT INTO ' \
-#           'battle_medal(taskid,`timing`,bloggerid, %s)' \
-#           'values("%s",%s,%s,%s)' % (medal, task_id, timestamp, unique_id, value)
+#     sql = (
+#         "INSERT INTO "
+#         "battle_medal(taskid,`timing`,bloggerid, %s)"
+#         'values("%s",%s,%s,%s)'
+#         % (
+#             medal,
+#             task_id,
+#             timestamp,
+#             unique_id,
+#             value,
+#         )
+#     )
 #     try:
 #         execute(sql)
-#         logger.info(f'{task_id}{medal}勋章sql数据添加成功')
+#         logger.info(f"{task_id}{medal}勋章sql数据添加成功")
 #     except Exception as e:
-#         logger.info('勋章存储数据错误，原因： %s' % e)
-#         raise Exception('勋章存储数据错误，原因： %s' % e)
+#         logger.info("勋章存储数据错误，原因： %s" % e)
+#         raise Exception("勋章存储数据错误，原因： %s" % e)

@@ -1,3 +1,4 @@
+import time
 import functools
 from concurrent import futures
 
@@ -14,9 +15,6 @@ def timeout(seconds):
         return wrapper
 
     return decorator
-
-
-import time
 
 
 @timeout(2)
