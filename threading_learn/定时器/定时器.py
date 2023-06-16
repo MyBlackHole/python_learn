@@ -27,4 +27,3 @@ while count < 8:
     print("while")
     time.sleep(count)
     count += 1
-

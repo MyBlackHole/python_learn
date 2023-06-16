@@ -35,4 +35,3 @@ class Job(threading.Thread):
         self.__flag.set()
         # 设置为 False
         self.__running.clear()
-
