@@ -92,6 +92,7 @@ class Ruler:
 
 if __name__ == "__main__":
     r = Ruler(**ruler)
+    r.fault
     print(r)
     print(asdict(r))
     print(astuple(r))

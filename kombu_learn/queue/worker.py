@@ -43,7 +43,7 @@ if __name__ == "__main__":
     # with Connection("amqp://guest:guest@172.17.0.2:5672//") as conn:
     # with Connection("redis://localhost:6379") as conn:
     with Connection(
-        "redis://localhost:6379",
+        "redis://localhost:6379/8",
         transport_options={"visibility_timeout": 10},
     ) as conn:
         try:

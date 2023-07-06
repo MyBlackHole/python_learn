@@ -10,8 +10,8 @@ def get():
 
 if __name__ == "__main__":
     app.run(
-        ssl_context=(
-            r"./secret.pem",
-            r"./secret.key",
-        )
+        # ssl_context=(
+        #     r"./secret.pem",
+        #     r"./secret.key",
+        # )
     )

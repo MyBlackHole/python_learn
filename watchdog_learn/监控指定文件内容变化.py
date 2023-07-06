@@ -23,14 +23,19 @@ from watchdog.observers import Observer
 
 class MyHandler(FileSystemEventHandler):
     def on_modified(self, event):
-        if event.src_path == r".\1.py":  # 监控指定文件内容、权限等变化
-            print(event.src_path)
+        # if event.src_path == r".\1.py":  # 监控指定文件内容、权限等变化
+        #     print(event.src_path)
+
+        print(event.src_path)
 
 
 if __name__ == "__main__":
     event_handler = MyHandler()
     observer = Observer()
-    observer.schedule(event_handler, path=".", recursive=False)
+    path = "/media/black/Data/Documents/Python/1.txt"
+    # # 不能监控设备
+    # path = "/dev/sdb1"
+    observer.schedule(event_handler, path=path, recursive=False)
     observer.start()
     try:
         while True:

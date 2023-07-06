@@ -25,8 +25,8 @@ redis_info = {
 redis_conn = redis.Redis(**redis_info)
 
 start_time = arrow.now().timestamp
-# # 批量加
-# resp = redis_conn.sadd('test',  bytes(list(range(4, 100))))
+# 批量加
+resp = redis_conn.sadd('test',  bytes(list(range(4, 100))))
 
 # 获取多有成员
 resp = redis_conn.smembers("test")
