@@ -21,7 +21,10 @@ import psutil
 # 设置子进程在新的终端窗口运行同时设置工作目录
 print(
     psutil.Popen(
-        ["python.exe", r"C:\Users\BlackHole\PycharmProjects\Test\进程\脱离窗口版守护进程\Demo.py"],
+        [
+            "python.exe",
+            r"C:\Users\BlackHole\PycharmProjects\Test\进程\脱离窗口版守护进程\Demo.py",
+        ],
         cwd=r"C:\Users\BlackHole\PycharmProjects\Test\进程\脱离窗口版守护进程",
         creationflags=CREATE_NEW_CONSOLE,
     ).pid

@@ -12,11 +12,12 @@
 -------------------------------------------------
 """
 
-__author__ = 'Black Hole'
+__author__ = "Black Hole"
 
 import os
 from pathlib import Path
 
 from pathlib_learn import get_cwd
+
 print(Path().parent.resolve())
 print(os.getcwd())

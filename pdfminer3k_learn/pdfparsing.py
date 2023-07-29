@@ -13,12 +13,16 @@
 -------------------------------------------------
 """
 
-__author__ = 'Black Hole'
+__author__ = "Black Hole"
 
 from pdfminer.pdfparser import PDFParser, PDFDocument
 from pdfminer.converter import PDFPageAggregator
 from pdfminer.layout import LAParams, LTTextBoxHorizontal
-from pdfminer.pdfinterp import PDFTextExtractionNotAllowed, PDFResourceManager, PDFPageInterpreter
+from pdfminer.pdfinterp import (
+    PDFTextExtractionNotAllowed,
+    PDFResourceManager,
+    PDFPageInterpreter,
+)
 
 
 def pdf_parse(path):
@@ -28,7 +32,7 @@ def pdf_parse(path):
     :return: 每页结果列表
     """
 
-    fp = open(path, 'rb')  # 以二进制读模式打开
+    fp = open(path, "rb")  # 以二进制读模式打开
     # 用文件对象来创建一个pdf文档分析器
     praser = PDFParser(fp)
     # 创建一个PDF文档
@@ -64,7 +68,7 @@ def pdf_parse(path):
     return results
 
 
-with open('pdf.txt', 'w', encoding='utf-8') as f:
-    for i in pdf_parse('1.pdf'):
+with open("pdf.txt", "w", encoding="utf-8") as f:
+    for i in pdf_parse("1.pdf"):
         print(i)
         f.write(i)

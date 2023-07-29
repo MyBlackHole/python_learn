@@ -26,6 +26,11 @@ class Point(object):
     z = attrib(type=list, default=[])
     i = attrib(type=str, default="")
 
+    @attrs
+    class Point_(object):
+        z = attrib(type=list, default=[])
+        i = attrib(type=str, default="")
+
     # def __init__(self, i):
     #     self.i = ''
 
@@ -43,4 +48,5 @@ if __name__ == "__main__":
     # if Point(x=1, y=2, z=[]) in [Point(x=1, y=1, z=[])]:
     #     print('ok')
     print(Point(x=1, y=1, z=[1], i="b") < Point(x=1, y=1, z=[1], i="c"))
-    # print(Point().x)
+    p = Point()
+    print(p.Point_(z=1, i=1))

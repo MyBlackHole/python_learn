@@ -12,7 +12,7 @@
 -------------------------------------------------
 """
 
-__author__ = 'Black Hole'
+__author__ = "Black Hole"
 
 import pyautogui
 
@@ -29,12 +29,14 @@ pyautogui.click(200, 220)  # 在（200, 220）处单击.
 # pyautogui.move(None, 10)  # 相对当前位置，鼠标的y坐标向下移动10个像素.
 
 pyautogui.doubleClick()  # 在鼠标当前位置双击。
-pyautogui.moveTo(500, 500, duration=2, tween=pyautogui.easeInOutQuad)  # 使用淡入淡出方式在2秒内移动到（500, 500）
+pyautogui.moveTo(
+    500, 500, duration=2, tween=pyautogui.easeInOutQuad
+)  # 使用淡入淡出方式在2秒内移动到（500, 500）
 
-pyautogui.write('Hello world!', interval=0.25)  # 每个字符键入间隔0.25秒，敲出'Hello world.
+pyautogui.write("Hello world!", interval=0.25)  # 每个字符键入间隔0.25秒，敲出'Hello world.
 
-pyautogui.press('esc')  # 模拟敲击ESC键，就是按下松开esc（就是键盘左上角那个键）
-pyautogui.keyDown('shift')  # 按下shift键（此时没有松开）
-pyautogui.write(['left', 'left', 'left', 'left', 'left', 'left'])
-pyautogui.keyUp('shift')  # 松开shift键
-pyautogui.hotkey('ctrl', 'c')  # 按下组合键ctrol + c
+pyautogui.press("esc")  # 模拟敲击ESC键，就是按下松开esc（就是键盘左上角那个键）
+pyautogui.keyDown("shift")  # 按下shift键（此时没有松开）
+pyautogui.write(["left", "left", "left", "left", "left", "left"])
+pyautogui.keyUp("shift")  # 松开shift键
+pyautogui.hotkey("ctrl", "c")  # 按下组合键ctrol + c

@@ -29,7 +29,10 @@ class User:
     signup_ts: datetime = None
 
 
-user = User(id="42", signup_ts="2032-06-21T12:00")
+user = User(
+    id="42",
+    signup_ts="2032-06-21T12:00",
+)
 # -> User(id=42, name='John Doe', signup_ts=datetime.datetime(2032, 6, 21, 12, 0))
 print(user)
 
@@ -43,6 +46,9 @@ class User(BaseModel):
 
 
 try:
-    User(signup_ts="broken", friends=[1, 2, "not number"])
+    User(
+        signup_ts="broken",
+        friends=[1, 2, "not number"],
+    )
 except ValidationError as e:
     print(e.json())

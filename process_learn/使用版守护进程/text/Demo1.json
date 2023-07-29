@@ -1,11 +1,11 @@
 {
-  "process": {
-    "pid": 2400,
-    "cmd": "C:\\Users\\BlackHole\\PycharmProjects\\Test\\\u8fdb\u7a0b\\\u4f7f\u7528\u7248\u5b88\u62a4\u8fdb\u7a0b\\text\\Demo1.py"
-  },
-  "file_monitor": {
-    "file_path": "C:\\Users\\BlackHole\\PycharmProjects\\Test\\\u8fdb\u7a0b\\\u4f7f\u7528\u7248\u5b88\u62a4\u8fdb\u7a0b\\text\\demo1.log",
-    "wait_time": 10,
-    "diff_size": 0
-  }
+    "process": {
+        "pid": 2400,
+        "cmd": "C:\\Users\\BlackHole\\PycharmProjects\\Test\\\u8fdb\u7a0b\\\u4f7f\u7528\u7248\u5b88\u62a4\u8fdb\u7a0b\\text\\Demo1.py"
+    },
+    "file_monitor": {
+        "file_path": "C:\\Users\\BlackHole\\PycharmProjects\\Test\\\u8fdb\u7a0b\\\u4f7f\u7528\u7248\u5b88\u62a4\u8fdb\u7a0b\\text\\demo1.log",
+        "wait_time": 10,
+        "diff_size": 0
+    }
 }

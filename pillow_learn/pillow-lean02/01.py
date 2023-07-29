@@ -79,7 +79,7 @@ class VectorCompare:
     def magnitude(self, concordance):
         total = 0
         for word, count in concordance.items():
-            total += count ** 2
+            total += count**2
         return math.sqrt(total)
 
     # 计算矢量之间的 cos 值
@@ -107,16 +107,63 @@ def buildvector(im):
 
 v = VectorCompare()
 
-iconset = ['0', '1', '2', '3', '4', '5', '6', '7', '8', '9', '0', 'a', 'b', 'c', 'd', 'e', 'f', 'g', 'h', 'i', 'j', 'k',
-           'l', 'm', 'n', 'o', 'p', 'q', 'r', 's', 't', 'u', 'v', 'w', 'x', 'y', 'z']
+iconset = [
+    "0",
+    "1",
+    "2",
+    "3",
+    "4",
+    "5",
+    "6",
+    "7",
+    "8",
+    "9",
+    "0",
+    "a",
+    "b",
+    "c",
+    "d",
+    "e",
+    "f",
+    "g",
+    "h",
+    "i",
+    "j",
+    "k",
+    "l",
+    "m",
+    "n",
+    "o",
+    "p",
+    "q",
+    "r",
+    "s",
+    "t",
+    "u",
+    "v",
+    "w",
+    "x",
+    "y",
+    "z",
+]
 
 # 加载训练集
 imageset = []
 for letter in iconset:
-    for img in os.listdir('./iconset/%s/' % (letter)):
+    for img in os.listdir("./iconset/%s/" % (letter)):
         temp = []
         if img != "Thumbs.db" and img != ".DS_Store":
-            temp.append(buildvector(Image.open("./iconset/%s/%s" % (letter, img))))
+            temp.append(
+                buildvector(
+                    Image.open(
+                        "./iconset/%s/%s"
+                        % (
+                            letter,
+                            img,
+                        )
+                    )
+                )
+            )
         imageset.append({letter: temp})
 
 count = 0

@@ -13,7 +13,7 @@
 -------------------------------------------------
 """
 
-__author__ = 'Black Hole'
+__author__ = "Black Hole"
 
 from pathlib import Path
 
@@ -73,16 +73,20 @@ class FileMonitor(Ob):
 
     def is_result(self):
         try:
-            return file_monitor(file_path=self.file_path, wait_time=self.wait_time, diff_size=self.diff_size)
+            return file_monitor(
+                file_path=self.file_path,
+                wait_time=self.wait_time,
+                diff_size=self.diff_size,
+            )
         except Exception as e:
-            logger.exception(f'{e}')
+            logger.exception(f"{e}")
         return False
 
 
 @attrs
 class RequestMonitor(Ob):
     # 需要监控的url
-    url = attrib(type=str, default='')
+    url = attrib(type=str, default="")
 
     def is_reboot(self):
         if self.is_result():
@@ -90,7 +94,7 @@ class RequestMonitor(Ob):
         return False
 
     def is_result(self):
-        if self.url == '':
+        if self.url == "":
             return False
         if url_monitor(self.url):
             return False
@@ -115,7 +119,7 @@ if __name__ == "__main__":
     project = Project()
     print(project.dumps())
     param_dict = project.__dict__.copy()
-    param_dict.pop('name')
+    param_dict.pop("name")
     print(param_dict.values())
     print(project.dumps())
     # print(process)

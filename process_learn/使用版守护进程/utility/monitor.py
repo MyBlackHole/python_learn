@@ -12,7 +12,7 @@
 -------------------------------------------------
 """
 
-__author__ = 'Black Hole'
+__author__ = "Black Hole"
 
 import time
 from pathlib import Path
@@ -31,17 +31,19 @@ def file_monitor(file_path: str, wait_time: int, diff_size: int = 0) -> bool:
     """
     fp = Path(file_path)
     if not fp.is_file():
-        raise OSError(f' path：{file_path} 文件不存在 ')
+        raise OSError(f" path：{file_path} 文件不存在 ")
     start_size = fp.stat().st_size
     time.sleep(wait_time)
     end_size = fp.stat().st_size
-    logger.info(f' end_size：{end_size}, start_size：{start_size}')
+    logger.info(f" end_size：{end_size}, start_size：{start_size}")
     if end_size > start_size + diff_size:
         return True
     return False
 
 
-def interface_monitor(url: str, result: str, func: str = 'get', data_type_func: str = 'text'):
+def interface_monitor(
+    url: str, result: str, func: str = "get", data_type_func: str = "text"
+):
     """
     接口监控
     :param url: url接口
@@ -68,6 +70,6 @@ def url_monitor(url: str):
     return False
 
 
-if __name__ == '__main__':
-    print(url_monitor(url='http://baidu.com/'))
+if __name__ == "__main__":
+    print(url_monitor(url="http://baidu.com/"))
     # print(Path(r'C:\Users\BlackHole\PycharmProjects\python_learn\监控程序\文件监控\1.txt').stat().st_size)

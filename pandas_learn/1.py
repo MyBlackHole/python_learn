@@ -19,7 +19,10 @@ import pandas as pd
 from pandas import DataFrame, Series
 
 # 创建
-data = {"数量": {"苹果": 3, "梨": 2, "草莓": 5}, "价格": {"苹果": 10, "梨": 9, "草莓": 8}}
+data = {
+    "数量": {"苹果": 3, "梨": 2, "草莓": 5},
+    "价格": {"苹果": 10, "梨": 9, "草莓": 8},
+}
 df = DataFrame(data)
 print(df)
 
@@ -50,13 +53,19 @@ print(pd.merge(df1, df2))
 print(pd.merge(df1, df2, on="key"))
 
 ### 无公共列名
-df3 = DataFrame({"lkey": ["b", "b", "a", "c", "a", "a", "b"], "data1": range(7)})
+df3 = DataFrame(
+    {"lkey": ["b", "b", "a", "c", "a", "a", "b"], "data1": range(7)},
+)
 df4 = DataFrame({"rkey": ["a", "b", "d"], "data2": range(3)})
 print(pd.merge(df3, df4, left_on="lkey", right_on="rkey"))
 
 ## 根据多个列明合并 (只有多个列完全相同的行才进行合并)
 left = DataFrame(
-    {"key1": ["foo", "foo", "bar"], "key2": ["one", "two", "one"], "lval": [1, 2, 3]}
+    {
+        "key1": ["foo", "foo", "bar"],
+        "key2": ["one", "two", "one"],
+        "lval": [1, 2, 3],
+    }
 )
 right = DataFrame(
     {

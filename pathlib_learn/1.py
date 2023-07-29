@@ -1,25 +1,25 @@
 from pathlib import Path
 
 print(Path.cwd())
-print(Path('address.txt').exists())
+print(Path("address.txt").exists())
 # file = open(Path.cwd() / 'address.txt', 'r+')
-file = (Path.cwd() / 'address.txt').open('r+')
+file = (Path.cwd() / "address.txt").open("r+")
 address = file.read()
 file.close()
 print(address)
 
 from pathlib import Path
 
-path = Path('.')
+path = Path(".")
 
-for p in path.rglob('*.*'):
+for p in path.rglob("*.*"):
     print(p)
 
 print("*" * 30)
 
 # path = Path('13_文件/2')
 # path.rename(Path('13_文件/2'))
-path = Path('a')
+path = Path("a")
 # path.rename(Path('2.txt'))
 
 print(path.name)

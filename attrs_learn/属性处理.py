@@ -50,3 +50,4 @@ json = cattr.unstructure(event)
 print('json:', json)
 event = cattr.structure(json, Event)
 print('Event:', event)
+

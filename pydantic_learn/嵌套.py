@@ -28,6 +28,8 @@ class Navbar:
     button: NavbarButton
 
 
-navbar = Navbar(button=("https://example.com",))
+navbar = Navbar(
+    button="https://example.com",
+)
 print(navbar)
 # > Navbar(button=NavbarButton(href='https://example.com'))

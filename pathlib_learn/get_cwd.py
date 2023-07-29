@@ -12,10 +12,11 @@
 -------------------------------------------------
 """
 
-__author__ = 'Black Hole'
+__author__ = "Black Hole"
 
 import os
-a = ''
+
+a = ""
 
 print(os.getcwd())
 print(__file__)

@@ -47,7 +47,10 @@ if __name__ == "__main__":
     research_department = {
         "name": "research",
         "lead": {"name": "Allen", "gender": "man"},
-        "cast": [{"name": "Jane", "gender": "women"}, {"name": "Tim", "gender": "man"}],
+        "cast": [
+            {"name": "Jane", "gender": "women"},
+            {"name": "Tim", "gender": "man"},
+        ],
     }
 
     company = {

@@ -12,9 +12,9 @@
 -------------------------------------------------
 """
 
-__author__ = 'Black Hole'
+__author__ = "Black Hole"
 
 import pyautogui
 
 im1 = pyautogui.screenshot()  # 截屏
-im1.save('robin.png')  # 保存截屏到当前工作目录下，并命名为robin.png
+im1.save("robin.png")  # 保存截屏到当前工作目录下，并命名为robin.png
