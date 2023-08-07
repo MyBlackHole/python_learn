@@ -61,4 +61,6 @@ if __name__ == "__main__":
     }
 
     company = Company(**company)
+    import pdb
+    pdb.set_trace()
     print(company.json())
