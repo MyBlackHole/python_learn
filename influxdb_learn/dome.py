@@ -1,4 +1,7 @@
-import influxdb_client, os, time
+import os
+import time
+
+import influxdb_client
 from influxdb_client import InfluxDBClient, Point, WritePrecision
 from influxdb_client.client.write_api import SYNCHRONOUS
 
@@ -12,7 +15,11 @@ org = "test"
 bucket = "test"
 url = "http://127.0.0.1:8086"
 
-write_client = influxdb_client.InfluxDBClient(url=url, token=token, org=org)
+write_client = influxdb_client.InfluxDBClient(
+    url=url,
+    token=token,
+    org=org,
+)
 
 write_api = write_client.write_api(write_options=SYNCHRONOUS)
 

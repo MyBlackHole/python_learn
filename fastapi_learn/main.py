@@ -1,35 +1,44 @@
-#!/usr/bin/env python
-# -*- coding: utf-8 -*-
-
-"""
--------------------------------------------------
-   File Name:          1
-   Description:
-   Author:             Black Hole
-   date:               2020/7/22
--------------------------------------------------
-   Change Activity:    2020/7/22:
--------------------------------------------------
-"""
-
-__author__ = "Black Hole"
+from typing import Union
 
 from fastapi import FastAPI
+from pydantic import BaseModel
 
 app = FastAPI()
 
 
-@app.get("/ping")
-def read_item():
-    return {"user": "black", "value": "hole"}
+class Item(BaseModel):
+    name: str
+    price: float
+    is_offer: Union[bool, None] = None
 
 
-@app.post("/ping")
-def post(data: dict):
-    return {"user": "black", "value": "hole"}
+class MysqlItem(BaseModel):
+    mysql: str
+    id: int
 
 
-if __name__ == "__main__":
-    import uvicorn
+class SqlItem(BaseModel):
+    sql: str
+    id: int
 
-    uvicorn.run(app="main:app", host="0.0.0.0", port=8090)
+
+class ResponseItem(BaseModel):
+    name: str
+    id: int
+    item: Union[MysqlItem, SqlItem, None]
+
+
+@app.get("/")
+def read_root():
+    return {"Hello": "World"}
+
+
+@app.get("/items/{item_id}")
+def read_item(item_id: int, q: Union[str, None] = None):
+    return {"item_id": item_id, "q": q}
+
+
+@app.put("/items/{item_id}", response_model=ResponseItem)
+def update_item(item_id: int, item: Item):
+    # return {"item_id": item_id, "q": item.name}
+    return ResponseItem(name=item.name, id=item_id)

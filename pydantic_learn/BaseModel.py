@@ -23,6 +23,7 @@ from pydantic import BaseModel
 class User(BaseModel):
     id: int
     name = "John Doe"
+    NAME = "John Doe"
     signup_ts: Optional[datetime] = None
     friends: List[int] = []
 
@@ -38,3 +39,5 @@ print(user.id)
 print(user.signup_ts)
 print(repr(user.signup_ts))
 print(user.dict())
+print(user.json())
+print(user.json())

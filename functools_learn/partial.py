@@ -1,11 +1,11 @@
 from functools import partial
 
 
-def subtraction(x, y):
-    return x - y
+def add(*args):
+    return sum(args)
 
 
-# 4 赋给了 x
-f = partial(subtraction, 4)
+add_100 = partial(add, 100)
+
 if __name__ == "__main__":
-    print(f(10))
+    print(add_100(10))
