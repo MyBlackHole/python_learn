@@ -2,7 +2,7 @@ from datetime import timedelta
 from celery import chain, chord, group
 from celery.app.base import datetime
 from celery.result import AsyncResult
-from tasks import waiter
+from tasks import add
 
 # 添加任务
 # python app.py
@@ -16,8 +16,8 @@ if __name__ == "__main__":
     #     time_delay = timedelta(seconds=second)  # seconds: 秒
     #     return utc_ctime + time_delay
 
-    # res = add.apply_async(args=(200, 50), countdown=7)
-    res = waiter.apply_async(countdown=40)
+    res = add.apply_async(args=(200, 50), countdown=7)
+    # res = waiter.apply_async(countdown=40)
 
     # print("task start....")
     # res1 = add.delay(2, 3)

@@ -2,10 +2,11 @@ import minio
 
 minio_conf = {
     "endpoint": "127.0.0.1:9000",
-    "access_key": "admin1234",
-    "secret_key": "admin1234",
+    "access_key": "12345678",
+    "secret_key": "12345678",
     "secure": False,
 }
+# pip install minio
 
 
 def up_data_minio(bucket: str, object_name: str, file_path: str):
@@ -29,7 +30,7 @@ def load_data_minio(bucket: str):
     return data.data
 
 
-file_path = "package-lock.json"
+file_path = "util_minio.py"
 
-up_data_minio("test", file_path, file_path)
+up_data_minio("wdg1", file_path, file_path)
 # load_data_minio('test')

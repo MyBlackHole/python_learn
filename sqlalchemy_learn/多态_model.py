@@ -15,13 +15,8 @@ it uses a fixed number of tables to serve any number of potential parent
 objects, but is also slightly more complex.
 
 """
-from urllib.parse import quote_plus as urlquote
-
-from sqlalchemy import Column, ForeignKey, Integer, String, create_engine
-from sqlalchemy.ext.associationproxy import association_proxy
+from sqlalchemy import Column, Integer, String
 from sqlalchemy.ext.declarative import as_declarative, declared_attr
-from sqlalchemy.orm import Session, backref, relationship
-from sqlalchemy.schema import CreateTable
 
 
 @as_declarative()
@@ -51,7 +46,6 @@ class AddressAssociation(Base):
     discriminator = Column(String(100))
     street = Column(String(100))
     city = Column(String(100))
-
 
 
 class Address_A(AddressAssociation):

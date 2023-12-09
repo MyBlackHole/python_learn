@@ -1,7 +1,6 @@
 # 导入:
 from urllib.parse import quote_plus as urlquote
 
-from requests import session
 from sqlalchemy import BIGINT, Column, String, create_engine, text
 from sqlalchemy.orm import declarative_base, scoped_session, sessionmaker
 

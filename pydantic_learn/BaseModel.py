@@ -41,3 +41,7 @@ print(repr(user.signup_ts))
 print(user.dict())
 print(user.json())
 print(user.json())
+
+import pdb
+pdb.set_trace()
+print(User)

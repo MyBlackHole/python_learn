@@ -14,7 +14,6 @@
 
 __author__ = 'Black Hole'
 
-import users
 import uvicorn
 from fastapi import FastAPI
 

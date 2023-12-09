@@ -17,18 +17,12 @@ objects, but is also slightly more complex.
 """
 from sqlalchemy import Column
 from sqlalchemy import create_engine
-from sqlalchemy import ForeignKey
 from sqlalchemy import Integer
 from sqlalchemy import String
-from sqlalchemy.ext.associationproxy import association_proxy
 from sqlalchemy.ext.declarative import as_declarative
 from sqlalchemy.ext.declarative import declared_attr
-from sqlalchemy.orm import backref
-from sqlalchemy.orm import relationship
 from sqlalchemy.orm import Session
 from urllib.parse import quote_plus as urlquote
-
-from sqlalchemy.schema import CreateTable
 
 
 @as_declarative()
