@@ -11,7 +11,7 @@ class SongBase(SQLModel):
 if __name__ == "__main__":
     song = SongBase(
         name="ok",
-        artist="o",
+        artist=1,
     )
     print(song.dict(exclude_none=True))
     # {'name': 'ok', 'artist': 'ok'}

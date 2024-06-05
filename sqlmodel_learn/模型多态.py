@@ -14,6 +14,7 @@ class SshUser(User):
     def connc():
         pass
 
+
 class AgentUser(User):
     agent_name: str
 

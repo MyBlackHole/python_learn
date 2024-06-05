@@ -63,3 +63,4 @@ if __name__ == "__main__":
     del b
     b = B()
     print(id(b), b.a)
+    del b

@@ -1,8 +1,17 @@
 import sqlite3
 from contextlib import closing
 
-from flask import (Flask, abort, flash, g, redirect, render_template, request,
-                   session, url_for)
+from flask import (
+    Flask,
+    abort,
+    flash,
+    g,
+    redirect,
+    render_template,
+    request,
+    session,
+    url_for,
+)
 
 DATABASE = "/tmp/flaskr.db"
 ENV = "development"

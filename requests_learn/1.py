@@ -1,4 +1,5 @@
 import requests
+import json
 
 # cookies = {
 #     # "_s_tentry": "www.baidu.com",
@@ -45,10 +46,11 @@ headers = {
 }
 # url = 'https://www.baidu.com/s?tn=news&rtt=4&bsst=1&cl=2&wd=%E4%B8%B4%E6%B1%BE+%E7%81%BE%E5%AE%B3%E4%BA%8B%E6%95%85&medium=1&x_bfe_rqs=20001&x_bfe_tjscore=0.714732&tngroupname=organic_news&newVideo=12&rsv_dl=news_b_pn&pn=10&p_tk=2506yugq4GzNxVn72iK%2FnUFN1H9sNparRt6fhSky7bbDW%2FtXldpcd%2BqRQj8BQQuLcgLQsOEl1yCJtxntkVDl6w35SKHMcRGg%2B6WSHT2qOF0CLg4%3D&p_timestamp=1601007660&p_signature=fb158093a36432407bc726f90010102f'
 # url = 'http://tieba.baidu.com/f/search/res?ie=utf-8&qw=长沙&only_thread=0&pn=3'
-url = "https://0.0.0.0:8000/todos/?a=0"
+url = "http://0.0.0.0:5000/"
 
-res = requests.get(url, verify=False)
+res = requests.get(url)
 print(res.text)
+# print(json.loads(res.text))
 # while True:
 #     try:
 #         res = requests.get(url)

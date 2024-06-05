@@ -2,7 +2,16 @@ from typing import List, Optional
 
 from urllib.parse import quote_plus as urlquote
 from sqlalchemy.orm import registry, with_polymorphic
-from sqlmodel import Field, Relationship, Session, SQLModel, create_engine
+from sqlmodel import (
+    Field,
+    Relationship,
+    Session,
+    SQLModel,
+    col,
+    create_engine,
+    select,
+    update,
+)
 
 mapper_registry = registry()
 
@@ -90,41 +99,54 @@ class Client(SQLModel, table=True):
 #     # echo=True,
 # )
 engine = create_engine(
-    f"mysql+pymysql://root:{urlquote('p@3Sw0rd')}@192.168.78.213:3306/airflow?charset=utf8mb4",
+    f"mysql+pymysql://root:{urlquote('123456')}@127.0.0.1:3306/test?charset=utf8mb4",
     echo=True,
 )
 
+# with Session(engine) as session:
+#     SQLModel.metadata.create_all(engine)
+
+#     c = Client()
+
+#     c.name = "client name"
+#     c.contracts = [
+#         TimeContract(
+#             currency=12.2,
+#             title="title1",
+#             term_of_payment=1,
+#             rate=3.4,
+#         ),
+#         WorksContract(
+#             title="title2",
+#             currency=43.4,
+#             term_of_payment=6,
+#             price=344.2,
+#             deliverable="---",
+#         ),
+#         TimeContract(
+#             currency=13.2,
+#             title="title3",
+#             term_of_payment=12,
+#             rate=56.4,
+#         ),
+#     ]
+#     session.add(c)
+#     session.commit()
+#     session.refresh(c)
+
+#     contract_manager = with_polymorphic(
+#         Contract,
+#         [
+#             TimeContract,
+#             WorksContract,
+#         ],
+#     )
+
+#     query = session.query(contract_manager)
+#     for i in query.all():
+#         print(i)
+
 with Session(engine) as session:
-    SQLModel.metadata.create_all(engine)
-
-    c = Client()
-
-    c.name = "client name"
-    c.contracts = [
-        TimeContract(
-            currency=12.2,
-            title="title1",
-            term_of_payment=1,
-            rate=3.4,
-        ),
-        WorksContract(
-            title="title2",
-            currency=43.4,
-            term_of_payment=6,
-            price=344.2,
-            deliverable="---",
-        ),
-        TimeContract(
-            currency=13.2,
-            title="title3",
-            term_of_payment=12,
-            rate=56.4,
-        ),
-    ]
-    session.add(c)
-    session.commit()
-    session.refresh(c)
-
     contract_manager = with_polymorphic(
         Contract,
         [
@@ -133,6 +155,22 @@ with Session(engine) as session:
         ],
     )
 
-    query = session.query(contract_manager)
-    for i in query.all():
-        print(i)
+    # statement = select(contract_manager).where(Contract.id == 1)
+    # results = session.exec(statement)
+    # contract: Contract = results.one()
+    # contract.title = "title_test"
+    # session.add(contract)
+
+    statement = (
+        update(contract_manager)
+        .where(
+            Contract.id == 1,
+        )
+        .values(
+            title="title_test1",
+        )
+    )
+    print(statement)
+    results = session.execute(statement)
+    print(results)
+    session.commit()
