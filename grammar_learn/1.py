@@ -37,6 +37,7 @@
 # #     print('ok')
 # func()
 
-from bzd import dnd
-
-print(qnd.AAA)
+# from bzd import dnd
+#
+# print(qnd.AAA)
+#
